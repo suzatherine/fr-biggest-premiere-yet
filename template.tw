@@ -725,7 +725,9 @@ From art museums, libraries, train stations, and cafes in Liverpool, to differen
 From where you are now, at the Liverpool Everyman, to the Lesya Ukrainka Theater in Lviv. Here you will meet our first artist Olha Puzhakovska, who with tremendous courage and ingenuity transformed her theatre to respond to a moment of crisis… 
 So, are you ready?
 Let’s begin
+
 ALEXANDER LEVITSKY:
+
 Ten. Nine. Eight. Seven.
 Burning house in heaven.
 A cartridge is full of deceptions.
@@ -740,7 +742,9 @@ There is nowhere to flee.
 To the abyss of suffering, we have run.
 Two. One.
 The war has begun. 
+
 OLHA PUZHAKOVSKA:
+
 On the 24th of February 2022 (the day of the full-scale invasion), we made a plan of how to defend the theatre and how we could avoid it being captured. 
 It’s the highest building in the district and right across the street, there is a big military base. So we put razor wire anywhere a person could climb onto the rooftop, and some of the staff began to make Molotov cocktails. 
 This was the first day.
@@ -761,7 +765,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 :: instnar3 [nobr]
-<<set $prevpass to "olga">>
+<<set $prevpass to "premiere">>
 <<set $passage to "instnar3">>
 <<if $theatre is "open">>
   <<set $nextpass to "AR1">>
@@ -1002,7 +1006,7 @@ This will go down in the history books.
 
 
 :: end [nobr]
-<<set $prevpass to "mixtape">>
+<<set $prevpass to "streets">>
 <<set $passage to "end">>
 <<set $nextpass to "end">>
 <<set $showMap to false>>
