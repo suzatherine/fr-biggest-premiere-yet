@@ -376,6 +376,7 @@ setup.backThirty = () => {
 <div class="nav-wrapper">
     <div class="nav-item">
       <<link [img[assets/img/captions.png]]>>
+      /* <<toggleclass "#posterWrapper" "small">> */
       <<if $captionToggle is true>>
           <<set $captionToggle to false>>
       <<set $fn to setup.hideCap()>>
@@ -672,32 +673,43 @@ You have two options:
 <<set $nextpass to "instnar3">>
 <<set $transcript to false>>
 <<set $playToggle to false>>
-<<set $captionToggle to true>>
+<<set $captionToggle to false>>
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to true>>
 <<set $showMap to false>>
 <<set $transcriptname to  "premieretranscript">>
 <<include "headerstory">>
-<main class="story">
+<main class="story" id="story">
 <audio id="audio" >
-  <source src="">
+  <source src="https://www.dropbox.com/s/ldn4ws1lyq2rn26/Walk%202%20_%20Stas%20Acoustic%20Music%20V1.mp3?raw=1">
   <track kind="captions" srclang="en" label="English captions" id="captrack" default>
 </audio>
-<div class="poster-wrapper">
+<div class="poster-wrapper" id="posterWrapper">
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
  </div>
- 
+  
 <div id="caption"></div>
 <div id="transcript"></div>
-<div id="mount"  ><p class="comment">Press play to listen to <em>$title</em></p></div>
+<div id="mount"  ><p class="comment"> To listen to <em>$title</em> press <div class="inline-btn-wrapper">
+<<link "play">>
+        <<if $playToggle is false>>
+      <<set $fn to setup.play()>>
+      <<set $playToggle to true>>
+      <<addclass "#playpause" "playhighlight">>
+      <<else>>
+       <<set $fn to setup.pause()>>
+        <<set $playToggle to false>>
+      <<removeclass "#playpause" "playhighlight">>
+      <</if>>
+      <</link>></div></p></div>
 
 
-<<timed 6s>>
+<<timed 15s>>
   /* <<addclass "#forIcon" "circle">>
    <<addclass "#forIcon" "pulse">> */
 <<replace "#mount">>
-<p class="comment"> When you're finished listening, let me know</p>
-<<button "I'm finished">><<goto $nextpass>><</button>>
+<p class="comment"> When you're finished listening, let me know. <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
+
  <</replace>>
  <</timed>>
 </main>

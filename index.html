@@ -425,6 +425,7 @@ setup.backThirty = () => {
 &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
       &lt;&lt;link [img[assets/img/captions.png]]&gt;&gt;
+      /* &lt;&lt;toggleclass &quot;#posterWrapper&quot; &quot;small&quot;&gt;&gt; */
       &lt;&lt;if $captionToggle is true&gt;&gt;
           &lt;&lt;set $captionToggle to false&gt;&gt;
       &lt;&lt;set $fn to setup.hideCap()&gt;&gt;
@@ -691,32 +692,43 @@ You have two options:
 &lt;&lt;set $nextpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $playToggle to false&gt;&gt;
-&lt;&lt;set $captionToggle to true&gt;&gt;
+&lt;&lt;set $captionToggle to false&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to true&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $transcriptname to  &quot;premieretranscript&quot;&gt;&gt;
 &lt;&lt;include &quot;headerstory&quot;&gt;&gt;
-&lt;main class=&quot;story&quot;&gt;
+&lt;main class=&quot;story&quot; id=&quot;story&quot;&gt;
 &lt;audio id=&quot;audio&quot; &gt;
-  &lt;source src=&quot;&quot;&gt;
+  &lt;source src=&quot;https://www.dropbox.com/s/ldn4ws1lyq2rn26/Walk%202%20_%20Stas%20Acoustic%20Music%20V1.mp3?raw=1&quot;&gt;
   &lt;track kind=&quot;captions&quot; srclang=&quot;en&quot; label=&quot;English captions&quot; id=&quot;captrack&quot; default&gt;
 &lt;/audio&gt;
-&lt;div class=&quot;poster-wrapper&quot;&gt;
+&lt;div class=&quot;poster-wrapper&quot; id=&quot;posterWrapper&quot;&gt;
    &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
  &lt;/div&gt;
- 
+  
 &lt;div id=&quot;caption&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;mount&quot;  &gt;&lt;p class=&quot;comment&quot;&gt;Press play to listen to &lt;em&gt;$title&lt;/em&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;  &gt;&lt;p class=&quot;comment&quot;&gt; To listen to &lt;em&gt;$title&lt;/em&gt; press &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
+&lt;&lt;link &quot;play&quot;&gt;&gt;
+        &lt;&lt;if $playToggle is false&gt;&gt;
+      &lt;&lt;set $fn to setup.play()&gt;&gt;
+      &lt;&lt;set $playToggle to true&gt;&gt;
+      &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;else&gt;&gt;
+       &lt;&lt;set $fn to setup.pause()&gt;&gt;
+        &lt;&lt;set $playToggle to false&gt;&gt;
+      &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+      &lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;
 
 
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;
   /* &lt;&lt;addclass &quot;#forIcon&quot; &quot;circle&quot;&gt;&gt;
    &lt;&lt;addclass &quot;#forIcon&quot; &quot;pulse&quot;&gt;&gt; */
 &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know&lt;/p&gt;
-&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know. &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/p&gt;
+
  &lt;&lt;/replace&gt;&gt;
  &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
