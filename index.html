@@ -130,14 +130,35 @@ const handleStart = (evt) =>{
   // log("touchstart.");
   const initial = document.getElementById("initial");
   const stat = document.getElementById("stat");
-    const reveal = document.getElementById("reveal");
+    const ARContainer = document.getElementById("ARContainer");
     //  reveal.classList.add("transparent");  
      initial.classList.add("transparent");  
-     console.log(reveal)
-//       setTimeout(() => {
-//     initial.classList.add("hide"); 
-// }, "1000");
-   
+     console.log(ARContainer)
+      setTimeout(() => {
+    ARContainer.classList.remove("one"); 
+    ARContainer.classList.add("two"); 
+}, "3000");
+setTimeout(() => {
+    ARContainer.classList.remove("two"); 
+    ARContainer.classList.add("three"); 
+}, "6000");
+setTimeout(() => {
+    ARContainer.classList.remove("three"); 
+    ARContainer.classList.add("four"); 
+}, "9000");
+setTimeout(() => {
+    ARContainer.classList.remove("four"); 
+    ARContainer.classList.add("five"); 
+}, "12000");
+setTimeout(() => {
+    ARContainer.classList.remove("five"); 
+    ARContainer.classList.add("six"); 
+}, "16000");
+
+setTimeout(() => {
+    ARContainer.classList.remove("six"); 
+    ARContainer.classList.add("seven"); 
+}, "19000");
 //   initial.classList.add("dissolve");  
 //    stat.classList.add("appear"); 
 //   setTimeout(() => {
@@ -727,7 +748,7 @@ You have two options:
   /* &lt;&lt;addclass &quot;#forIcon&quot; &quot;circle&quot;&gt;&gt;
    &lt;&lt;addclass &quot;#forIcon&quot; &quot;pulse&quot;&gt;&gt; */
 &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know. &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/p&gt;
 
  &lt;&lt;/replace&gt;&gt;
  &lt;&lt;/timed&gt;&gt;
@@ -832,7 +853,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main&gt;
 
-  &lt;div class=&quot;ar-imgs-container&quot;&gt;
+  &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
     &lt;div class=&quot;ar-img-wrapper touch bottom&quot; id=&quot;initial&quot; &gt;
       &lt;img src=&quot;./assets/img/everyman-theatre.webp&quot; class=&quot;&quot;&gt;
       &lt;/div&gt;

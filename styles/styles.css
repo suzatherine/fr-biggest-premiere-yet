@@ -381,14 +381,41 @@ main.end {
 .ar-imgs-container {
   position: relative;
   width: 100%;
-  height: 80vh;
-  background-image: url("./../assets/img/big_stage_by_B.Yemets.jpg");
+  height: 50vh;
   background-size: cover;
+}
+
+.ar-imgs-container.one {
+  background-image: url("./../assets/img/le15.jpeg");
+}
+
+.ar-imgs-container.two {
+  background-image: url("./../assets/img/le17.jpg");
+}
+
+.ar-imgs-container.three {
+  background-image: url("./../assets/img/le16.jpeg");
+}
+
+.ar-imgs-container.four {
+  background-image: url("./../assets/img/le14.jpeg");
+}
+
+.ar-imgs-container.five {
+  background-image: url("./../assets/img/le13.jpeg");
+}
+
+.ar-imgs-container.six {
+  background-image: url("./../assets/img/le11.jpg");
+}
+
+.ar-imgs-container.seven {
+  background-image: url("./../assets/img/le12.jpg");
 }
 
 .ar-img-wrapper,
 .hidden-img-wrapper {
-  height: 80vh;
+  height: 50vh;
   object-fit: cover;
   /* position: absolute; */
   left: 0;

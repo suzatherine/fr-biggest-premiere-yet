@@ -50,14 +50,35 @@ const handleStart = (evt) =>{
   // log("touchstart.");
   const initial = document.getElementById("initial");
   const stat = document.getElementById("stat");
-    const reveal = document.getElementById("reveal");
+    const ARContainer = document.getElementById("ARContainer");
     //  reveal.classList.add("transparent");  
      initial.classList.add("transparent");  
-     console.log(reveal)
-//       setTimeout(() => {
-//     initial.classList.add("hide"); 
-// }, "1000");
-   
+     console.log(ARContainer)
+      setTimeout(() => {
+    ARContainer.classList.remove("one"); 
+    ARContainer.classList.add("two"); 
+}, "3000");
+setTimeout(() => {
+    ARContainer.classList.remove("two"); 
+    ARContainer.classList.add("three"); 
+}, "6000");
+setTimeout(() => {
+    ARContainer.classList.remove("three"); 
+    ARContainer.classList.add("four"); 
+}, "9000");
+setTimeout(() => {
+    ARContainer.classList.remove("four"); 
+    ARContainer.classList.add("five"); 
+}, "12000");
+setTimeout(() => {
+    ARContainer.classList.remove("five"); 
+    ARContainer.classList.add("six"); 
+}, "16000");
+
+setTimeout(() => {
+    ARContainer.classList.remove("six"); 
+    ARContainer.classList.add("seven"); 
+}, "19000");
 //   initial.classList.add("dissolve");  
 //    stat.classList.add("appear"); 
 //   setTimeout(() => {
@@ -708,7 +729,7 @@ You have two options:
   /* <<addclass "#forIcon" "circle">>
    <<addclass "#forIcon" "pulse">> */
 <<replace "#mount">>
-<p class="comment"> When you're finished listening, let me know. <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
+<p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
 
  <</replace>>
  <</timed>>
@@ -828,7 +849,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 /* <<include "header">> */
 <main>
 
-  <div class="ar-imgs-container">
+  <div class="ar-imgs-container one" id="ARContainer">
     <div class="ar-img-wrapper touch bottom" id="initial" >
       <img src="./assets/img/everyman-theatre.webp" class="">
       </div>
