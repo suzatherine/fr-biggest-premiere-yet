@@ -345,7 +345,7 @@ setup.backThirty = () => {
 <footer class="ar">
   <div class="nav-wrapper">
     <div class="nav-item">
-    <div id="mount"> <span>Press the image</span> <span>to see it change</span></div>
+    <div id="mount"> <span>Press the image</span> <span>to see it transform</span></div>
     <<silently>>
 	<<repeat 10s>>
     <<timed 0.1s>>
@@ -355,7 +355,7 @@ setup.backThirty = () => {
      <</timed>>
      <<timed 6s>>
       <<replace "#mount">>
-       <span>Press the image</span> <span>to see it change</span>
+       <span>Press the image</span> <span>to see it transform</span>
       <</replace>>
      <</timed>>
     <</repeat>>
@@ -363,7 +363,7 @@ setup.backThirty = () => {
     </div></div>
     <div class="nav-wrapper">
     <div class="nav-item">
-       <<button "I’ve finished listening">><<goto $nextpass>><</button>>
+       <<button "Next">><<goto $nextpass>><</button>>
     </div>
   </div>
 </footer>
@@ -797,14 +797,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <main class="instructions">
 <div id="map" class="hide">$map</div>
 <<if $theatre is "open">>
-  <p> Let me show you some images </p>
+  <p> Let me show you some photos </p>
   <p>Stand in front of the elevator, facing the bar</p>
   <p>Hold up your phone</p>
-    <<button "I'm in position">><<goto $nextpass>><</button>>
+    <<button "Show me">><<goto $nextpass>><</button>>
 <</if>>
 
 <<if $theatre is "closed">>
-<p>Let me show you some images </p>
+<p>Let me show you some photos </p>
 <p>Cross the road and face the Liverpool Everyman</p>
 <p>Hold up your phone and press</p>
   <<button "Show Me">><<goto $nextpass>><</button>>

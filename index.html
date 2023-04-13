@@ -398,7 +398,7 @@ setup.backThirty = () => {
 &lt;/footer&gt;</tw-passagedata><tw-passagedata pid="6" name="footerAR" tags="nobr" position="100,375" size="100,100">&lt;footer class=&quot;ar&quot;&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;div id=&quot;mount&quot;&gt; &lt;span&gt;Press the image&lt;/span&gt; &lt;span&gt;to see it change&lt;/span&gt;&lt;/div&gt;
+    &lt;div id=&quot;mount&quot;&gt; &lt;span&gt;Press the image&lt;/span&gt; &lt;span&gt;to see it transform&lt;/span&gt;&lt;/div&gt;
     &lt;&lt;silently&gt;&gt;
 	&lt;&lt;repeat 10s&gt;&gt;
     &lt;&lt;timed 0.1s&gt;&gt;
@@ -408,7 +408,7 @@ setup.backThirty = () => {
      &lt;&lt;/timed&gt;&gt;
      &lt;&lt;timed 6s&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-       &lt;span&gt;Press the image&lt;/span&gt; &lt;span&gt;to see it change&lt;/span&gt;
+       &lt;span&gt;Press the image&lt;/span&gt; &lt;span&gt;to see it transform&lt;/span&gt;
       &lt;&lt;/replace&gt;&gt;
      &lt;&lt;/timed&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
@@ -416,7 +416,7 @@ setup.backThirty = () => {
     &lt;/div&gt;&lt;/div&gt;
     &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
-       &lt;&lt;button &quot;I’ve finished listening&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+       &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="footerstory" tags="nobr" position="850,100" size="100,100">&lt;footer&gt;
@@ -805,14 +805,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
 &lt;&lt;if $theatre is &quot;open&quot;&gt;&gt;
-  &lt;p&gt; Let me show you some images &lt;/p&gt;
+  &lt;p&gt; Let me show you some photos &lt;/p&gt;
   &lt;p&gt;Stand in front of the elevator, facing the bar&lt;/p&gt;
   &lt;p&gt;Hold up your phone&lt;/p&gt;
-    &lt;&lt;button &quot;I&#39;m in position&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+    &lt;&lt;button &quot;Show me&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $theatre is &quot;closed&quot;&gt;&gt;
-&lt;p&gt;Let me show you some images &lt;/p&gt;
+&lt;p&gt;Let me show you some photos &lt;/p&gt;
 &lt;p&gt;Cross the road and face the Liverpool Everyman&lt;/p&gt;
 &lt;p&gt;Hold up your phone and press&lt;/p&gt;
   &lt;&lt;button &quot;Show Me&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
