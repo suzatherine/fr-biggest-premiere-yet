@@ -597,8 +597,9 @@ You have two options:
 <<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.4030572538972, -2.969504715141457)>>
 <div id="audio"></div>
 <<include "header">>
-<main class="instructions">
 <div class="comp-warning">Best to experience on a phone</div>
+<main class="instructions">
+
 <div id="map" class="hide">$map</div>
 
   <p>You should be inside or outside the Liverpool Everyman</p>
