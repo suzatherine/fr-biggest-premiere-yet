@@ -520,7 +520,7 @@ You have two options:
 :: instructions [nobr]
 <<set $prevpass to "landing">>
 <<set $passage to "instructions">>
-<<set $nextpass to "instnar1">>
+<<set $nextpass to "premiere">>
 <<set $showMap to false>>
 <<set $showAudio to false>>
 <<set $showReplay to false>>
@@ -603,9 +603,9 @@ You have two options:
 <<include "footer">>
 
 :: instnar2 [nobr]
-<<set $prevpass to "instnar1">>
+<<set $prevpass to "landing">>
 <<set $passage to "instnar2">>
-<<set $nextpass to "premiere">>
+<<set $nextpass to "instructions">>
 <<set $showMap to false>>
 <<set $showAudio to false>>
 <<set $showReplay to true>>
