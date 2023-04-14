@@ -123,28 +123,27 @@ return iFrame
 // taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
 setup.startup = (backgrounds) =>  {
   const ongoingTouches = [];
-  console.log(ongoingTouches)
-console.log(backgrounds)
+let running 
+running = false
 const handleStart = (evt) =>{
   evt.preventDefault();
-  // log("touchstart.");
-  const initial = document.getElementById("initial");
-  const stat = document.getElementById("stat");
+ console.log("clicked runnig", running )
+ const initial = document.getElementById("initial");
+
     const ARContainer = document.getElementById("ARContainer");
     //  reveal.classList.add("transparent");  
      initial.classList.add("transparent");  
-     console.log("ARContainer", ARContainer)
-    ARContainer.style.backgroundImage = "url(./../assets/img/le15.jpeg)"
-console.log("bg", ARContainer.style.backgroundImage)
-
-
-for(let i = 0; i < backgrounds.length; i++){
-setTimeout (()=> {
-   ARContainer.style.backgroundImage = `url(./../assets/img/${backgrounds[i]}.jpeg)`
-}, `${i*3000}`)
+if (!running) {
+    running = true
+    for(let i = 0; i < backgrounds.length; i++){
+    setTimeout (()=> {
+      ARContainer.style.backgroundImage = `url(./../assets/img/${backgrounds[i]}.jpeg)`
+    }, `${i*3000}`)
+    }
+} else {
+  console.log("already running")
+return
 }
- 
- 
 }
 
 const handleMove = (evt) => {
@@ -156,7 +155,7 @@ const handleEnd = (evt) => {
   evt.preventDefault();
   // log("touchend");
    const initial = document.getElementById("initial");
-    const reveal = document.getElementById("reveal");
+    // const reveal = document.getElementById("reveal");
     //  initial.classList.remove("hide"); 
      initial.classList.remove("transparent");  
   // initial.classList.remove("hide")  
@@ -805,9 +804,8 @@ For the last five years, we have been trying to work without a strict hierarchy.
     &lt;div class=&quot;ar-img-wrapper touch bottom&quot; id=&quot;initial&quot; &gt;
       &lt;img src=&quot;./assets/img/everyman-theatre.webp&quot; class=&quot;&quot;&gt;
       &lt;/div&gt;
-  &lt;/div &gt;
+  &lt;/div&gt;
 
-/* &lt;p&gt;(Liverpool Everyman Transforms into the volunteering at Lesya Ukrainka Theater)&lt;/p&gt; */
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
@@ -926,8 +924,8 @@ For the last five years, we have been trying to work without a strict hierarchy.
   &lt;track kind=&quot;captions&quot; srclang=&quot;en&quot; label=&quot;English captions&quot; id=&quot;captrack&quot; default&gt;
 &lt;/audio&gt;
 
-&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
-&lt;div class=&quot;poster-wrapper&quot; id=&quot;poster&quot;&gt;
+&lt;div id=&quot;map&quot; class=&quot;&quot;&gt;$map&lt;/div&gt;
+&lt;div class=&quot;poster-wrapper hide&quot; id=&quot;poster&quot;&gt;
    &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
  &lt;/div&gt;
 &lt;div id=&quot;caption&quot; &gt;&lt;/div&gt;

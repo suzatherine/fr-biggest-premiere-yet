@@ -273,7 +273,7 @@ textarea {
   margin: auto;
 }
 
-.directions-card {
+.gm-style .directions-card {
   display: none !important;
 }
 
@@ -385,9 +385,9 @@ main.end {
   background-size: cover;
 }
 
-.ar-imgs-container.one {
+/* .ar-imgs-container.one {
   background-image: url("./../assets/img/le15.jpeg");
-}
+} */
 
 .ar-img-wrapper,
 .hidden-img-wrapper {
@@ -413,26 +413,6 @@ main.end {
 .static-img-wrapper.transparent {
   opacity: 0;
   /* height: 0; */
-}
-
-.ar-img-wrapper.hover:hover {
-  filter: grayscale(100%);
-}
-
-.ar-img-wrapper.active:active {
-  filter: grayscale(100%);
-}
-
-.ar-img-wrapper.focus:focus {
-  filter: grayscale(100%);
-}
-
-.ar-img-wrapper.touch {
-  filter: grayscale(0%);
-}
-
-.ar-img-wrapper.touch.filter {
-  filter: grayscale(100%);
 }
 
 #log {
@@ -517,7 +497,7 @@ footer > .nav-wrapper.playpause-wrapper {
 main.story > .poster-wrapper {
   width: 95%;
   margin: 0 auto;
-  margin-top: -3rem;
+
   z-index: -999;
 }
 
@@ -528,8 +508,7 @@ main.story > .poster-wrapper.small {
 
 main.story > #caption {
   z-index: 9999;
-  color: #000000;
-  background: aliceblue;
+  color: #ffff;
   margin-block-start: -3rem;
   padding: 0.5rem;
 }
