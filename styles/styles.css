@@ -425,6 +425,7 @@ main.end {
 footer.ar > .nav-wrapper > .nav-item > #mount > span {
   display: block;
   font-size: 1.4rem;
+  text-align: center;
 }
 
 @media screen and (min-width: 450px) {
@@ -510,7 +511,7 @@ main.story > .poster-wrapper.small {
 main.story > #caption {
   z-index: 9999;
   color: #ffff;
-  margin-block-start: -3rem;
+
   padding: 0.5rem;
 }
 
