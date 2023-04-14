@@ -123,27 +123,15 @@ return iFrame
 // taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
 setup.startup = (backgrounds) =>  {
   const ongoingTouches = [];
-let running 
-running = false
+
 const handleStart = (evt) =>{
   evt.preventDefault();
- console.log("clicked runnig", running )
  const initial = document.getElementById("initial");
-
-    const ARContainer = document.getElementById("ARContainer");
-    //  reveal.classList.add("transparent");  
+  const ARContainer = document.getElementById("ARContainer");
      initial.classList.add("transparent");  
-if (!running) {
-    running = true
-    for(let i = 0; i < backgrounds.length; i++){
-    setTimeout (()=> {
-      ARContainer.style.backgroundImage = `url(./../assets/img/${backgrounds[i]}.jpeg)`
-    }, `${i*3000}`)
-    }
-} else {
-  console.log("already running")
-return
-}
+     reveal.classList.remove("transparent");  
+
+
 }
 
 const handleMove = (evt) => {
@@ -155,11 +143,10 @@ const handleEnd = (evt) => {
   evt.preventDefault();
   // log("touchend");
    const initial = document.getElementById("initial");
-    // const reveal = document.getElementById("reveal");
-    //  initial.classList.remove("hide"); 
+
      initial.classList.remove("transparent");  
-  // initial.classList.remove("hide")  
-  //   reveal.classList.add("hide");  
+     reveal.classList.add("transparent");  
+
   
 }
 
@@ -801,6 +788,9 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;main&gt;
 
   &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
+    &lt;div class=&quot;hidden-img-wrapper touch transparent&quot; id=&quot;reveal&quot; &gt;
+        &lt;img src=&quot;./assets/img/gifs/ar1.gif&quot; class=&quot;&quot;&gt;
+      &lt;/div&gt;
     &lt;div class=&quot;ar-img-wrapper touch bottom&quot; id=&quot;initial&quot; &gt;
       &lt;img src=&quot;./assets/img/everyman-theatre.webp&quot; class=&quot;&quot;&gt;
       &lt;/div&gt;
