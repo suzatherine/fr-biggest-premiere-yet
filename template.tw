@@ -517,8 +517,9 @@ setup.backThirty = () => {
 <div class="poster-wrapper" id="poster">
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
  </div>
+ <div class="menu-wrapper">
     <<button "Begin">><<goto $nextpass>><</button>>
-
+</div>
 </main>
 
 
