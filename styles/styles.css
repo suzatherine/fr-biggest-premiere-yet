@@ -318,7 +318,7 @@ header.credits > .header-item > h3 {
 /* INSTRUCTIONS  */
 
 main.instructions {
-  justify-content: center;
+  justify-content: flex-start;
 }
 main.instructions > h2 {
   margin-block-end: 3rem;
