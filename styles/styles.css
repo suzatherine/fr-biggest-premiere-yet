@@ -325,7 +325,8 @@ main.instructions > h2 {
 }
 
 main.instructions > #mount > p > .link-image > img,
-main.instructions > p > .link-image > img {
+main.instructions > p > .link-image > img,
+main.story > #mount > p > .link-image > img {
   width: 25px;
   margin: 0 10px;
 }

@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Our Biggest Premiere Yet" startnode="12" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Our Biggest Premiere Yet" startnode="10" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
@@ -287,7 +287,10 @@ setup.backThirty = () => {
 &lt;&lt;if $showMap is true&gt;&gt;
     &lt;div class=&quot;nav-wrapper&quot;&gt;
       &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
+    &lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;
+    &lt;&lt;toggleclass &quot;#poster&quot; &quot;hide&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
@@ -318,7 +321,9 @@ setup.backThirty = () => {
   &lt;&lt;if $showMap is true&gt;&gt;
     &lt;div class=&quot;nav-wrapper&quot;&gt;
       &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
+    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
+    &lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;&lt;/if&gt;&gt;
@@ -487,16 +492,7 @@ setup.backThirty = () => {
         &lt;&lt;button &quot;I&#39;ve arrived&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="lost" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main&gt;
-Sorry to hear that you&#39;re lost! 
-You have two options:
-
-&lt;&lt;button &quot;Begin the adventure again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="credits" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;credits&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="credits" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;credits&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
@@ -536,7 +532,26 @@ You have two options:
 &lt;p&gt;Poem Survivor&#39;s Syndrome by Andriy Bondarenko&lt;/p&gt;
 &lt;p&gt;Poem by Ostap Slyvynsky&lt;/p&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerback&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="instructions" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+&lt;&lt;include &quot;footerback&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="beginning" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;beginning&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;instructions&quot;&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $playToggle to false&gt;&gt;
+&lt;&lt;set $captionToggle to false&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to false&gt;&gt;
+&lt;&lt;set $showCaptionsIcon to true&gt;&gt;
+&lt;&lt;set $showMap to false&gt;&gt;
+
+
+&lt;main class=&quot;&quot; id=&quot;&quot;&gt;
+
+&lt;div class=&quot;poster-wrapper&quot; id=&quot;poster&quot;&gt;
+   &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
+ &lt;/div&gt;
+    &lt;&lt;button &quot;Begin&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="11" name="instructions" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -838,11 +853,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main&gt;
 
-  &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
+ &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
+    &lt;div class=&quot;hidden-img-wrapper touch transparent&quot; id=&quot;reveal&quot; &gt;
+        &lt;img src=&quot;./assets/img/gifs/ar1.gif&quot; class=&quot;&quot;&gt;
+      &lt;/div&gt;
     &lt;div class=&quot;ar-img-wrapper touch bottom&quot; id=&quot;initial&quot; &gt;
       &lt;img src=&quot;./assets/img/everyman-theatre.webp&quot; class=&quot;&quot;&gt;
       &lt;/div&gt;
-  &lt;/div &gt;
+  &lt;/div&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
@@ -854,7 +872,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &quot;le16&quot;,
 &quot;le17&quot;])&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="instnar5" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;AR1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar5&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;journey1&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to true&gt;&gt;
@@ -873,28 +891,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="journey1" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar4&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;journey1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
-&lt;&lt;set $showMap to true&gt;&gt;
-&lt;&lt;set $showAudio to false&gt;&gt;
-&lt;&lt;set $showReplay to true&gt;&gt;
-&lt;&lt;set $showBackwards to true&gt;&gt;
-&lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-/* &lt;&lt;set $showAudio to true&gt;&gt; */
-/* Everyman to 1931  */
-&lt;&lt;set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.40143323565547, -2.9706816152244295)&gt;&gt;
-&lt;main class=&quot;instructions&quot;&gt;
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
-&lt;p&gt;You can use the map &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; to help you get there.&lt;/p&gt;
-
-&lt;p&gt;As you begin to walk press &lt;&lt;button &quot;Play&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-
-&lt;/main&gt;
-
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="streets" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;journey1&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="streets" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -920,7 +917,17 @@ For the last five years, we have been trying to work without a strict hierarchy.
  &lt;/div&gt;
 &lt;div id=&quot;caption&quot; &gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;mount&quot;  &gt;&lt;p class=&quot;comment&quot;&gt; To listen press &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 1s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;  
+&lt;p class=&quot;comment&quot;&gt;You can use the map &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; to help you get there.&lt;/p&gt;
+&lt;&lt;/replace&gt;&gt;
+ &lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 6s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;  
+&lt;p class=&quot;comment&quot;&gt;As you begin to walk press  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
 &lt;&lt;link &quot;play&quot;&gt;&gt;
         &lt;&lt;if $playToggle is false&gt;&gt;
       &lt;&lt;set $fn to setup.play()&gt;&gt;
@@ -931,12 +938,11 @@ For the last five years, we have been trying to work without a strict hierarchy.
         &lt;&lt;set $playToggle to false&gt;&gt;
       &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
       &lt;&lt;/if&gt;&gt;
-      &lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;
+      &lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/p&gt;
 
-
+      &lt;&lt;/replace&gt;&gt;
+ &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 15s&gt;&gt;
-  /* &lt;&lt;addclass &quot;#forIcon&quot; &quot;circle&quot;&gt;&gt;
-   &lt;&lt;addclass &quot;#forIcon&quot; &quot;pulse&quot;&gt;&gt; */
 &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/p&gt;
 
@@ -947,7 +953,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;include &quot;footerstory&quot;&gt;&gt;
 &lt;&lt;done&gt;&gt;
   &lt;&lt;set $addC to setup.addCaptions(&quot;streets&quot;)&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="streetstranscript" tags="" position="350,350" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
+&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="streetstranscript" tags="" position="225,350" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
 
 NARRATOR:
 
@@ -968,7 +974,7 @@ There will be no classes today.
 Stay safe. Mind the sirens. Go down to the shelter. Pack a backpack. Bandages and iodine. Other medications you may need. A bottle of water. Biscuits. A flashlight. A needle with thread. Money. Documents. A power bank. A mobile phone.
 Write your name/surname on your hand. Your blood group. Relatives’ phone number. If the explosion is close, run to the bathroom.
 Keep in touch. Breathe deeply.
-This will go down in the history books.</tw-passagedata><tw-passagedata pid="24" name="end" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
+This will go down in the history books.</tw-passagedata><tw-passagedata pid="23" name="end" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;

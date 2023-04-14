@@ -7,7 +7,7 @@ Our Biggest Premiere Yet
 	"ifid": "F9E39354-F641-4070-8B45-C337A3FDC8C9",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "landing",
+	"start": "beginning",
 	"zoom": 0.6
 }
 
@@ -222,7 +222,10 @@ setup.backThirty = () => {
 <<if $showMap is true>>
     <div class="nav-wrapper">
       <div class="nav-item">
-    <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>>
+    <<link [img[assets/img/map.png]]>>
+    <<toggleclass "#map" "hide">>
+    <<toggleclass "#poster" "hide">>
+    <</link>>
     </div>
   </div>
   <</if>>
@@ -257,7 +260,9 @@ setup.backThirty = () => {
   <<if $showMap is true>>
     <div class="nav-wrapper">
       <div class="nav-item">
-    <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>>
+    <<link [img[assets/img/map.png]]>>
+    <<toggleclass "#map" "hide">>
+    <</link>>
     </div>
   </div>
   <</if>>
@@ -444,18 +449,6 @@ setup.backThirty = () => {
 </footer>
 
 
-:: lost {"position":"450,50","size":"100,100"}
-<<set $passage to "lost">><<include "header">>
-<main>
-Sorry to hear that you're lost! 
-You have two options:
-
-<<button "Begin the adventure again">><<goto "landing">><</button>>
-
-<<button "Take me straight to the end location!">><<goto "end">><</button>>
-</main>
-<<include "footer">>
-
 
 :: credits [nobr]{"position":"450,50","size":"100,100"}
 <<set $passage to "credits">>
@@ -501,10 +494,34 @@ You have two options:
 <<include "footerback">>
 
 
+:: beginning [nobr]  {"position":"700,175","size":"100,100"}
+<<set $prevpass to "beginning">>
+<<set $passage to "beginning">>
+<<set $nextpass to "instructions">>
+<<set $transcript to false>>
+<<set $playToggle to false>>
+<<set $captionToggle to false>>
+<<set $showForwards to true>>
+<<set $showBackwards to false>>
+<<set $showCaptionsIcon to true>>
+<<set $showMap to false>>
+
+
+<main class="" id="">
+
+<div class="poster-wrapper" id="poster">
+   <img class="poster" src="./../assets/img/obpy.jpeg"/>
+ </div>
+    <<button "Begin">><<goto $nextpass>><</button>>
+
+</main>
+
+
+
 
 
 :: instructions [nobr]
-<<set $prevpass to "landing">>
+<<set $prevpass to "beginning">>
 <<set $passage to "instructions">>
 <<set $nextpass to "premiere">>
 <<set $showMap to false>>
@@ -843,11 +860,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
 /* <<include "header">> */
 <main>
 
-  <div class="ar-imgs-container one" id="ARContainer">
+ <div class="ar-imgs-container one" id="ARContainer">
+    <div class="hidden-img-wrapper touch transparent" id="reveal" >
+        <img src="./assets/img/gifs/ar1.gif" class="">
+      </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
       <img src="./assets/img/everyman-theatre.webp" class="">
       </div>
-  </div >
+  </div>
 
 </main>
 <<include "footerAR">>
@@ -863,7 +883,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 :: instnar5 [nobr]
 <<set $prevpass to "AR1">>
 <<set $passage to "instnar5">>
-<<set $nextpass to "journey1">>
+<<set $nextpass to "streets">>
 <<set $showMap to true>>
 <<set $showAudio to false>>
 <<set $showReplay to true>>
@@ -885,37 +905,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<include "footer">>
 
 
-:: journey1 [nobr]
-<<set $prevpass to "instnar4">>
-<<set $passage to "journey1">>
-<<set $nextpass to "streets">>
-<<set $showMap to true>>
-<<set $showAudio to false>>
-<<set $showReplay to true>>
-<<set $showBackwards to true>>
-<<set $showForwards to true>>
-<<set $showCaptionsIcon to false>>
-/* <<set $showAudio to true>> */
-/* Everyman to 1931  */
-<<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.40143323565547, -2.9706816152244295)>>
-<main class="instructions">
-<div id="audio"></div>
-<div id="map" class="hide">$map</div>
-<p>You can use the map <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>> to help you get there.</p>
-
-<p>As you begin to walk press <<button "Play">><<goto $nextpass>><</button>></p>
-
-</main>
-
-<<include "footer">>
-
-
-
-
 
 
 :: streets[nobr]
-<<set $prevpass to "journey1">>
+<<set $prevpass to "instnar5">>
 <<set $passage to "streets">>
 <<set $nextpass to "end">>
 <<set $showMap to true>>
@@ -941,7 +934,17 @@ For the last five years, we have been trying to work without a strict hierarchy.
  </div>
 <div id="caption" ></div>
 <div id="transcript"></div>
-<div id="mount"  ><p class="comment"> To listen press <div class="inline-btn-wrapper">
+<div id="mount"></div>
+
+<<timed 1s>>
+  <<replace "#mount">>  
+<p class="comment">You can use the map <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>> to help you get there.</p>
+<</replace>>
+ <</timed>>
+
+ <<timed 6s>>
+  <<replace "#mount">>  
+<p class="comment">As you begin to walk press  <div class="inline-btn-wrapper">
 <<link "play">>
         <<if $playToggle is false>>
       <<set $fn to setup.play()>>
@@ -952,12 +955,11 @@ For the last five years, we have been trying to work without a strict hierarchy.
         <<set $playToggle to false>>
       <<removeclass "#playpause" "playhighlight">>
       <</if>>
-      <</link>></div></p></div>
+      <</link>></div></p>
 
-
+      <</replace>>
+ <</timed>>
 <<timed 15s>>
-  /* <<addclass "#forIcon" "circle">>
-   <<addclass "#forIcon" "pulse">> */
 <<replace "#mount">>
 <p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
 
