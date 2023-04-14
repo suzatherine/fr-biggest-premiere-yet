@@ -288,7 +288,7 @@ setup.backThirty = () => {
   &lt;h1&gt;$title&lt;/h1&gt;
   &lt;h3 class=&quot;subtitle&quot;&gt;With Fire &amp; Rage&lt;/h3&gt;
 &lt;/div &gt;
-&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="headerstory" tags="nobr" position="350,100" size="100,100">&lt;header&gt;
+&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="headerstory" tags="nobr" position="350,100" size="100,100">&lt;header class=&quot;story&quot;&gt;
 &lt;&lt;if $showBackwards is true&gt;&gt;
   &lt;div class=&quot;nav-wrapper&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
@@ -656,31 +656,7 @@ You have two options:
     &lt;&lt;button &quot;I&#39;m ready&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;
-
-
-/* :: preintro [nobr] {&quot;position&quot;:&quot;450,50&quot;,&quot;size&quot;:&quot;100,100&quot;}
-&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;preintro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;premiere&quot;&gt;&gt;
-&lt;&lt;set $showMap to false&gt;&gt;
-&lt;&lt;set $showAudio to false&gt;&gt;
-&lt;&lt;set $showReplay to true&gt;&gt;
-&lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to true&gt;&gt;
-&lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-&lt;main class=&quot;story&quot;&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-  &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
- &lt;div class=&quot;poster-wrapper&quot;&gt;
-   &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
- &lt;/div&gt;
-    &lt;p&gt;Press  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;[[play|premiere]] &lt;/div&gt; to listen to &lt;em&gt;$title&lt;/em&gt;
-&lt;/p&gt;
-  &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="14" name="premiere" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="premiere" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
@@ -696,7 +672,7 @@ You have two options:
   &lt;source src=&quot;https://www.dropbox.com/s/myez5ffs5k6zy26/01.%20Our%20Biggest%20Premiere%20Yet%20V1.mp3?raw=1&quot;&gt;
   &lt;track kind=&quot;captions&quot; srclang=&quot;en&quot; label=&quot;English captions&quot; id=&quot;captrack&quot; default&gt;
 &lt;/audio&gt;
-&lt;div class=&quot;poster-wrapper&quot; id=&quot;posterWrapper&quot;&gt;
+&lt;div class=&quot;poster-wrapper&quot; id=&quot;poster&quot;&gt;
    &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
  &lt;/div&gt;
   
@@ -870,6 +846,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
+
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main&gt;
 
@@ -939,6 +916,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to true&gt;&gt;
+&lt;&lt;set $transcriptname to  &quot;streetstranscript&quot;&gt;&gt;
 /* Everyman to 1931  */
 &lt;&lt;set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.40143323565547, -2.9706816152244295)&gt;&gt;
 &lt;&lt;include &quot;headerstory&quot;&gt;&gt;
@@ -949,20 +927,32 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;/audio&gt;
 
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
-&lt;div class=&quot;poster-wrapper&quot;&gt;
+&lt;div class=&quot;poster-wrapper&quot; id=&quot;poster&quot;&gt;
    &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
  &lt;/div&gt;
 &lt;div id=&quot;caption&quot; &gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;mount&quot; &gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;  &gt;&lt;p class=&quot;comment&quot;&gt; To listen press &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
+&lt;&lt;link &quot;play&quot;&gt;&gt;
+        &lt;&lt;if $playToggle is false&gt;&gt;
+      &lt;&lt;set $fn to setup.play()&gt;&gt;
+      &lt;&lt;set $playToggle to true&gt;&gt;
+      &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;else&gt;&gt;
+       &lt;&lt;set $fn to setup.pause()&gt;&gt;
+        &lt;&lt;set $playToggle to false&gt;&gt;
+      &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+      &lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/p&gt;&lt;/div&gt;
 
-&lt;&lt;timed 6s&gt;&gt;
-  &lt;&lt;addclass &quot;#forIcon&quot; &quot;circle&quot;&gt;&gt;
-   &lt;&lt;addclass &quot;#forIcon&quot; &quot;pulse&quot;&gt;&gt;
-/* &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know&lt;/p&gt;
-&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
- &lt;&lt;/replace&gt;&gt; */
+
+&lt;&lt;timed 15s&gt;&gt;
+  /* &lt;&lt;addclass &quot;#forIcon&quot; &quot;circle&quot;&gt;&gt;
+   &lt;&lt;addclass &quot;#forIcon&quot; &quot;pulse&quot;&gt;&gt; */
+&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;button &quot;I&#39;m finished&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/p&gt;
+
+ &lt;&lt;/replace&gt;&gt;
  &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 

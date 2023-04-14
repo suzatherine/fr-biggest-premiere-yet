@@ -223,7 +223,7 @@ setup.backThirty = () => {
 
 :: headerstory [nobr]
 
-<header>
+<header class="story">
 <<if $showBackwards is true>>
   <div class="nav-wrapper">
     <div class="nav-item">
@@ -634,28 +634,6 @@ You have two options:
 <<include "footer">>
 
 
-/* :: preintro [nobr] {"position":"450,50","size":"100,100"}
-<<set $prevpass to "instnar2">>
-<<set $passage to "preintro">>
-<<set $nextpass to "premiere">>
-<<set $showMap to false>>
-<<set $showAudio to false>>
-<<set $showReplay to true>>
-<<set $showForwards to true>>
-<<set $showBackwards to true>>
-<<set $showCaptionsIcon to false>>
-<main class="story">
-<div id="mount"></div>
-  <<timed 0.1s>><<replace "#mount">>
- <div class="poster-wrapper">
-   <img class="poster" src="./../assets/img/obpy.jpeg"/>
- </div>
-    <p>Press  <div class="inline-btn-wrapper">[[play|premiere]] </div> to listen to <em>$title</em>
-</p>
-  <</replace>><</timed>>
-
-</main>
-<<include "footer">> */
 
 
 
@@ -677,7 +655,7 @@ You have two options:
   <source src="https://www.dropbox.com/s/myez5ffs5k6zy26/01.%20Our%20Biggest%20Premiere%20Yet%20V1.mp3?raw=1">
   <track kind="captions" srclang="en" label="English captions" id="captrack" default>
 </audio>
-<div class="poster-wrapper" id="posterWrapper">
+<div class="poster-wrapper" id="poster">
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
  </div>
   
@@ -873,6 +851,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
+
 /* <<include "header">> */
 <main>
 
@@ -958,6 +937,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to true>>
+<<set $transcriptname to  "streetstranscript">>
 /* Everyman to 1931  */
 <<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.40143323565547, -2.9706816152244295)>>
 <<include "headerstory">>
@@ -968,20 +948,32 @@ For the last five years, we have been trying to work without a strict hierarchy.
 </audio>
 
 <div id="map" class="hide">$map</div>
-<div class="poster-wrapper">
+<div class="poster-wrapper" id="poster">
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
  </div>
 <div id="caption" ></div>
 <div id="transcript"></div>
-<div id="mount" ></div>
+<div id="mount"  ><p class="comment"> To listen press <div class="inline-btn-wrapper">
+<<link "play">>
+        <<if $playToggle is false>>
+      <<set $fn to setup.play()>>
+      <<set $playToggle to true>>
+      <<addclass "#playpause" "playhighlight">>
+      <<else>>
+       <<set $fn to setup.pause()>>
+        <<set $playToggle to false>>
+      <<removeclass "#playpause" "playhighlight">>
+      <</if>>
+      <</link>></div></p></div>
 
-<<timed 6s>>
-  <<addclass "#forIcon" "circle">>
-   <<addclass "#forIcon" "pulse">>
-/* <<replace "#mount">>
-<p class="comment"> When you're finished listening, let me know</p>
-<<button "I'm finished">><<goto $nextpass>><</button>>
- <</replace>> */
+
+<<timed 15s>>
+  /* <<addclass "#forIcon" "circle">>
+   <<addclass "#forIcon" "pulse">> */
+<<replace "#mount">>
+<p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
+
+ <</replace>>
  <</timed>>
 </main>
 
