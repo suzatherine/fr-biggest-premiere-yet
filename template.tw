@@ -433,6 +433,82 @@ setup.backThirty = () => {
 
 </footer>
 
+:: footerstorywalk [nobr]
+
+<footer>
+
+<<if $showCaptionsIcon is true>>
+<div class="nav-wrapper">
+    <div class="nav-item">
+      <<link [img[assets/img/captions.png]]>>
+      /* <<toggleclass "#posterWrapper" "small">> */
+      <<if $captionToggle is true>>
+         <<toggleclass "#storyContainer" "captions">>
+          <<set $captionToggle to false>>
+      <<set $fn to setup.hideCap()>>
+          <<else>>
+          <<toggleclass "#storyContainer" "captions">>
+          <<set $captionToggle to true>>
+      <<set $fn to setup.showCap()>>
+        <</if>>
+      <</link>>
+</div>
+  </div>
+<</if>>
+
+
+<div class="nav-wrapper">
+  <div class="nav-item">
+    <<link "-30s">>
+<<set $fn to setup.backThirty()>>
+  <</link>>
+  </div>
+</div>
+
+<div class="nav-wrapper playpause-wrapper">
+  <div class="nav-item" id="playpause">
+      <<link [img[assets/img/playpause.png]]>>
+        <<if $playToggle is false>>
+      <<set $fn to setup.play()>>
+      <<set $playToggle to true>>
+      <<addclass "#playpause" "playhighlight">>
+      <<else>>
+       <<set $fn to setup.pause()>>
+        <<set $playToggle to false>>
+      <<removeclass "#playpause" "playhighlight">>
+      <</if>>
+      <</link>>
+  </div>
+</div>
+
+<div class="nav-wrapper">
+  <div class="nav-item">
+    <<link "+30s">>
+      <<set $fn to setup.addThirty()>>
+  <</link>>
+  </div>
+</div>
+
+<div class="nav-wrapper">
+  <div class="nav-item">
+  <<link [img[assets/img/transcript.png]]>>
+<<if $transcript is false>>
+  <<set $transcript to true>>
+  <<replace "#transcript">>
+    <<include $transcriptname>>
+  <</replace>>
+  <<else>>
+  <<set $transcript to false>>
+  <<replace "#transcript">>
+  <</replace>>
+  <</if>>
+  <</link>>
+  </div>
+</div>
+
+</footer>
+
+
 :: footerMap [nobr]{"position":"100,375","size":"100,100"}
 <footer>
   <div class="nav-wrapper">
@@ -679,10 +755,6 @@ setup.backThirty = () => {
       <<set $fn to setup.play()>>
       <<set $playToggle to true>>
       <<addclass "#playpause" "playhighlight">>
-      <<else>>
-       <<set $fn to setup.pause()>>
-        <<set $playToggle to false>>
-      <<removeclass "#playpause" "playhighlight">>
       <</if>>
       <</link>></div></p></div>
 
@@ -931,16 +1003,16 @@ For the last five years, we have been trying to work without a strict hierarchy.
 /* Everyman to 1931  */
 <<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.40143323565547, -2.9706816152244295)>>
 <<include "headerstory">>
-<main class="story">
+<main class="story" id="storyContainer" >
 <audio id="audio" >
   <source src="https://www.dropbox.com/s/y21jy250efbj22e/01.%20THE%20STREETS%20PART%20ONE%20V1.mp3?raw=1">
   <track kind="captions" srclang="en" label="English captions" id="captrack" default>
 </audio>
 
 <div id="map" class="">$map</div>
-<div class="poster-wrapper hide" id="poster">
+/* <div class="poster-wrapper hide" id="poster">
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
- </div>
+ </div> */
 <div id="caption" class="hide" ></div>
 <div id="transcript"></div>
 <div id="mount"></div>
@@ -962,10 +1034,6 @@ For the last five years, we have been trying to work without a strict hierarchy.
       <<set $fn to setup.play()>>
       <<set $playToggle to true>>
       <<addclass "#playpause" "playhighlight">>
-      <<else>>
-       <<set $fn to setup.pause()>>
-        <<set $playToggle to false>>
-      <<removeclass "#playpause" "playhighlight">>
       <</if>>
       <</link>></div></p>
 
@@ -974,7 +1042,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 </main>
 
-<<include "footerstory">>
+<<include "footerstorywalk">>
 <<done>>
   <<set $addC to setup.addCaptions("streets")>>
 <</done>>
