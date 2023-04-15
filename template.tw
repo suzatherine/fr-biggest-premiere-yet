@@ -284,7 +284,6 @@ setup.backThirty = () => {
 
 :: footer [nobr]{"position":"100,375","size":"100,100"}
 <footer>
-<div></div>
 <<if $showBackwards is true>>
   <div class="nav-wrapper">
     <div class="nav-item">
