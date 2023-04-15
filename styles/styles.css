@@ -197,13 +197,6 @@ nav {
 .poster-wrapper {
   position: relative;
   margin-bottom: 3rem;
-  display: flex;
-  justify-content: center;
-}
-
-img.poster{
-  max-height: 50vh;
-  margin: auto;
 }
 
 .poster-wrapper > h2,
