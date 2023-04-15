@@ -590,11 +590,11 @@ setup.backThirty = () => {
 <<set $showCaptionsIcon to true>>
 <<set $showMap to false>>
 
-
+<div class="comp-warning">Best experienced on a phone</div>
 <main class="" id="">
 
 <div class="poster-wrapper" id="poster">
-   <img class="poster" src="./../assets/img/obpy.jpeg"/>
+   <img class="poster" src="./../assets/img/main.jpeg"/>
  </div>
  <div class="menu-wrapper">
     <<button "Begin">><<goto $nextpass>><</button>>
