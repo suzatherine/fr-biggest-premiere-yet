@@ -142,10 +142,10 @@ const handleMove = (evt) => {
 const handleEnd = (evt) => {
   evt.preventDefault();
   // log("touchend");
-   const initial = document.getElementById("initial");
+  //  const initial = document.getElementById("initial");
 
-     initial.classList.remove("transparent");  
-     reveal.classList.add("transparent");  
+  //    initial.classList.remove("transparent");  
+  //    reveal.classList.add("transparent");  
 
   
 }
@@ -723,8 +723,8 @@ setup.backThirty = () => {
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
   &lt;&lt;if $theatre is &quot;open&quot;&gt;&gt;
-    &lt;p&gt;Go inside and take a seat in the downstairs bar. &lt;/p&gt;
-  &lt;p&gt;There are some comfy sofas either end.&lt;/p&gt;
+    &lt;p&gt;Go inside and take a seat in the downstairs bar &lt;/p&gt;
+  &lt;p&gt;There are some comfy sofas either end&lt;/p&gt;
   &lt;p&gt;When you’re ready let me know&lt;/p&gt;
   &lt;&lt;button &quot;I&#39;m ready&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -997,7 +997,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 &lt;&lt;timed 1s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;  
-&lt;p class=&quot;comment&quot;&gt;You can use the map &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;/link&gt;&gt; to help you get there.&lt;/p&gt;
+&lt;p class=&quot;comment&quot;&gt;You can use the map &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;/link&gt;&gt; to help you get there&lt;/p&gt;
 &lt;&lt;/replace&gt;&gt;
  &lt;&lt;/timed&gt;&gt;
 

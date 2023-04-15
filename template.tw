@@ -62,10 +62,10 @@ const handleMove = (evt) => {
 const handleEnd = (evt) => {
   evt.preventDefault();
   // log("touchend");
-   const initial = document.getElementById("initial");
+  //  const initial = document.getElementById("initial");
 
-     initial.classList.remove("transparent");  
-     reveal.classList.add("transparent");  
+  //    initial.classList.remove("transparent");  
+  //    reveal.classList.add("transparent");  
 
   
 }
@@ -705,8 +705,8 @@ setup.backThirty = () => {
 <main class="instructions">
 <div id="map" class="hide">$map</div>
   <<if $theatre is "open">>
-    <p>Go inside and take a seat in the downstairs bar. </p>
-  <p>There are some comfy sofas either end.</p>
+    <p>Go inside and take a seat in the downstairs bar </p>
+  <p>There are some comfy sofas either end</p>
   <p>When you’re ready let me know</p>
   <<button "I'm ready">><<goto $nextpass>><</button>>
 <</if>>
@@ -1019,7 +1019,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 <<timed 1s>>
   <<replace "#mount">>  
-<p class="comment">You can use the map <<link [img[assets/img/map.png]]>><</link>> to help you get there.</p>
+<p class="comment">You can use the map <<link [img[assets/img/map.png]]>><</link>> to help you get there</p>
 <</replace>>
  <</timed>>
 
