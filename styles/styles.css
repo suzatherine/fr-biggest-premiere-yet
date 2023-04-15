@@ -370,7 +370,7 @@ main.end {
 /* LOFI AR */
 
 main.ar {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .ar-option-wrapper {
