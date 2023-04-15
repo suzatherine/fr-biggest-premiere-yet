@@ -879,10 +879,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $prevpass to "premiere">>
 <<set $passage to "instnar3">>
 <<if $theatre is "open">>
-  <<set $nextpass to "AR1">>
+  <<set $nextpass to "AR2">>
 <</if>>
 <<if $theatre is "closed">>
-  <<set $nextpass to "AR2">>
+  <<set $nextpass to "AR1">>
 <</if>>
 <<set $showMap to true>>
 <<set $showAudio to false>>
@@ -993,7 +993,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 :: instnar5 [nobr]
-<<set $prevpass to "AR1">>
+<<set $prevpass to "instnar3">>
 <<set $passage to "instnar5">>
 <<set $nextpass to "streets">>
 <<set $showMap to true>>
