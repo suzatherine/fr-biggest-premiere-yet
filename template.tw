@@ -929,7 +929,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   <div class="ar-imgs-container one" id="ARContainer">
     <div class="hidden-img-wrapper touch transparent" id="reveal" >
-        <img src="./assets/img/gifs/ar1.gif" class="">
+        <img src="./assets/img/gifs/ar2.gif" class="">
       </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
       <img src="./assets/img/everyman-inside.jpeg" class="">
@@ -981,7 +981,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
  <div class="ar-imgs-container one" id="ARContainer">
     <div class="hidden-img-wrapper touch transparent" id="reveal" >
-        <img src="./assets/img/gifs/ar2.gif" class="">
+        <img src="./assets/img/gifs/ar1.gif" class="">
       </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
       <img src="./assets/img/everyman-outside.jpeg" class="">
