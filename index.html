@@ -917,11 +917,12 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
+/* OPEN */
 &lt;main&gt;
 
   &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
     &lt;div class=&quot;hidden-img-wrapper touch transparent&quot; id=&quot;reveal&quot; &gt;
-        &lt;img src=&quot;./assets/img/gifs/ar2.gif&quot; class=&quot;&quot;&gt;
+        &lt;img src=&quot;./assets/img/gifs/ar1open.gif&quot; class=&quot;&quot;&gt;
       &lt;/div&gt;
     &lt;div class=&quot;ar-img-wrapper touch bottom&quot; id=&quot;initial&quot; &gt;
       &lt;img src=&quot;./assets/img/everyman-inside.jpeg&quot; class=&quot;&quot;&gt;
@@ -931,7 +932,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="instnar4" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $prevpass to &quot;AR1&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;
+
+/* :: instnar4 [nobr]
+&lt;&lt;set $prevpass to &quot;AR1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;AR2&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -951,7 +955,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;button &quot;I&#39;m in position&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="AR2" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar4&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="20" name="AR2" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -960,13 +964,13 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-
+/* CLOSED  */
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main&gt;
 
  &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
     &lt;div class=&quot;hidden-img-wrapper touch transparent&quot; id=&quot;reveal&quot; &gt;
-        &lt;img src=&quot;./assets/img/gifs/ar1.gif&quot; class=&quot;&quot;&gt;
+        &lt;img src=&quot;./assets/img/gifs/ar2closed.gif&quot; class=&quot;&quot;&gt;
       &lt;/div&gt;
     &lt;div class=&quot;ar-img-wrapper touch bottom&quot; id=&quot;initial&quot; &gt;
       &lt;img src=&quot;./assets/img/everyman-outside.jpeg&quot; class=&quot;&quot;&gt;
@@ -974,7 +978,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
   &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="instnar5" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="instnar5" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -995,7 +999,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="streets" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="streets" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1051,7 +1055,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;include &quot;footerstorywalk&quot;&gt;&gt;
 &lt;&lt;done&gt;&gt;
   &lt;&lt;set $addC to setup.addCaptions(&quot;streets&quot;)&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="streetstranscript" tags="" position="475,350" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
+&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="streetstranscript" tags="" position="350,350" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
 
 NARRATOR:
 
@@ -1072,7 +1076,7 @@ There will be no classes today.
 Stay safe. Mind the sirens. Go down to the shelter. Pack a backpack. Bandages and iodine. Other medications you may need. A bottle of water. Biscuits. A flashlight. A needle with thread. Money. Documents. A power bank. A mobile phone.
 Write your name/surname on your hand. Your blood group. Relatives’ phone number. If the explosion is close, run to the bathroom.
 Keep in touch. Breathe deeply.
-This will go down in the history books.</tw-passagedata><tw-passagedata pid="25" name="end" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
+This will go down in the history books.</tw-passagedata><tw-passagedata pid="24" name="end" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
