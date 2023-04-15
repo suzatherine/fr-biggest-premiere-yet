@@ -710,7 +710,7 @@ setup.backThirty = () => {
 
 :: landing [nobr]
 <<set $title to "Our Biggest Premiere Yet">>
-<<set $theatre to "closed">>
+<<set $openOrClosed to "closed">>
 <<set $prevpass to "instructions">>
 <<set $passage to "landing">>
 <<set $nextpass to "instnar2">>
@@ -729,7 +729,7 @@ setup.backThirty = () => {
 <div id="map" class="hide">$map</div>
 
   <p>You should be inside or outside the Liverpool Everyman</p>
- <p>Is the theatre  <div class="inline-btn-wrapper"><<link "open">><<set $theatre to "open">><<goto "instnar2">><</link>> or <div class="inline-btn-wrapper"><<link "closed">><<set $theatre to "closed">><<goto "instnar2">><</link>></div></div>?</p>
+ <p>Is the theatre  <div class="inline-btn-wrapper"><<link "open">><<set $openOrClosed to "open">><<goto "instnar2">><</link>> or <div class="inline-btn-wrapper"><<link "closed">><<set $openOrClosed to "closed">><<goto "instnar2">><</link>></div></div>?</p>
  
 </main>
 <<include "footer">>
@@ -748,7 +748,7 @@ setup.backThirty = () => {
 <<include "header">>
 <main class="instructions">
 <div id="map" class="hide">$map</div>
-  <<if $theatre is "open">>
+  <<if $openOrClosed is "open">>
     <p>Go inside and take a seat in the downstairs bar </p>
   <p>There are some comfy sofas either end</p>
   <p>When you’re ready let me know</p>
@@ -756,7 +756,7 @@ setup.backThirty = () => {
 <</if>>
 
 
-  <<if $theatre is "closed">>
+  <<if $openOrClosed is "closed">>
   <p>Find a place to take shelter</p>
   <p>Maybe by the big windows, under the theatre’s balcony</p>
   <p>When you’re ready let me know</p>
@@ -874,10 +874,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 :: instnar3 [nobr]
 <<set $prevpass to "premiere">>
 <<set $passage to "instnar3">>
-<<if $theatre is "open">>
+<<if $openOrClosed is "open">>
   <<set $nextpass to "AR1">>
 <</if>>
-<<if $theatre is "closed">>
+<<if $openOrClosed is "closed">>
   <<set $nextpass to "AR2">>
 <</if>>
 <<set $showMap to true>>
@@ -891,14 +891,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 <main class="instructions">
 <div id="map" class="hide">$map</div>
-<<if $theatre is "open">>
+<<if $openOrClosed is "open">>
   <p> Let me show you some photos </p>
   <p>Stand in front of the elevator, facing the bar</p>
   <p>Hold up your phone</p>
     <<button "Show me">><<goto $nextpass>><</button>>
 <</if>>
 
-<<if $theatre is "closed">>
+<<if $openOrClosed is "closed">>
 <p>Let me show you some photos </p>
 <p>Cross the road and face the Liverpool Everyman</p>
 <p>Hold up your phone and press</p>
