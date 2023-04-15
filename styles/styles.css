@@ -393,7 +393,7 @@ main.end {
 
 .ar-img-wrapper,
 .hidden-img-wrapper {
-  height: 50vh;
+  max-height: 50vh;
   object-fit: cover;
   position: absolute;
   left: 0;
@@ -477,7 +477,7 @@ main.story {
   padding-top: 0;
 }
 
-main.story > #mount > p.comment {
+main.story > #mount > p.comment, .nav-item>#mount>span.comment {
   background-color: var(--accent-color-secondary);
   padding: 6px 8px;
   border-radius: 10px;

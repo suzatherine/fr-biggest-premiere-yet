@@ -41,13 +41,13 @@ return iFrame
 
 // TOUCHEVENTS 
 // taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
-setup.startup = (backgrounds) =>  {
+setup.startup = () =>  {
   const ongoingTouches = [];
 
 const handleStart = (evt) =>{
   evt.preventDefault();
  const initial = document.getElementById("initial");
-  const ARContainer = document.getElementById("ARContainer");
+const reveal = document.getElementById("reveal");
      initial.classList.add("transparent");  
      reveal.classList.remove("transparent");  
 
@@ -333,21 +333,7 @@ setup.backThirty = () => {
  
   <div class="nav-wrapper">
     <div class="nav-item">
-    <div id="mount"> <span>Press the image</span> <span>to see it transform</span></div>
-    <<silently>>
-	<<repeat 10s>>
-    <<timed 0.1s>>
-      <<replace "#mount">>
-         <span>When you’ve finished</span> <span>listening let me know</span>
-      <</replace>>
-     <</timed>>
-     <<timed 6s>>
-      <<replace "#mount">>
-       <span>Press the image</span> <span>to see it transform</span>
-      <</replace>>
-     <</timed>>
-    <</repeat>>
-<</silently>>
+    <div id="mount"> <span class="comment">Press the image <br> to see it transform</span></div>
     </div></div>
     <div class="nav-wrapper">
     <div class="nav-item">
@@ -871,9 +857,9 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 :: AR1 [nobr]{"position":"450,50","size":"100,100"}
-<<set $prevpass to "landing">>
+<<set $prevpass to "instnar3">>
 <<set $passage to "AR1">>
-<<set $nextpass to "instnar4">>
+<<set $nextpass to "instnar5">>
 <<set $showMap to false>>
 <<set $showAudio to false>>
 <<set $showReplay to true>>
@@ -888,20 +874,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
         <img src="./assets/img/gifs/ar1.gif" class="">
       </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
-      <img src="./assets/img/everyman-theatre.webp" class="">
+      <img src="./assets/img/everyman-inside.jpeg" class="">
       </div>
   </div>
 
 
 </main>
 <<include "footerAR">>
-<<done>><<set $s to setup.startup(["le15","le15"
-,"le17"
-,"le16"
-,"le14"
-,"le13"
-,"le11",
-"le12"])>><</done>>
+<<done>><<set $s to setup.startup()>><</done>>
 
 :: instnar4 [nobr]
 <<set $prevpass to "AR1">>
@@ -946,19 +926,12 @@ For the last five years, we have been trying to work without a strict hierarchy.
         <img src="./assets/img/gifs/ar2.gif" class="">
       </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
-      <img src="./assets/img/everyman-theatre.webp" class="">
+      <img src="./assets/img/everyman-outside.jpeg" class="">
       </div>
   </div>
-
 </main>
 <<include "footerAR">>
-<<done>><<set $s to setup.startup(["le11",
-"le12",
-"le13",
-"le14",
-"le15",
-"le16",
-"le17"])>><</done>>
+<<done>><<set $s to setup.startup()>><</done>>
 
 
 :: instnar5 [nobr]
