@@ -287,7 +287,7 @@ setup.backThirty = () => {
       &lt;div class=&quot;nav-item&quot;&gt;
     &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
     &lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;
-    &lt;&lt;toggleclass &quot;#poster&quot; &quot;hide&quot;&gt;&gt;
+
     &lt;&lt;/link&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -415,10 +415,13 @@ setup.backThirty = () => {
       &lt;&lt;link [img[assets/img/captions.png]]&gt;&gt;
       /* &lt;&lt;toggleclass &quot;#posterWrapper&quot; &quot;small&quot;&gt;&gt; */
       &lt;&lt;if $captionToggle is true&gt;&gt;
-         
+         &lt;&lt;toggleclass &quot;#poster&quot; &quot;hide&quot;&gt;&gt;
+         &lt;&lt;toggleclass &quot;#storyContainer&quot; &quot;captions&quot;&gt;&gt;
           &lt;&lt;set $captionToggle to false&gt;&gt;
       &lt;&lt;set $fn to setup.hideCap()&gt;&gt;
           &lt;&lt;else&gt;&gt;
+          &lt;&lt;toggleclass &quot;#poster&quot; &quot;hide&quot;&gt;&gt;
+          &lt;&lt;toggleclass &quot;#storyContainer&quot; &quot;captions&quot;&gt;&gt;
           &lt;&lt;set $captionToggle to true&gt;&gt;
       &lt;&lt;set $fn to setup.showCap()&gt;&gt;
         &lt;&lt;/if&gt;&gt;
@@ -674,7 +677,7 @@ setup.backThirty = () => {
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $transcriptname to  &quot;premieretranscript&quot;&gt;&gt;
 &lt;&lt;include &quot;headerstory&quot;&gt;&gt;
-&lt;main class=&quot;story&quot; id=&quot;story&quot;&gt;
+&lt;main class=&quot;story&quot; id=&quot;storyContainer&quot;&gt;
 &lt;audio id=&quot;audio&quot; &gt;
   &lt;source src=&quot;https://www.dropbox.com/s/myez5ffs5k6zy26/01.%20Our%20Biggest%20Premiere%20Yet%20V1.mp3?raw=1&quot;&gt;
   &lt;track kind=&quot;captions&quot; srclang=&quot;en&quot; label=&quot;English captions&quot; id=&quot;captrack&quot; default&gt;

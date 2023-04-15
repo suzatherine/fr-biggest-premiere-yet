@@ -486,6 +486,10 @@ main.story > #mount > p.comment {
   width: fit-content;
 }
 
+main.story.captions{
+  justify-content: center;
+}
+
 footer > .nav-wrapper.playpause-wrapper {
   width: 25px;
   display: flex;

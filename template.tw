@@ -222,7 +222,7 @@ setup.backThirty = () => {
       <div class="nav-item">
     <<link [img[assets/img/map.png]]>>
     <<toggleclass "#map" "hide">>
-    <<toggleclass "#poster" "hide">>
+
     <</link>>
     </div>
   </div>
@@ -366,10 +366,13 @@ setup.backThirty = () => {
       <<link [img[assets/img/captions.png]]>>
       /* <<toggleclass "#posterWrapper" "small">> */
       <<if $captionToggle is true>>
-         
+         <<toggleclass "#poster" "hide">>
+         <<toggleclass "#storyContainer" "captions">>
           <<set $captionToggle to false>>
       <<set $fn to setup.hideCap()>>
           <<else>>
+          <<toggleclass "#poster" "hide">>
+          <<toggleclass "#storyContainer" "captions">>
           <<set $captionToggle to true>>
       <<set $fn to setup.showCap()>>
         <</if>>
@@ -659,7 +662,7 @@ setup.backThirty = () => {
 <<set $showMap to false>>
 <<set $transcriptname to  "premieretranscript">>
 <<include "headerstory">>
-<main class="story" id="story">
+<main class="story" id="storyContainer">
 <audio id="audio" >
   <source src="https://www.dropbox.com/s/myez5ffs5k6zy26/01.%20Our%20Biggest%20Premiere%20Yet%20V1.mp3?raw=1">
   <track kind="captions" srclang="en" label="English captions" id="captrack" default>
