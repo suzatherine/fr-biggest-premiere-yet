@@ -366,6 +366,18 @@ setup.backThirty = () => {
   
 </footer>
 
+:: footerfor [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+<div></div>
+  <div class="nav-wrapper">
+    <div class="nav-item">
+        [img[Back|assets/img/for.png][$nextpass]]
+    </div>
+  </div>
+
+  
+</footer>
+
 
 :: footerAR [nobr]{"position":"100,375","size":"100,100"}
 <footer class="ar">
@@ -694,7 +706,7 @@ setup.backThirty = () => {
   <</append>>
 <</timed>>
 </main>
-<<include "footer">>
+<<include "footerfor">>
 
 
 :: landing [nobr]
