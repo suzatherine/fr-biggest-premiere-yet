@@ -26,9 +26,12 @@ $(document.head).find('#style-ui-bar').remove();
 
 // MAKE MAP FUNCTION
 
-setup.generateDirectionsMap = function (origin, destination){
-const {originLat,originLong,originPlaceId} = origin;
-
+setup.generateDirectionsMap = function (origin, destination, waypoints){
+const {originLat,originLong,originName} = origin;
+let waypointsString = "";
+if (waypoints) {
+waypointsString = `&waypoints=${waypoints}`
+}
 console.log(origin)
 console.log(destination)
 const iFrame = document.createElement("iframe")
@@ -36,25 +39,40 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&zoom=17&origin=${originPlaceId}&destination=${destination}&mode=walking`)
+// iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&zoom=17&origin=${originPlaceId}&destination=${destination}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&zoom=17&origin=${originName}&destination=${destination}${waypointsString}&mode=walking`)
 const mount = document.getElementById("mapMount")
 console.log(iFrame)
 return iFrame
 // this.mapMount.appendChild(iFrame)
 }
 
-
-setup.generateViewMap = function (origin, destination){
-const {originLat,originLong,originPlaceId} = origin;
-
-console.log(origin)
-console.log(destination)
+setup.generateDirectionsMapWP = function (origin, dest, wayp){
 const iFrame = document.createElement("iframe")
 iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&zoom=17&origin=${originPlaceId}&destination=${destination}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
+const mount = document.getElementById("mapMount")
+console.log(iFrame)
+return iFrame
+// this.mapMount.appendChild(iFrame)
+}
+// <<set $map = setup.generateDirectionsMapWP([53.1, 1.48], [52.3, 1.50], "Blah St | Blah Blah St")>>
+
+
+setup.generateViewMap = function (origin, destination){
+const {originName, originLat,originLong} = origin;
+
+console.log("origin", origin)
+console.log("dest", destination)
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/place?key=AIzaSyB7uJuBjDcK-tb0aJpTjaKA1ZNLWhEPN5M&center=${originLat},${originLong}&q=${originName}&zoom=17`)
 const mount = document.getElementById("mapMount")
 console.log(iFrame)
 return iFrame
@@ -626,7 +644,10 @@ setup.backThirty = () => {
 <<set $showForwards to true>>
 <<set $showBackwards to false>>
 <<set $showCaptionsIcon to false>>
-<<set $map = setup.generateDirectionsMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originPlaceId: "ChIJ2ccRtxghe0gR3Z7JzoorJ58"},"ChIJ2ccRtxghe0gR3Z7JzoorJ58")>>
+/* <<set $map = setup.generateDirectionsMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originPlaceId: "ChIJ2ccRtxghe0gR3Z7JzoorJ58"},"ChIJ2ccRtxghe0gR3Z7JzoorJ58")>> */
+
+<<set $map = setup.generateViewMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originName: "Liverpool Everyman Theatre"})>>
+
 
 <div id="audio"></div>
 /* <<include "header">> */
@@ -999,7 +1020,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showCaptionsIcon to true>>
 <<set $transcriptname to  "streetstranscript">>
 /* Everyman to 1931  */
-<<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.40143323565547, -2.9706816152244295)>>
+<<set $map = setup.generateDirectionsMap({originName: "Liverpool Everyman", originLat: 53.40294244809804, originLong:-2.9694980926454186}, "Liverpool Philharmonic")>>
 <<include "headerstory">>
 <main class="story" id="storyContainer" >
 <audio id="audio" >
