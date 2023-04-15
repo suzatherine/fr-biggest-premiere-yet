@@ -800,17 +800,13 @@ setup.backThirty = () => {
       <<set $playToggle to true>>
       <<addclass "#playpause" "playhighlight">>
       <</if>>
-      <</link>></div></p></div>
+     
 
-
-<<timed 15s>>
-  /* <<addclass "#forIcon" "circle">>
-   <<addclass "#forIcon" "pulse">> */
 <<replace "#mount">>
 <p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
 
  <</replace>>
- <</timed>>
+ <</link>></div></p></div>
 </main>
 
 <<include "footerstory">>
