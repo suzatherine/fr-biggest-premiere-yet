@@ -369,6 +369,10 @@ main.end {
 
 /* LOFI AR */
 
+main.ar {
+  justify-content: flex-start;
+}
+
 .ar-option-wrapper {
   display: flex;
   flex-direction: column;
@@ -383,8 +387,7 @@ main.end {
 .ar-imgs-container {
   position: relative;
   width: 100%;
-  height: 50vh;
-  background-size: cover;
+  max-height: 50vh;
 }
 
 /* .ar-imgs-container.one {
@@ -406,7 +409,7 @@ main.end {
 .ar-img-wrapper > img,
 .hidden-img-wrapper > img,
 .static-img-wrapper > img {
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
 }
 
@@ -477,7 +480,8 @@ main.story {
   padding-top: 0;
 }
 
-main.story > #mount > p.comment, .nav-item>#mount>span.comment {
+main.story > #mount > p.comment,
+.nav-item > #mount > span.comment {
   background-color: var(--accent-color-secondary);
   padding: 6px 8px;
   border-radius: 10px;
@@ -486,7 +490,7 @@ main.story > #mount > p.comment, .nav-item>#mount>span.comment {
   width: fit-content;
 }
 
-main.story.captions{
+main.story.captions {
   justify-content: center;
 }
 
@@ -530,7 +534,7 @@ main.story > .mount > p {
   display: none;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 500px) {
   main {
     display: none !important;
   }

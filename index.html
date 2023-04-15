@@ -875,10 +875,10 @@ In the costume department, we sewed parts of the uniforms for soldiers. A very i
 For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="18" name="instnar3" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;if $theatre is &quot;open&quot;&gt;&gt;
-  &lt;&lt;set $nextpass to &quot;AR2&quot;&gt;&gt;
+  &lt;&lt;set $nextpass to &quot;AR1&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $theatre is &quot;closed&quot;&gt;&gt;
-  &lt;&lt;set $nextpass to &quot;AR1&quot;&gt;&gt;
+  &lt;&lt;set $nextpass to &quot;AR2&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
@@ -902,6 +902,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;p&gt;Let me show you some photos &lt;/p&gt;
 &lt;p&gt;Cross the road and face the Liverpool Everyman&lt;/p&gt;
 &lt;p&gt;Hold up your phone and press&lt;/p&gt;
+
   &lt;&lt;button &quot;Show Me&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -918,7 +919,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 /* OPEN */
-&lt;main&gt;
+&lt;main class=&quot;ar&quot;&gt;
 
   &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
     &lt;div class=&quot;hidden-img-wrapper touch transparent&quot; id=&quot;reveal&quot; &gt;
@@ -966,7 +967,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 /* CLOSED  */
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
-&lt;main&gt;
+&lt;main class=&quot;ar&quot;&gt;
 
  &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
     &lt;div class=&quot;hidden-img-wrapper touch transparent&quot; id=&quot;reveal&quot; &gt;

@@ -879,10 +879,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $prevpass to "premiere">>
 <<set $passage to "instnar3">>
 <<if $theatre is "open">>
-  <<set $nextpass to "AR2">>
+  <<set $nextpass to "AR1">>
 <</if>>
 <<if $theatre is "closed">>
-  <<set $nextpass to "AR1">>
+  <<set $nextpass to "AR2">>
 <</if>>
 <<set $showMap to true>>
 <<set $showAudio to false>>
@@ -906,6 +906,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <p>Let me show you some photos </p>
 <p>Cross the road and face the Liverpool Everyman</p>
 <p>Hold up your phone and press</p>
+
   <<button "Show Me">><<goto $nextpass>><</button>>
 <</if>>
 
@@ -926,7 +927,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showCaptionsIcon to false>>
 /* <<include "header">> */
 /* OPEN */
-<main>
+<main class="ar">
 
   <div class="ar-imgs-container one" id="ARContainer">
     <div class="hidden-img-wrapper touch transparent" id="reveal" >
@@ -978,7 +979,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showCaptionsIcon to false>>
 /* CLOSED  */
 /* <<include "header">> */
-<main>
+<main class="ar">
 
  <div class="ar-imgs-container one" id="ARContainer">
     <div class="hidden-img-wrapper touch transparent" id="reveal" >
