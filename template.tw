@@ -233,9 +233,16 @@ setup.backThirty = () => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "premiere" "https://remote.co.com/MoTT/AgentTraining/Sounds/13.%20Challenge%203%20-%202.mp3">>
+<<cacheaudio "1" "./../assets/audio/1.mp3">>
+<<cacheaudio "2" "./../assets/audio/2.mp3">>
+<<cacheaudio "3" "./../assets/audio/3.mp3">>
+<<cacheaudio "4" "./../assets/audio/4.mp3">>
+<<cacheaudio "5" "./../assets/audio/5.mp3">>
+<<cacheaudio "6" "./../assets/audio/6.mp3">>
+<<cacheaudio "7" "./../assets/audio/7.mp3">>
+<<cacheaudio "8" "./../assets/audio/8.mp3">>
+<<cacheaudio "9" "./../assets/audio/9.mp3">>
 <<waitforaudio>>
-
 
 
 :: header [nobr]{"position":"100,225","size":"100,100"}
@@ -721,6 +728,7 @@ setup.backThirty = () => {
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
 <<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
+<<audio ":all" stop>><<audio "1" play>>
 <div id="audio"></div>
 <<include "header">>
 <div class="comp-warning">Best to experience on a phone</div>
@@ -749,6 +757,7 @@ setup.backThirty = () => {
 <main class="instructions">
 <div id="map" class="hide">$map</div>
   <<if $openOrClosed is "open">>
+    <<audio ":all" stop>><<audio "2" play>>
     <p>Go inside and take a seat in the downstairs bar </p>
   <p>There are some comfy sofas either end</p>
   <p>When you’re ready let me know</p>
@@ -757,6 +766,7 @@ setup.backThirty = () => {
 
 
   <<if $openOrClosed is "closed">>
+  <<audio ":all" stop>><<audio "6" play>>
   <p>Find a place to take shelter</p>
   <p>Maybe by the big windows, under the theatre’s balcony</p>
   <p>When you’re ready let me know</p>
@@ -782,6 +792,7 @@ setup.backThirty = () => {
 <<set $showMap to false>>
 <<set $transcriptname to  "premieretranscript">>
 <<include "headerstory">>
+ <<audio ":all" stop>><<audio "3" play>>
 <main class="story" id="storyContainer">
 <audio id="audio" >
   <source src="https://www.dropbox.com/s/myez5ffs5k6zy26/01.%20Our%20Biggest%20Premiere%20Yet%20V1.mp3?raw=1">
@@ -892,6 +903,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <main class="instructions">
 <div id="map" class="hide">$map</div>
 <<if $openOrClosed is "open">>
+ <<audio ":all" stop>><<audio "4" play>>
   <p> Let me show you some photos </p>
   <p>Stand in front of the elevator, facing the bar</p>
   <p>Hold up your phone</p>
@@ -899,6 +911,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <</if>>
 
 <<if $openOrClosed is "closed">>
+ <<audio ":all" stop>><<audio "7" play>>
 <p>Let me show you some photos </p>
 <p>Cross the road and face the Liverpool Everyman</p>
 <p>Hold up your phone and press</p>
@@ -921,6 +934,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
+ <<audio ":all" stop>><<audio "5" play>>
 /* <<include "header">> */
 /* OPEN */
 <main class="ar">
@@ -973,6 +987,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
+ <<audio ":all" stop>><<audio "5" play>>
 /* CLOSED  */
 /* <<include "header">> */
 <main class="ar">
@@ -1000,7 +1015,8 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"},"Royal Liverpool Philharmonic")>>
+<<set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Liverpool Everyman Theatre"},"Royal Liverpool Philharmonic")>>
+ <<audio ":all" stop>><<audio "8" play>>
 <div id="audio"></div>
 
 <main class="instructions">
@@ -1031,6 +1047,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $transcriptname to  "streetstranscript">>
 /* Everyman to 1931  */
 <<set $map = setup.generateDirectionsMap({originName: "Liverpool Everyman", originLat: 53.40294244809804, originLong:-2.9694980926454186}, "Liverpool Philharmonic")>>
+ <<audio ":all" stop>><<audio "9" play>>
 <<include "headerstory">>
 <main class="story" id="storyContainer" >
 <audio id="audio" >
@@ -1048,7 +1065,13 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 
- <<timed 2s>>
+ <<timed 1s>>
+  <<replace "#mount">>  
+<p class="comment">The map<<link [img[assets/img/map.png]]>><</link>> will help guide you</p>
+<</replace>>
+ <</timed>>
+
+ <<timed 6s>>
   <<replace "#mount">>  
 <p class="comment">As you begin to walk press  <div class="inline-btn-wrapper">
 <<link "play">>
@@ -1061,6 +1084,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
       <<addclass "#playpause" "playhighlight">>
       <</if>>
       <</link>></div></p>
+
       <</replace>>
  <</timed>>
 
