@@ -388,7 +388,7 @@ setup.backThirty = () => {
  
   <div class="nav-wrapper">
     <div class="nav-item">
-    <div id="mount"> <span class="comment">Press the image <br> to see it transform</span></div>
+    <div id="mount"> <span class="comment">Press the photo <br> to see it transform</span></div>
     </div></div>
     <div class="nav-wrapper">
     <div class="nav-item">
