@@ -728,7 +728,7 @@ setup.backThirty = () => {
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="landing" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $title to &quot;Our Biggest Premiere Yet&quot;&gt;&gt;
-&lt;&lt;set $theatre to &quot;closed&quot;&gt;&gt;
+&lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;
 &lt;&lt;set $prevpass to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar2&quot;&gt;&gt;
@@ -738,7 +738,7 @@ setup.backThirty = () => {
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-&lt;&lt;set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.4030572538972, -2.969504715141457)&gt;&gt;
+&lt;&lt;set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: &quot;Everyman Theatre&quot;})&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;div class=&quot;comp-warning&quot;&gt;Best to experience on a phone&lt;/div&gt;
@@ -747,7 +747,7 @@ setup.backThirty = () => {
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
 
   &lt;p&gt;You should be inside or outside the Liverpool Everyman&lt;/p&gt;
- &lt;p&gt;Is the theatre  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;open&quot;&gt;&gt;&lt;&lt;set $theatre to &quot;open&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; or &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;closed&quot;&gt;&gt;&lt;&lt;set $theatre to &quot;closed&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/div&gt;?&lt;/p&gt;
+ &lt;p&gt;Is the theatre  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;open&quot;&gt;&gt;&lt;&lt;set $openOrClosed to &quot;open&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; or &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;closed&quot;&gt;&gt;&lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/div&gt;?&lt;/p&gt;
  
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="instnar2" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
@@ -763,7 +763,7 @@ setup.backThirty = () => {
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
-  &lt;&lt;if $theatre is &quot;open&quot;&gt;&gt;
+  &lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
     &lt;p&gt;Go inside and take a seat in the downstairs bar &lt;/p&gt;
   &lt;p&gt;There are some comfy sofas either end&lt;/p&gt;
   &lt;p&gt;When you’re ready let me know&lt;/p&gt;
@@ -771,7 +771,7 @@ setup.backThirty = () => {
 &lt;&lt;/if&gt;&gt;
 
 
-  &lt;&lt;if $theatre is &quot;closed&quot;&gt;&gt;
+  &lt;&lt;if $openOrClosed is &quot;closed&quot;&gt;&gt;
   &lt;p&gt;Find a place to take shelter&lt;/p&gt;
   &lt;p&gt;Maybe by the big windows, under the theatre’s balcony&lt;/p&gt;
   &lt;p&gt;When you’re ready let me know&lt;/p&gt;
@@ -870,10 +870,10 @@ Everything we had as a theatre was used in a new way. Set and costume became hum
 In the costume department, we sewed parts of the uniforms for soldiers. A very interesting fashion designer who lived in our shelter became the head of this production.
 For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="18" name="instnar3" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar3&quot;&gt;&gt;
-&lt;&lt;if $theatre is &quot;open&quot;&gt;&gt;
+&lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
   &lt;&lt;set $nextpass to &quot;AR1&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $theatre is &quot;closed&quot;&gt;&gt;
+&lt;&lt;if $openOrClosed is &quot;closed&quot;&gt;&gt;
   &lt;&lt;set $nextpass to &quot;AR2&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -882,19 +882,19 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-&lt;&lt;set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.4030572538972, -2.969504715141457)&gt;&gt;
+&lt;&lt;set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: &quot;Everyman Theatre&quot;})&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
-&lt;&lt;if $theatre is &quot;open&quot;&gt;&gt;
+&lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
   &lt;p&gt; Let me show you some photos &lt;/p&gt;
   &lt;p&gt;Stand in front of the elevator, facing the bar&lt;/p&gt;
   &lt;p&gt;Hold up your phone&lt;/p&gt;
     &lt;&lt;button &quot;Show me&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;if $theatre is &quot;closed&quot;&gt;&gt;
+&lt;&lt;if $openOrClosed is &quot;closed&quot;&gt;&gt;
 &lt;p&gt;Let me show you some photos &lt;/p&gt;
 &lt;p&gt;Cross the road and face the Liverpool Everyman&lt;/p&gt;
 &lt;p&gt;Hold up your phone and press&lt;/p&gt;
@@ -984,7 +984,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-&lt;&lt;set $map = setup.generateDirectionsMap(53.40122672594675, -2.969617415416523,53.40188587934155, -2.97516167308871)&gt;&gt;
+&lt;&lt;set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: &quot;Everyman Theatre&quot;},&quot;Royal Liverpool Philharmonic&quot;)&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 
 &lt;main class=&quot;instructions&quot;&gt;
@@ -1083,7 +1083,7 @@ This will go down in the history books.</tw-passagedata><tw-passagedata pid="24"
 &lt;&lt;set $showForwards to false&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 /* Church  */
-&lt;&lt;set $map = setup.generateDirectionsMap(53.40143323565547, -2.9706816152244295, 53.40143323565547, -2.9706816152244295)&gt;&gt;
+&lt;&lt;set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: &quot;Everyman Theatre&quot;},&quot;Royal Liverpool Philharmonic&quot;)&gt;&gt;
 &lt;main class=&quot;end&quot;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;

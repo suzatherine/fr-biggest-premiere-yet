@@ -720,7 +720,7 @@ setup.backThirty = () => {
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.4030572538972, -2.969504715141457)>>
+<<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
 <div id="audio"></div>
 <<include "header">>
 <div class="comp-warning">Best to experience on a phone</div>
@@ -886,7 +886,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.4030572538972, -2.969504715141457)>>
+<<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
 <div id="audio"></div>
 
 <main class="instructions">
@@ -1000,7 +1000,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $map = setup.generateDirectionsMap(53.40122672594675, -2.969617415416523,53.40188587934155, -2.97516167308871)>>
+<<set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"},"Royal Liverpool Philharmonic")>>
 <div id="audio"></div>
 
 <main class="instructions">
@@ -1119,7 +1119,7 @@ This will go down in the history books.
 <<set $showForwards to false>>
 <<set $showCaptionsIcon to false>>
 /* Church  */
-<<set $map = setup.generateDirectionsMap(53.40143323565547, -2.9706816152244295, 53.40143323565547, -2.9706816152244295)>>
+<<set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"},"Royal Liverpool Philharmonic")>>
 <main class="end">
 <div id="audio"></div>
 <div id="map" class="hide">$map</div>
