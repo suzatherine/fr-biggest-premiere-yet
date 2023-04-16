@@ -1046,13 +1046,9 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <div id="transcript"></div>
 <div id="mount"></div>
 
-<<timed 1s>>
-  <<replace "#mount">>  
-<p class="comment">You can use the map <<link [img[assets/img/map.png]]>><</link>> to help you get there</p>
-<</replace>>
- <</timed>>
 
- <<timed 6s>>
+
+ <<timed 2s>>
   <<replace "#mount">>  
 <p class="comment">As you begin to walk press  <div class="inline-btn-wrapper">
 <<link "play">>
@@ -1065,7 +1061,6 @@ For the last five years, we have been trying to work without a strict hierarchy.
       <<addclass "#playpause" "playhighlight">>
       <</if>>
       <</link>></div></p>
-
       <</replace>>
  <</timed>>
 
