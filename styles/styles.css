@@ -342,6 +342,15 @@ main.instructions > p {
   width: fit-content;
 }
 
+main.instructions > p.amenities {
+  background-color: transparent;
+  padding: inherit;
+  border-radius: inherit;
+  border: inherit;
+  color: white;
+  width: fit-content;
+  text-align: right;
+}
 /* END  */
 
 main.end {
@@ -563,4 +572,10 @@ main.story > .mount > p {
   100% {
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
+}
+
+/* FRAMING  */
+main.framing > p {
+  font-size: 2rem;
+  text-align: center;
 }

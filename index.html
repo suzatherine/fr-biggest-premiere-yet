@@ -659,7 +659,7 @@ setup.backThirty = () => {
 &lt;/main&gt;
 &lt;&lt;include &quot;footerback&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="beginning" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;beginning&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;instructions&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;framing&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $playToggle to false&gt;&gt;
 &lt;&lt;set $captionToggle to false&gt;&gt;
@@ -677,7 +677,36 @@ setup.backThirty = () => {
  &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Begin&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="13" name="instructions" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="13" name="framing" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;framing&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;instructions&quot;&gt;&gt;
+&lt;&lt;set $transcript to false&gt;&gt;
+&lt;&lt;set $playToggle to false&gt;&gt;
+&lt;&lt;set $captionToggle to false&gt;&gt;
+&lt;&lt;set $showForwards to true&gt;&gt;
+&lt;&lt;set $showBackwards to false&gt;&gt;
+&lt;&lt;set $showCaptionsIcon to true&gt;&gt;
+&lt;&lt;set $showMap to false&gt;&gt;
+
+&lt;main class=&quot;instructions&quot; id=&quot;&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;Welcome to the immersive audio experience With Fire and Rage...&lt;/p&gt;
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 4s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.&lt;/p&gt;
+&lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;Before we start, let me take you through some navigation&lt;/p&gt;
+&lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 8s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;You can move forward via a button like&lt;&lt;button &quot;This&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt; 
+&lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ 
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="14" name="instructions" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -699,34 +728,35 @@ setup.backThirty = () => {
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;The &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; takes you to a map&lt;/p&gt;
+    &lt;p&gt;This icon takes you to a map &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt;
   &lt;&lt;/replace&gt;&gt;
 
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;The arrow [img[Back|assets/img/back.png][$prevpass]] skips back&lt;/p&gt;
+   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;This arrow takes you back[img[Back|assets/img/back.png][$prevpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;You can replay with this icon   [img[Replay|assets/img/replay.png][$passage]]&lt;/p&gt;
+&lt;p&gt;This arrow skips you forward [img[Forward|assets/img/for.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
     
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 11s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Step forward via a button like this     [img[Forward|assets/img/for.png][$nextpass]]&lt;/p&gt;
+&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;You can replay with this icon   [img[Replay|assets/img/replay.png][$passage]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 13s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Toggle captions by tapping this [img[Forward|assets/img/captions.png][$nextpass]]&lt;/p&gt;
+&lt;p&gt;To read the audio transcript press[img[Forward|assets/img/transcript.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
+
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 15s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;[img[Forward|assets/img/transcript.png][$nextpass]] will show a transcript of the audio&lt;/p&gt;
+   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;Toggle captions by tapping this [img[Forward|assets/img/captions.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 17s&gt;&gt;
@@ -735,7 +765,7 @@ setup.backThirty = () => {
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="landing" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $title to &quot;Our Biggest Premiere Yet&quot;&gt;&gt;
+&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="landing" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $title to &quot;Our Biggest Premiere Yet&quot;&gt;&gt;
 &lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;
 &lt;&lt;set $prevpass to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
@@ -759,7 +789,7 @@ setup.backThirty = () => {
  &lt;p&gt;Is the theatre  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;open&quot;&gt;&gt;&lt;&lt;set $openOrClosed to &quot;open&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; or &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;closed&quot;&gt;&gt;&lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/div&gt;?&lt;/p&gt;
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="instnar2" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="instnar2" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -778,6 +808,10 @@ setup.backThirty = () => {
   &lt;p&gt;There are some comfy sofas either end&lt;/p&gt;
   &lt;p&gt;When you’re ready let me know&lt;/p&gt;
   &lt;&lt;button &quot;I&#39;m ready&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+   /* &lt;br/&gt;
+    &lt;br/&gt; */
+    /* &lt;p class=&quot;amenities&quot;&gt;&lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;/link&gt;&gt; &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/p&gt; */
 &lt;&lt;/if&gt;&gt;
 
 
@@ -787,9 +821,11 @@ setup.backThirty = () => {
   &lt;p&gt;Maybe by the big windows, under the theatre’s balcony&lt;/p&gt;
   &lt;p&gt;When you’re ready let me know&lt;/p&gt;
     &lt;&lt;button &quot;I&#39;m ready&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+   
 &lt;&lt;/if&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="premiere" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="premiere" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
@@ -831,7 +867,7 @@ setup.backThirty = () => {
 &lt;&lt;include &quot;footerstory&quot;&gt;&gt;
 &lt;&lt;done&gt;&gt;
   &lt;&lt;set $addC to setup.addCaptions(&quot;premiere&quot;)&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="premieretranscript" tags="" position="850,225" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
+&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="premieretranscript" tags="" position="975,225" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
 
 NARRATOR:
 
@@ -880,7 +916,7 @@ We prepared warm food and drinks, and actors would give this out at the railway 
 We equipped soldiers, including our colleagues and friends, who went to go and defend the country. 
 Everything we had as a theatre was used in a new way. Set and costume became humanitarian aid, and technical supplies things like walkie-talkies were sent to the front line.
 In the costume department, we sewed parts of the uniforms for soldiers. A very interesting fashion designer who lived in our shelter became the head of this production.
-For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="18" name="instnar3" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
+For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="19" name="instnar3" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
   &lt;&lt;set $nextpass to &quot;AR1&quot;&gt;&gt;
@@ -918,7 +954,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="AR1" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="AR1" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -967,7 +1003,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;button &quot;I&#39;m in position&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="20" name="AR2" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt; */</tw-passagedata><tw-passagedata pid="21" name="AR2" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -991,7 +1027,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
   &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="instnar5" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="instnar5" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1013,7 +1049,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="streets" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="streets" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1072,7 +1108,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;include &quot;footerstorywalk&quot;&gt;&gt;
 &lt;&lt;done&gt;&gt;
   &lt;&lt;set $addC to setup.addCaptions(&quot;streets&quot;)&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="streetstranscript" tags="" position="350,350" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
+&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="streetstranscript" tags="" position="475,350" size="100,100">&lt;h2&gt;Transcript&lt;/h2&gt;
 
 NARRATOR:
 
@@ -1093,7 +1129,7 @@ There will be no classes today.
 Stay safe. Mind the sirens. Go down to the shelter. Pack a backpack. Bandages and iodine. Other medications you may need. A bottle of water. Biscuits. A flashlight. A needle with thread. Money. Documents. A power bank. A mobile phone.
 Write your name/surname on your hand. Your blood group. Relatives’ phone number. If the explosion is close, run to the bathroom.
 Keep in touch. Breathe deeply.
-This will go down in the history books.</tw-passagedata><tw-passagedata pid="24" name="end" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
+This will go down in the history books.</tw-passagedata><tw-passagedata pid="25" name="end" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;

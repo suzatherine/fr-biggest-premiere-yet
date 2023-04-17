@@ -629,7 +629,7 @@ setup.backThirty = () => {
 :: beginning [nobr]  {"position":"700,175","size":"100,100"}
 <<set $prevpass to "beginning">>
 <<set $passage to "beginning">>
-<<set $nextpass to "instructions">>
+<<set $nextpass to "framing">>
 <<set $transcript to false>>
 <<set $playToggle to false>>
 <<set $captionToggle to false>>
@@ -649,6 +649,38 @@ setup.backThirty = () => {
 </div>
 </main>
 
+
+:: framing [nobr]  {"position":"700,175","size":"100,100"}
+<<set $prevpass to "beginning">>
+<<set $passage to "framing">>
+<<set $nextpass to "instructions">>
+<<set $transcript to false>>
+<<set $playToggle to false>>
+<<set $captionToggle to false>>
+<<set $showForwards to true>>
+<<set $showBackwards to false>>
+<<set $showCaptionsIcon to true>>
+<<set $showMap to false>>
+
+<main class="instructions" id="">
+<div id="mount"></div>
+<<timed 2s>><<replace "#mount">>
+<p>Welcome to the immersive audio experience With Fire and Rage...</p>
+<</replace>><</timed>>
+
+<<timed 4s>><<append "#mount">>
+<p>I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.</p>
+<</append>><</timed>>
+
+<<timed 6s>><<append "#mount">>
+<p>Before we start, let me take you through some navigation</p>
+<</append>><</timed>>
+
+<<timed 8s>><<append "#mount">>
+<p>You can move forward via a button like<<button "This">><<goto $nextpass>><</button>></p> 
+<</append>><</timed>>
+ 
+</main>
 
 
 
@@ -676,34 +708,35 @@ setup.backThirty = () => {
 <div id="mount"></div>
 <<timed 2s>>
   <<replace "#mount">>
-    <p>The <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>> takes you to a map</p>
+    <p>This icon takes you to a map <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>></p>
   <</replace>>
 
 <</timed>>
 <<timed 5s>>
-  <<append "#mount">>
-<p>The arrow [img[Back|assets/img/back.png][$prevpass]] skips back</p>
+   <<append "#mount">>
+<p>This arrow takes you back[img[Back|assets/img/back.png][$prevpass]]</p>
   <</append>>
 <</timed>>
 <<timed 8s>>
   <<append "#mount">>
-<p>You can replay with this icon   [img[Replay|assets/img/replay.png][$passage]]</p>
+<p>This arrow skips you forward [img[Forward|assets/img/for.png][$nextpass]]</p>
   <</append>>
     
 <</timed>>
 <<timed 11s>>
-  <<append "#mount">>
-<p>Step forward via a button like this     [img[Forward|assets/img/for.png][$nextpass]]</p>
+<<append "#mount">>
+<p>You can replay with this icon   [img[Replay|assets/img/replay.png][$passage]]</p>
   <</append>>
 <</timed>>
  <<timed 13s>>
   <<append "#mount">>
-<p>Toggle captions by tapping this [img[Forward|assets/img/captions.png][$nextpass]]</p>
+<p>To read the audio transcript press[img[Forward|assets/img/transcript.png][$nextpass]]</p>
   <</append>>
+
 <</timed>>
  <<timed 15s>>
-  <<append "#mount">>
-<p>[img[Forward|assets/img/transcript.png][$nextpass]] will show a transcript of the audio</p>
+   <<append "#mount">>
+<p>Toggle captions by tapping this [img[Forward|assets/img/captions.png][$nextpass]]</p>
   <</append>>
 <</timed>>
  <<timed 17s>>
@@ -762,6 +795,10 @@ setup.backThirty = () => {
   <p>There are some comfy sofas either end</p>
   <p>When you’re ready let me know</p>
   <<button "I'm ready">><<goto $nextpass>><</button>>
+
+   /* <br/>
+    <br/> */
+    /* <p class="amenities"><<link [img[assets/img/map.png]]>><</link>><<link [img[assets/img/map.png]]>><</link>> <<link [img[assets/img/map.png]]>><</link>></p> */
 <</if>>
 
 
@@ -771,6 +808,8 @@ setup.backThirty = () => {
   <p>Maybe by the big windows, under the theatre’s balcony</p>
   <p>When you’re ready let me know</p>
     <<button "I'm ready">><<goto $nextpass>><</button>>
+
+   
 <</if>>
 </main>
 <<include "footer">>
