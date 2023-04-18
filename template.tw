@@ -255,6 +255,22 @@ setup.backThirty = () => {
 </header>
 
 
+:: headerAR [nobr]{"position":"100,225","size":"100,100"}
+
+<header class="ar" >
+ <div class="nav-wrapper">
+    <div class="nav-item">
+  <h2>$ARtitle</h2>
+ </div>
+ </div>
+ <div class="nav-wrapper">
+    <div class="nav-item">
+    <p class="comment">Press the photo <br> to see it transform</p>
+    </div>
+    </div>
+    
+</header>
+
 :: headerstory [nobr]
 
 <header class="story">
@@ -279,13 +295,22 @@ setup.backThirty = () => {
   <</if>> */
 
 <<if $showForwards is true>>
+  <<if $sendOn is true>>
+ <div class="nav-wrapper" id="forIcon">
+    <div class="nav-item " >
+        <a href="https://fr-spirits-concrete-iron.netlify.app/">
+<img src="assets/img/for.png"></a>
+    </div>
+  </div>
+  <<else>>
     <div class="nav-wrapper" id="forIcon">
     <div class="nav-item " >
          [img[Forward|assets/img/for.png][$nextpass]]
     </div>
-  
   </div>
-     <</if>>
+  <</if>>
+<</if>>
+
 </header>
 
 
@@ -335,13 +360,13 @@ setup.backThirty = () => {
     </div>
     </div>
     <</if>> */
-     <<if $showCaptionsIcon is true>>
+     /* <<if $showCaptionsIcon is true>>
      <div class="nav-wrapper">
     <div class="nav-item">
   <<link [img[assets/img/captions.png]]>><<set $captions to !$captions>><<goto $passage>><</link>>
     </div>
     </div>
-    <</if>>
+    <</if>> */
     /* <<if $showFF is true>>
     <div class="nav-wrapper">
     <div class="nav-item">
@@ -392,11 +417,31 @@ setup.backThirty = () => {
         [img[Back|assets/img/back.png][$prevpass]]
     </div>
   </div>
- 
-  <div class="nav-wrapper">
+   <div class="nav-wrapper">
+  <div class="nav-item">
+  <<link [img[assets/img/transcript.png]]>>
+<<if $transcript is false>>
+  <<set $transcript to true>>
+  <<replace "#transcript">>
+    <<include $transcriptname>>
+  <</replace>>
+  <<else>>
+  <<set $transcript to false>>
+  <<replace "#transcript">>
+  <</replace>>
+  <</if>>
+  <</link>>
+  </div>
+</div>
+ <<if $showReplay is true>>
+     <div class="nav-wrapper">
     <div class="nav-item">
-    <div id="mount"> <span class="comment">Press the photo <br> to see it transform</span></div>
-    </div></div>
+    [img[Replay|assets/img/replay.png][$passage]]
+    </div>
+    </div>
+    <</if>>
+   
+ 
     <div class="nav-wrapper">
     <div class="nav-item">
        <<button "Next">><<goto $nextpass>><</button>>
@@ -487,11 +532,10 @@ setup.backThirty = () => {
 
 <footer>
 
-<<if $showCaptionsIcon is true>>
+/* <<if $showCaptionsIcon is true>>
 <div class="nav-wrapper">
     <div class="nav-item">
       <<link [img[assets/img/captions.png]]>>
-      /* <<toggleclass "#posterWrapper" "small">> */
       <<if $captionToggle is true>>
          <<toggleclass "#storyContainer" "captions">>
           <<set $captionToggle to false>>
@@ -504,7 +548,7 @@ setup.backThirty = () => {
       <</link>>
 </div>
   </div>
-<</if>>
+<</if>> */
 
 
 <div class="nav-wrapper">
@@ -531,13 +575,7 @@ setup.backThirty = () => {
   </div>
 </div>
 
-<div class="nav-wrapper">
-  <div class="nav-item">
-    <<link "+30s">>
-      <<set $fn to setup.addThirty()>>
-  <</link>>
-  </div>
-</div>
+
 
 <div class="nav-wrapper">
   <div class="nav-item">
@@ -555,8 +593,17 @@ setup.backThirty = () => {
   <</link>>
   </div>
 </div>
+<div class="nav-wrapper">
+  <div class="nav-item">
+    <<link "+30s">>
+      <<set $fn to setup.addThirty()>>
+  <</link>>
+  </div>
+</div>
 
 </footer>
+
+
 
 
 :: footerMap [nobr]{"position":"100,375","size":"100,100"}
@@ -715,7 +762,7 @@ setup.backThirty = () => {
 <h2>Instructions</h2>
 <div id="map" class="hide">$map</div>
 <div id="mount"></div>
-<<timed 2s>>
+<<timed 0.5s>>
   <<replace "#mount">>
     <p>This icon takes you to a map <<link [img[assets/img/map.png]]>><<toggleclass "#map" "hide">><</link>></p>
   <</replace>>
@@ -769,7 +816,7 @@ setup.backThirty = () => {
 <h2>Instructions</h2>
 <div id="map" class="hide">$map</div>
 <div id="mount"></div>
-<<timed 2s>>
+<<timed 0.5s>>
   <<replace "#mount">>
     <p>On today’s journey we will stop briefy in ten different locations</p>
   <</replace>>
@@ -826,7 +873,7 @@ setup.backThirty = () => {
 <h2>Instructions</h2>
 <div id="map" class="hide">$map</div>
 <div id="mount"></div>
-<<timed 2s>>
+<<timed 0.5s>>
   <<replace "#mount">>
     <p>These icons will show when facilities are available</p>
   <</replace>>
@@ -956,6 +1003,7 @@ setup.backThirty = () => {
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to true>>
 <<set $showMap to false>>
+<<set $sendOn to false>>
 <<set $transcriptname to  "premieretranscript">>
 <<include "headerstory">>
  <<audio ":all" stop>><<audio "3" play>>
@@ -1003,9 +1051,7 @@ setup.backThirty = () => {
 
 :: premieretranscript
 
-<h2>Transcript</h2>
-
-$title
+<h2>$title</h2>
 
 Welcome to the immersive audio experience With Fire and Rage...
 I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.
@@ -1108,8 +1154,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
+<<set $ARtitle to "Title of Images TBC">>
+<<set $transcriptname to  "AR1transcript">>
  <<audio ":all" stop>><<audio "5" play>>
-/* <<include "header">> */
+<<include "headerAR">>
 /* OPEN */
 <main class="ar">
 
@@ -1122,34 +1170,14 @@ For the last five years, we have been trying to work without a strict hierarchy.
       </div>
   </div>
 
-
+<div id="transcript"></div>
 </main>
 <<include "footerAR">>
 <<done>><<set $s to setup.startup()>><</done>>
 
-/* :: instnar4 [nobr]
-<<set $prevpass to "AR1">>
-<<set $passage to "instnar4">>
-<<set $nextpass to "AR2">>
-<<set $showMap to true>>
-<<set $showAudio to false>>
-<<set $showReplay to true>>
-<<set $showBackwards to true>>
-<<set $showForwards to true>>
-<<set $showCaptionsIcon to false>>
-<<set $map = setup.generateDirectionsMap(53.4030572538972, -2.969504715141457,53.4030572538972, -2.969504715141457)>>
-<div id="audio"></div>
 
-<main class="instructions">
-<div id="map" class="hide">$map</div>
-<p>Go outside and cross the road </p>
-<p>Face the Liverpool Everyman</p>
-<p>Hold up your phone </p>
-
-  <<button "I'm in position">><<goto $nextpass>><</button>>
-</main>
-<<include "footer">> */
-
+:: AR1transcript
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
 
 :: AR2 [nobr]{"position":"450,50","size":"100,100"}
 <<set $prevpass to "instnar3">>
@@ -1161,9 +1189,11 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
+<<set $ARtitle to "Title of Images TBC">>
+<<set $transcriptname to  "AR2transcript">>
  <<audio ":all" stop>><<audio "5" play>>
 /* CLOSED  */
-/* <<include "header">> */
+<<include "headerAR">>
 <main class="ar">
 
  <div class="ar-imgs-container one" id="ARContainer">
@@ -1174,10 +1204,13 @@ For the last five years, we have been trying to work without a strict hierarchy.
       <img src="./assets/img/everyman-outside.jpeg" class="">
       </div>
   </div>
+<div id="transcript"></div>
 </main>
 <<include "footerAR">>
 <<done>><<set $s to setup.startup()>><</done>>
 
+:: AR2transcript
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
 
 :: instnar5 [nobr]
 <<set $prevpass to "instnar3">>
@@ -1210,7 +1243,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 :: streets[nobr]
 <<set $prevpass to "instnar5">>
 <<set $passage to "streets">>
-<<set $nextpass to "end">>
+<<set $nextpass to "streets">>
 <<set $showMap to true>>
 <<set $transcript to false>>
 <<set $playToggle to false>>
@@ -1218,6 +1251,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to true>>
+<<set $sendOn to true>>
 <<set $transcriptname to  "streetstranscript">>
 /* Everyman to 1931  */
 <<set $map = setup.generateDirectionsMap({originName: "Liverpool Everyman", originLat: 53.40294244809804, originLong:-2.9694980926454186}, "Liverpool Philharmonic")>>
@@ -1239,18 +1273,22 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 
- <<timed 1s>>
-  <<replace "#mount">>  
-<p class="comment">The map<<link [img[assets/img/map.png]]>><</link>> will help guide you</p>
+ <<timed 0.2s>>
+  <<replace "#headerinstmount">>  
+<p class="comment">The map will help guide you</p>
 <</replace>>
  <</timed>>
 
  <<timed 6s>>
-  <<replace "#mount">>  
+  <<replace "#headerinstmount">>  
 <p class="comment">As you begin to walk press  <div class="inline-btn-wrapper">
 <<link "play">>
-      <<replace "#mount">>
-    <p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
+      <<replace "#headerinstmount">>
+    <p class="comment"> When you're finished listening, let me know 
+    <a href="https://fr-spirits-concrete-iron.netlify.app/">
+<button>I'm finished</button></a>
+    /* </div> */
+    </p>
     <</replace>>
         <<if $playToggle is false>>
       <<set $fn to setup.play()>>
@@ -1260,6 +1298,16 @@ For the last five years, we have been trying to work without a strict hierarchy.
       <</link>></div></p>
 
       <</replace>>
+ <</timed>>
+
+  <<timed 30s>>
+<<replace "#headerinstmount">>
+    <p class="comment"> When you're finished listening, let me know 
+    <a href="https://fr-spirits-concrete-iron.netlify.app/">
+<button>I'm finished</button></a>
+    </p>
+    <</replace>>
+
  <</timed>>
 
 </main>
@@ -1273,7 +1321,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 :: streetstranscript
 
-<h2>Transcript</h2>
+<h2>Walk The Streets Part One</h2>
 
 NARRATOR:
 
