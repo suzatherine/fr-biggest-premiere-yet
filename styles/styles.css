@@ -482,6 +482,12 @@ header.story {
   justify-content: space-between;
 }
 
+header > #headerinstmount > p.comment {
+  font-size: 1.3rem;
+  max-width: 80%;
+  margin: auto;
+}
+
 main.story {
   justify-content: flex-start;
   gap: 1.5rem;
@@ -490,13 +496,18 @@ main.story {
 }
 
 main.story > #mount > p.comment,
-.nav-item > #mount > span.comment {
+.nav-item > #mount > span.comment,
+p.comment {
   background-color: var(--accent-color-secondary);
   padding: 6px 8px;
   border-radius: 10px;
   border: black 0.5px solid;
   color: black;
   width: fit-content;
+}
+
+p.comment.center {
+  text-align: center;
 }
 
 main.story.captions {

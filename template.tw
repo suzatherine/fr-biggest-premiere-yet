@@ -266,8 +266,8 @@ setup.backThirty = () => {
   </div>
   <</if>>
 
-
-<<if $showMap is true>>
+<div id="headerinstmount"></div>
+/* <<if $showMap is true>>
     <div class="nav-wrapper">
       <div class="nav-item">
     <<link [img[assets/img/map.png]]>>
@@ -276,7 +276,7 @@ setup.backThirty = () => {
     <</link>>
     </div>
   </div>
-  <</if>>
+  <</if>> */
 
 <<if $showForwards is true>>
     <div class="nav-wrapper" id="forIcon">
@@ -408,11 +408,11 @@ setup.backThirty = () => {
 
 <footer>
 
-<<if $showCaptionsIcon is true>>
+/* <<if $showCaptionsIcon is true>>
 <div class="nav-wrapper">
     <div class="nav-item">
       <<link [img[assets/img/captions.png]]>>
-      /* <<toggleclass "#posterWrapper" "small">> */
+     
       <<if $captionToggle is true>>
          <<toggleclass "#poster" "hide">>
          <<toggleclass "#storyContainer" "captions">>
@@ -427,7 +427,7 @@ setup.backThirty = () => {
       <</link>>
 </div>
   </div>
-<</if>>
+<</if>> */
 
 
 <div class="nav-wrapper">
@@ -456,14 +456,6 @@ setup.backThirty = () => {
 
 <div class="nav-wrapper">
   <div class="nav-item">
-    <<link "+30s">>
-      <<set $fn to setup.addThirty()>>
-  <</link>>
-  </div>
-</div>
-
-<div class="nav-wrapper">
-  <div class="nav-item">
   <<link [img[assets/img/transcript.png]]>>
 <<if $transcript is false>>
   <<set $transcript to true>>
@@ -478,6 +470,16 @@ setup.backThirty = () => {
   <</link>>
   </div>
 </div>
+
+<div class="nav-wrapper">
+  <div class="nav-item">
+    <<link "+30s">>
+      <<set $fn to setup.addThirty()>>
+  <</link>>
+  </div>
+</div>
+
+
 
 </footer>
 
@@ -639,11 +641,12 @@ setup.backThirty = () => {
 <<set $showMap to false>>
 
 <div class="comp-warning">Best experienced on a phone</div>
-<main class="" id="">
+<main class="beginning" id="">
 
 <div class="poster-wrapper" id="poster">
    <img class="poster" src="./../assets/img/main.jpeg"/>
  </div>
+ <p class="comment center">Put your headphones in and turn up the volume</p>
  <div class="menu-wrapper">
     <<button "Begin">><<goto $nextpass>><</button>>
 </div>
@@ -665,15 +668,21 @@ setup.backThirty = () => {
 <main class="instructions" id="">
 <div id="mount"></div>
 <<timed 2s>><<replace "#mount">>
-<p>Welcome to the immersive audio experience With Fire and Rage...</p>
+<p>Welcome to With Fire and Rage</p>
 <</replace>><</timed>>
 
 <<timed 4s>><<append "#mount">>
-<p>I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.</p>
+<p>I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine</p>
+<</append>><</timed>>
+
+<<timed 8s>><<append "#mount">>
+<p>I will be your guide for today
+</p>
 <</append>><</timed>>
 
 <<timed 6s>><<append "#mount">>
-<p>Before we start, let me take you through some navigation</p>
+<p>First let me show you, how to navigate your experience...
+</p>
 <</append>><</timed>>
 
 <<timed 8s>><<append "#mount">>
@@ -688,7 +697,7 @@ setup.backThirty = () => {
 :: instructions [nobr]
 <<set $prevpass to "beginning">>
 <<set $passage to "instructions">>
-<<set $nextpass to "landing">>
+<<set $nextpass to "instructions2">>
 <<set $showMap to false>>
 <<set $showAudio to false>>
 <<set $showReplay to false>>
@@ -734,12 +743,8 @@ setup.backThirty = () => {
   <</append>>
 
 <</timed>>
+
  <<timed 15s>>
-   <<append "#mount">>
-<p>Toggle captions by tapping this [img[Forward|assets/img/captions.png][$nextpass]]</p>
-  <</append>>
-<</timed>>
- <<timed 17s>>
   <<append "#mount">>
 <<button "Next">><<goto $nextpass>><</button>>
   <</append>>
@@ -747,6 +752,127 @@ setup.backThirty = () => {
 </main>
 <<include "footerfor">>
 
+:: instructions2 [nobr]
+<<set $prevpass to "instructions">>
+<<set $passage to "instructions2">>
+<<set $nextpass to "instructions3">>
+<<set $showMap to false>>
+<<set $showAudio to false>>
+<<set $showReplay to false>>
+<<set $showForwards to true>>
+<<set $showBackwards to false>>
+<<set $showCaptionsIcon to false>>
+
+<div id="audio"></div>
+/* <<include "header">> */
+<main class="instructions">
+<h2>Instructions</h2>
+<div id="map" class="hide">$map</div>
+<div id="mount"></div>
+<<timed 2s>>
+  <<replace "#mount">>
+    <p>On today’s journey we will stop briefy in ten different locations</p>
+  <</replace>>
+
+<</timed>>
+<<timed 4s>>
+   <<append "#mount">>
+<p>It’s up to you how fast or slow you travel, and how much you play in one go</p>
+  <</append>>
+<</timed>>
+<<timed 6s>>
+  <<append "#mount">>
+<p>Playing all the way through might take anywhere between 90 and 120 min.</p>
+  <</append>>
+    
+<</timed>>
+<<timed 8s>>
+<<append "#mount">>
+<p>Find a places to sit, to lean, to shelter, 
+</p>
+  <</append>>
+<</timed>>
+
+ <<timed 10s>>
+  <<append "#mount">>
+<p>If you want, take a break</p>
+  <</append>>
+<</timed>>
+
+ <<timed 15s>>
+  <<append "#mount">>
+<<button "Next">><<goto $nextpass>><</button>>
+  <</append>>
+<</timed>>
+</main>
+<<include "footerfor">>
+
+
+
+:: instructions3 [nobr]
+<<set $prevpass to "instructions2">>
+<<set $passage to "instructions3">>
+<<set $nextpass to "landing">>
+<<set $showMap to false>>
+<<set $showAudio to false>>
+<<set $showReplay to false>>
+<<set $showForwards to true>>
+<<set $showBackwards to false>>
+<<set $showCaptionsIcon to false>>
+
+<div id="audio"></div>
+/* <<include "header">> */
+<main class="instructions">
+<h2>Instructions</h2>
+<div id="map" class="hide">$map</div>
+<div id="mount"></div>
+<<timed 2s>>
+  <<replace "#mount">>
+    <p>These icons will show when facilities are available</p>
+  <</replace>>
+<</timed>>
+<<timed 3s>>
+   <<append "#mount">>
+<p>Bathroom [img[Bathroom|assets/img/bathroom.png][$passage]]</p>
+  <</append>>
+<</timed>>
+<<timed 4s>>
+  <<append "#mount">>
+<p>Wifi [img[Wifi|assets/img/wifi.png][$passage]]</p>
+  <</append>>
+<</timed>>
+
+<<timed 5s>>
+  <<append "#mount">>
+<p>Food and Drink  [img[Food|assets/img/food.png][$passage]] </p>
+  <</append>>
+<</timed>>
+
+<<timed 6s>>
+  <<append "#mount">>
+<p>Step-free access [img[StepFree|assets/img/stepfree.png][$passage]]</p>
+  <</append>>
+<</timed>>
+<<timed 7s>>
+  <<append "#mount">>
+<p>Phone Charger [img[Charge|assets/img/charge.png][$passage]]</p>
+  <</append>>
+<</timed>>
+
+<<timed 8s>>
+  <<append "#mount">>
+<p>Caution [img[Caution|assets/img/charge.png][$passage]]</p>
+  <</append>>
+<</timed>>
+
+
+ <<timed 10s>>
+  <<append "#mount">>
+<<button "Next">><<goto $nextpass>><</button>>
+  <</append>>
+<</timed>>
+</main>
+<<include "footerfor">>
 
 :: landing [nobr]
 <<set $title to "Our Biggest Premiere Yet">>
@@ -763,13 +889,14 @@ setup.backThirty = () => {
 <<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
 <<audio ":all" stop>><<audio "1" play>>
 <div id="audio"></div>
-<<include "header">>
+/* <<include "header">> */
 <div class="comp-warning">Best to experience on a phone</div>
 <main class="instructions">
 
 <div id="map" class="hide">$map</div>
 
-  <p>You should be inside or outside the Liverpool Everyman</p>
+  <p>Now, let’s check you are in the right place</p>
+  <p>You should be at the Liverpool Everyman</p>
  <p>Is the theatre  <div class="inline-btn-wrapper"><<link "open">><<set $openOrClosed to "open">><<goto "instnar2">><</link>> or <div class="inline-btn-wrapper"><<link "closed">><<set $openOrClosed to "closed">><<goto "instnar2">><</link>></div></div>?</p>
  
 </main>
@@ -786,13 +913,13 @@ setup.backThirty = () => {
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
 <div id="audio"></div>
-<<include "header">>
+/* <<include "header">> */
 <main class="instructions">
 <div id="map" class="hide">$map</div>
   <<if $openOrClosed is "open">>
     <<audio ":all" stop>><<audio "2" play>>
     <p>Go inside and take a seat in the downstairs bar </p>
-  <p>There are some comfy sofas either end</p>
+  <p>There are comfortable sofas either end</p>
   <p>When you’re ready let me know</p>
   <<button "I'm ready">><<goto $nextpass>><</button>>
 
@@ -843,20 +970,28 @@ setup.backThirty = () => {
   
 <div id="caption" class="hide"></div>
 <div id="transcript"></div>
-<div id="mount"  ><p class="comment"> To listen to <em>$title</em> press <div class="inline-btn-wrapper">
+<div id="mount"></div>
+<<timed 0.1s>><<replace "#headerinstmount">><p class="comment"> To listen to <em>$title</em> press <div class="inline-btn-wrapper">
 <<link "play">>
         <<if $playToggle is false>>
       <<set $fn to setup.play()>>
       <<set $playToggle to true>>
       <<addclass "#playpause" "playhighlight">>
       <</if>>
-     
-
-<<replace "#mount">>
+<<replace "#headerinstmount">>
 <p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
-
  <</replace>>
- <</link>></div></p></div>
+ <</link>>
+  </div></p>
+ <</replace>><</timed>>
+
+ <<timed 30s>>
+ <<replace "#headerinstmount">>
+<p class="comment"> When you're finished listening, let me know <div class="inline-btn-wrapper"><<button "I'm finished">><<goto $nextpass>><</button>></div></p>
+ <</replace>>
+
+ <</timed>>
+
 </main>
 
 <<include "footerstory">>
@@ -870,7 +1005,7 @@ setup.backThirty = () => {
 
 <h2>Transcript</h2>
 
-NARRATOR:
+$title
 
 Welcome to the immersive audio experience With Fire and Rage...
 I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.
@@ -953,7 +1088,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
  <<audio ":all" stop>><<audio "7" play>>
 <p>Let me show you some photos </p>
 <p>Cross the road and face the Liverpool Everyman</p>
-<p>Hold up your phone and press</p>
+<p>Hold up your phone</p>
 
   <<button "Show Me">><<goto $nextpass>><</button>>
 <</if>>
