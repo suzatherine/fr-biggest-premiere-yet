@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Our Biggest Premiere Yet" startnode="13" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C337A3FDC8C9// --><tw-storydata name="Our Biggest Premiere Yet" startnode="12" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C337A3FDC8C9" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
@@ -310,18 +310,58 @@ setup.backThirty = () => {
   audio.currentTime = timeHolder -30;
   }</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;1&quot; &quot;./../assets/audio/1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;2&quot; &quot;./../assets/audio/2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;3&quot; &quot;./../assets/audio/3.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;3&quot; &quot;./../assets/audio/3V2.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;4&quot; &quot;./../assets/audio/4.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;5&quot; &quot;./../assets/audio/5.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;6&quot; &quot;./../assets/audio/6.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;7&quot; &quot;./../assets/audio/7.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;8&quot; &quot;./../assets/audio/8.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;9&quot; &quot;./../assets/audio/9.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;9&quot; &quot;./../assets/audio/9V2.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="100,225" size="100,100">&lt;header&gt;
 &lt;div class=&quot;header-item&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;header-item&quot;&gt;
   &lt;h1&gt;$title&lt;/h1&gt;
-  &lt;h3 class=&quot;subtitle&quot;&gt;With Fire &amp; Rage&lt;/h3&gt;
+  &lt;h3 class=&quot;subtitle&quot;&gt;$location&lt;/h3&gt;
+
+&lt;div class=&quot;multiple-icon-wrapper&quot;&gt;
+&lt;&lt;if $bathroom is true&gt;&gt;
+ &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/bathroom.png&quot; &gt;
+
+    &lt;/div&gt;
+    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $wifi is true&gt;&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/wifi.png&quot; &gt;
+
+    &lt;/div&gt;
+     &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $food is true&gt;&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/food.png&quot; &gt;
+
+    &lt;/div&gt;
+     &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $charge is true&gt;&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/charge.png&quot; &gt;
+
+    &lt;/div&gt;
+     &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $stepfree is true&gt;&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/stepfree.png&quot; &gt;
+
+    &lt;/div&gt;
+     &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $caution is true&gt;&gt;
+     
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/caution.png&quot; &gt;
+
+    &lt;/div&gt;
+     &lt;&lt;/if&gt;&gt;
+&lt;/div&gt;
 &lt;/div &gt;
 &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="headerAR" tags="nobr" position="100,225" size="100,100">&lt;header class=&quot;ar&quot; &gt;
  &lt;div class=&quot;nav-wrapper&quot;&gt;
@@ -345,16 +385,6 @@ setup.backThirty = () => {
   &lt;&lt;/if&gt;&gt;
 
 &lt;div id=&quot;headerinstmount&quot;&gt;&lt;/div&gt;
-/* &lt;&lt;if $showMap is true&gt;&gt;
-    &lt;div class=&quot;nav-wrapper&quot;&gt;
-      &lt;div class=&quot;nav-item&quot;&gt;
-    &lt;&lt;link [img[assets/img/map.png]]&gt;&gt;
-    &lt;&lt;toggleclass &quot;#map&quot; &quot;hide&quot;&gt;&gt;
-
-    &lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;&lt;/if&gt;&gt; */
 
 &lt;&lt;if $showForwards is true&gt;&gt;
   &lt;&lt;if $sendOn is true&gt;&gt;
@@ -464,6 +494,21 @@ setup.backThirty = () => {
         [img[Back|assets/img/back.png][$prevpass]]
     &lt;/div&gt;
   &lt;/div&gt;
+  &lt;div class=&quot;nav-wrapper playpause-wrapper&quot;&gt;
+  &lt;div class=&quot;nav-item&quot; id=&quot;playpause&quot;&gt;
+      &lt;&lt;link [img[assets/img/playpause.png]]&gt;&gt;
+        &lt;&lt;if $playToggle is false&gt;&gt;
+      &lt;&lt;set $fn to setup.play()&gt;&gt;
+      &lt;&lt;set $playToggle to true&gt;&gt;
+      &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;else&gt;&gt;
+       &lt;&lt;set $fn to setup.pause()&gt;&gt;
+        &lt;&lt;set $playToggle to false&gt;&gt;
+      &lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+      &lt;&lt;/link&gt;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
    &lt;div class=&quot;nav-wrapper&quot;&gt;
   &lt;div class=&quot;nav-item&quot;&gt;
   &lt;&lt;link [img[assets/img/transcript.png]]&gt;&gt;
@@ -494,7 +539,8 @@ setup.backThirty = () => {
        &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerstory" tags="nobr" position="1100,100" size="100,100">&lt;footer&gt;
+&lt;/footer&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="footerstory" tags="nobr" position="1100,100" size="100,100">&lt;footer&gt;
 
 /* &lt;&lt;if $showCaptionsIcon is true&gt;&gt;
 &lt;div class=&quot;nav-wrapper&quot;&gt;
@@ -660,47 +706,7 @@ setup.backThirty = () => {
         &lt;&lt;button &quot;I&#39;ve arrived&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="12" name="credits" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;credits&quot;&gt;&gt;
-&lt;&lt;set $showMap to false&gt;&gt;
-&lt;&lt;set $showAudio to false&gt;&gt;
-&lt;&lt;set $showReplay to false&gt;&gt;
-&lt;header class=&quot;credits&quot;&gt;
-&lt;div class=&quot;header-item&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;header-item&quot;&gt;
-  &lt;h1&gt;With Fire &amp; Rage&lt;/h1&gt;
-&lt;/div &gt;
-&lt;/header&gt;
-&lt;main class=&quot;credits&quot;&gt;
-&lt;p&gt;Testimonies include: &lt;/p&gt;
-&lt;h3&gt;OLYA MUKHINA&lt;/h3&gt;
-&lt;p&gt;Executive Director of the Lesya Ukrainka Theater&lt;/p&gt;
-&lt;h3&gt;STAS KONONOV&lt;/h3&gt;
-&lt;p&gt;Musician and Guitarist&lt;/p&gt;
-&lt;h3&gt;ALEVTINA SHVETSOVA&lt;/h3&gt;
-&lt;p&gt;Arts Journalist and Artist&lt;/p&gt;
-&lt;h3&gt;LUTFIE ZUDIEVA&lt;/h3&gt;
-&lt;p&gt;Civic Journalist&lt;/p&gt;
-&lt;h3&gt;OLEKSANDRA OSADCHA&lt;/h3&gt;
-&lt;p&gt;Researcher and Curator at Kharkiv School Of Photography&lt;/p&gt;
-&lt;h3&gt;SERHIY ZAKHAROV&lt;/h3&gt;
-&lt;p&gt;Artist&lt;/p&gt;
-&lt;h3&gt;VICTORIA AMELINA&lt;/h3&gt;
-&lt;p&gt;Writer and Poet&lt;/p&gt;
-&lt;h3&gt;ANNA SHARYHINA&lt;/h3&gt;
-&lt;p&gt;Activist, Cultural Manager and Founder of Sphere&lt;/p&gt;
-&lt;h3&gt;JULIA NIKOLAJEVSKA&lt;/h3&gt;
-&lt;p&gt;Musician and Cultural Manager Kharkiv Music Fest&lt;/p&gt;
-&lt;h3&gt;DMYTRO KOSTIUMINSKIJ&lt;/h3&gt;
-&lt;p&gt;Artist, Theatre director and Filmmaker&lt;/p&gt;
-&lt;br/&gt;
-&lt;p&gt;Poetry &amp; Additional Texts include:&lt;/p&gt;
-&lt;p&gt;Text Counter/retnuoC by Alexander Levitsky from Anthology24 Text by Nina Zakhozhenko from Anthology24&lt;/p&gt;
-&lt;p&gt;Poem by Aliye Kenzhalieva&lt;/p&gt;
-&lt;p&gt;Poem Ctrl+Z by Mykhailo Zharzhalio&lt;/p&gt;
-&lt;p&gt;Poem Survivor&#39;s Syndrome by Andriy Bondarenko&lt;/p&gt;
-&lt;p&gt;Poem by Ostap Slyvynsky&lt;/p&gt;
-&lt;/main&gt;
-&lt;&lt;include &quot;footerback&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="beginning" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="12" name="beginning" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;framing&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
@@ -721,20 +727,20 @@ setup.backThirty = () => {
  &lt;div class=&quot;menu-wrapper&quot;&gt;
     &lt;&lt;button &quot;Begin&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="14" name="framing" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="13" name="framing" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;framing&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
 &lt;&lt;set $playToggle to false&gt;&gt;
 &lt;&lt;set $captionToggle to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to false&gt;&gt;
-&lt;&lt;set $showCaptionsIcon to true&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
+&lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 
 &lt;main class=&quot;instructions&quot; id=&quot;&quot;&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;Welcome to With Fire and Rage&lt;/p&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
@@ -756,16 +762,17 @@ setup.backThirty = () => {
 &lt;p&gt;You can move forward via a button like&lt;&lt;button &quot;This&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt; 
 &lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
  
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="15" name="instructions" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="instructions" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $prevpass to &quot;beginning&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instructions2&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to false&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-/* &lt;&lt;set $map = setup.generateDirectionsMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originPlaceId: &quot;ChIJ2ccRtxghe0gR3Z7JzoorJ58&quot;},&quot;ChIJ2ccRtxghe0gR3Z7JzoorJ58&quot;)&gt;&gt; */
+
 
 &lt;&lt;set $map = setup.generateViewMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originName: &quot;Liverpool Everyman Theatre&quot;})&gt;&gt;
 
@@ -773,7 +780,7 @@ setup.backThirty = () => {
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main class=&quot;instructions&quot;&gt;
-&lt;h2&gt;Instructions&lt;/h2&gt;
+&lt;h2&gt;Onboarding&lt;/h2&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 0.5s&gt;&gt;
@@ -800,7 +807,7 @@ setup.backThirty = () => {
 &lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 13s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;To read the audio transcript press[img[Forward|assets/img/transcript.png][$nextpass]]&lt;/p&gt;
+&lt;p&gt;To read a transcript of the audio press[img[Forward|assets/img/transcript.png][$nextpass]]&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 
 &lt;&lt;/timed&gt;&gt;
@@ -811,121 +818,145 @@ setup.backThirty = () => {
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="instructions2" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;instructions&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="instructions2" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $prevpass to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instructions2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instructions3&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to false&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main class=&quot;instructions&quot;&gt;
-&lt;h2&gt;Instructions&lt;/h2&gt;
+&lt;h2&gt;Onboarding&lt;/h2&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 0.5s&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;On today’s journey we will stop briefy in ten different locations&lt;/p&gt;
+    &lt;p&gt;We will travel to ten different locations&lt;/p&gt;
   &lt;&lt;/replace&gt;&gt;
 
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s&gt;&gt;
    &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;It’s up to you how fast or slow you travel, and how much you play in one go&lt;/p&gt;
+&lt;p&gt;Walking for a little over one kilometre, in short stretches &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Playing all the way through might take anywhere between 90 and 120 min.&lt;/p&gt;
+&lt;p&gt;It’s up to you how fast or slow you go&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
     
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8s&gt;&gt;
 &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Find a places to sit, to lean, to shelter, 
+&lt;p&gt;The full tour takes between 90 and 120 minutes 
 &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
  &lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;If you want, take a break&lt;/p&gt;
+&lt;p&gt;Listen to as much or as little as you like &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 
- &lt;&lt;timed 15s&gt;&gt;
+&lt;&lt;timed 12s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;You are always welcome to come back another day &lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+
+
+ &lt;&lt;timed 14s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="instructions3" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $prevpass to &quot;instructions2&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="instructions3" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $prevpass to &quot;instructions2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instructions3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
 &lt;&lt;set $showAudio to false&gt;&gt;
 &lt;&lt;set $showReplay to false&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
-&lt;&lt;set $showBackwards to false&gt;&gt;
+&lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main class=&quot;instructions&quot;&gt;
-&lt;h2&gt;Instructions&lt;/h2&gt;
+&lt;h2&gt;Onboarding&lt;/h2&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 0.5s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;These icons will show when facilities are available&lt;/p&gt;
-  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+    &lt;p&gt;At every location, I will suggest places to sit, to lean, to shelter&lt;/p&gt;
+  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Bathroom [img[Bathroom|assets/img/bathroom.png][$passage]]&lt;/p&gt;
+&lt;&lt;timed 2s&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+    &lt;p&gt;Make yourself comfortable, if you want, take a break&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Wifi [img[Wifi|assets/img/wifi.png][$passage]]&lt;/p&gt;
+    &lt;p&gt;These icons show when facilities are available &lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-
 &lt;&lt;timed 5s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Food and Drink  [img[Food|assets/img/food.png][$passage]] &lt;/p&gt;
-  &lt;&lt;/append&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-
-&lt;&lt;timed 6s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Step-free access [img[StepFree|assets/img/stepfree.png][$passage]]&lt;/p&gt;
+   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+  &lt;div class=&quot;multiple-icon-wrapper&quot;&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/bathroom.png&quot; &gt;
+    &lt;span&gt;Bathroom &lt;/span&gt;
+    &lt;/div&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/wifi.png&quot; &gt;
+    &lt;span&gt;Wifi &lt;/span&gt;
+    &lt;/div&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/food.png&quot; &gt;
+    &lt;span&gt;Food &amp; Drink &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 7s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Phone Charger [img[Charge|assets/img/charge.png][$passage]]&lt;/p&gt;
+&lt;p&gt;As well as other important information like&lt;/p&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-
 &lt;&lt;timed 8s&gt;&gt;
-  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Caution [img[Caution|assets/img/charge.png][$passage]]&lt;/p&gt;
+   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
+   &lt;div class=&quot;multiple-icon-wrapper&quot;&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/stepfree.png&quot; &gt;
+    &lt;span&gt;Step-free access &lt;/span&gt;
+    &lt;/div&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/wifi.png&quot; &gt;
+    &lt;span&gt;Phone Charger  &lt;/span&gt;
+    &lt;/div&gt;
+      &lt;div class=&quot;multiple-icon-item&quot;&gt;
+      &lt;img src=&quot;assets/img/caution.png&quot; &gt;
+    &lt;span&gt;Caution! take care crossing roads&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-
-
  &lt;&lt;timed 10s&gt;&gt;
   &lt;&lt;append &quot;#mount&quot;&gt;&gt;
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerfor&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="landing" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $title to &quot;Our Biggest Premiere Yet&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="landing" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $title to &quot;Our Biggest Premiere Yet&quot;&gt;&gt;
 &lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;
 &lt;&lt;set $prevpass to &quot;instructions&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
@@ -950,7 +981,7 @@ setup.backThirty = () => {
  &lt;p&gt;Is the theatre  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;open&quot;&gt;&gt;&lt;&lt;set $openOrClosed to &quot;open&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt; or &lt;div class=&quot;inline-btn-wrapper&quot;&gt;&lt;&lt;link &quot;closed&quot;&gt;&gt;&lt;&lt;set $openOrClosed to &quot;closed&quot;&gt;&gt;&lt;&lt;goto &quot;instnar2&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/div&gt;?&lt;/p&gt;
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="instnar2" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="instnar2" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -959,11 +990,28 @@ setup.backThirty = () => {
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
+&lt;&lt;set $location to &quot; Liverpool Everyman&quot;&gt;&gt;
+&lt;&lt;set $bathroom to true&gt;&gt;
+&lt;&lt;set $wifi to true&gt;&gt;
+&lt;&lt;set $food to true&gt;&gt;
+&lt;&lt;set $charge to true&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
+&lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
+&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;header&gt;
+&lt;div class=&quot;header-item&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;header-item&quot;&gt;
+  &lt;h1&gt;$title&lt;/h1&gt;
+  &lt;h3 class=&quot;subtitle&quot;&gt;$location&lt;/h3&gt;
+  &lt;/div&gt;
+
+  &lt;/header&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
   &lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
+  
     &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;2&quot; play&gt;&gt;
     &lt;p&gt;Go inside and take a seat in the downstairs bar &lt;/p&gt;
   &lt;p&gt;There are comfortable sofas either end&lt;/p&gt;
@@ -986,7 +1034,7 @@ setup.backThirty = () => {
    
 &lt;&lt;/if&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="premiere" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="premiere" tags="nobr" position="700,175" size="100,100">&lt;&lt;set $prevpass to &quot;instnar2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $transcript to false&gt;&gt;
@@ -1008,7 +1056,7 @@ setup.backThirty = () => {
    &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
  &lt;/div&gt;
   
-&lt;div id=&quot;caption&quot; class=&quot;hide&quot;&gt;&lt;/div&gt;
+
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#headerinstmount&quot;&gt;&gt;&lt;p class=&quot;comment&quot;&gt; To listen to &lt;em&gt;$title&lt;/em&gt; press &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
@@ -1034,10 +1082,7 @@ setup.backThirty = () => {
 
 &lt;/main&gt;
 
-&lt;&lt;include &quot;footerstory&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;
-  &lt;&lt;set $addC to setup.addCaptions(&quot;premiere&quot;)&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="premieretranscript" tags="" position="100,350" size="100,100">&lt;h2&gt;$title&lt;/h2&gt;
+&lt;&lt;include &quot;footerstory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="premieretranscript" tags="" position="1225,225" size="100,100">&lt;h2&gt;$title&lt;/h2&gt;
 
 Welcome to the immersive audio experience With Fire and Rage...
 I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.
@@ -1084,7 +1129,7 @@ We prepared warm food and drinks, and actors would give this out at the railway 
 We equipped soldiers, including our colleagues and friends, who went to go and defend the country. 
 Everything we had as a theatre was used in a new way. Set and costume became humanitarian aid, and technical supplies things like walkie-talkies were sent to the front line.
 In the costume department, we sewed parts of the uniforms for soldiers. A very interesting fashion designer who lived in our shelter became the head of this production.
-For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="22" name="instnar3" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
+For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="21" name="instnar3" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
   &lt;&lt;set $nextpass to &quot;AR1&quot;&gt;&gt;
@@ -1099,7 +1144,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 &lt;&lt;set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: &quot;Everyman Theatre&quot;})&gt;&gt;
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
+
 
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
@@ -1122,7 +1167,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="AR1" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="AR1" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -1131,9 +1176,12 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-&lt;&lt;set $ARtitle to &quot;Title of Images TBC&quot;&gt;&gt;
-&lt;&lt;set $transcriptname to  &quot;AR1transcript&quot;&gt;&gt;
+&lt;&lt;set $ARtitle to &quot;Lesya Ukrainka Theatre&quot;&gt;&gt;
+&lt;&lt;set $transcriptname to  &quot;ARtranscript&quot;&gt;&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;5&quot; play&gt;&gt;
+ &lt;audio id=&quot;audio&quot; &gt;
+  &lt;source src=&quot;&quot;&gt;
+&lt;/audio&gt;
 &lt;&lt;include &quot;headerAR&quot;&gt;&gt;
 /* OPEN */
 &lt;main class=&quot;ar&quot;&gt;
@@ -1150,7 +1198,11 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="AR1transcript" tags="" position="475,350" size="100,100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</tw-passagedata><tw-passagedata pid="25" name="AR2" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="ARtranscript" tags="" position="350,350" size="100,100">As the full-scale invasion began, the team at the Lesya Ukrainka Theater in Lviv, transformed the venue in response. 
+
+They cleaned out the basement to become a bomb shelter, and adapted spaces for humanitarian aid. 
+
+They also created a plan to defend the theatre, with Molotov cocktails and barbed wire.</tw-passagedata><tw-passagedata pid="24" name="AR2" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;AR2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
@@ -1159,8 +1211,11 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-&lt;&lt;set $ARtitle to &quot;Title of Images TBC&quot;&gt;&gt;
-&lt;&lt;set $transcriptname to  &quot;AR2transcript&quot;&gt;&gt;
+&lt;&lt;set $ARtitle to &quot;Lesya Ukrainka Theatre&quot;&gt;&gt;
+&lt;&lt;set $transcriptname to  &quot;ARtranscript&quot;&gt;&gt;
+ &lt;audio id=&quot;audio&quot; &gt;
+  &lt;source src=&quot;&quot;&gt;
+&lt;/audio&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;5&quot; play&gt;&gt;
 /* CLOSED  */
 &lt;&lt;include &quot;headerAR&quot;&gt;&gt;
@@ -1177,7 +1232,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="AR2transcript" tags="" position="725,350" size="100,100">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</tw-passagedata><tw-passagedata pid="27" name="instnar5" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="instnar5" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1199,7 +1254,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="streets" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="streets" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1225,7 +1280,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 /* &lt;div class=&quot;poster-wrapper hide&quot; id=&quot;poster&quot;&gt;
    &lt;img class=&quot;poster&quot; src=&quot;./../assets/img/obpy.jpeg&quot;/&gt;
  &lt;/div&gt; */
-&lt;div id=&quot;caption&quot; class=&quot;hide&quot; &gt;&lt;/div&gt;
+&lt;div class=&quot;caution&quot; &gt;&lt;img src=&quot;assets/img/caution.png&quot;&gt;&lt;p&gt;Take care crossing roads &lt;/p&gt;&lt;/div&gt;
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -1242,10 +1297,9 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;p class=&quot;comment&quot;&gt;As you begin to walk press  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
 &lt;&lt;link &quot;play&quot;&gt;&gt;
       &lt;&lt;replace &quot;#headerinstmount&quot;&gt;&gt;
-    &lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know 
+    &lt;p class=&quot;comment&quot;&gt; Are you outside the Liverpool Philharmonic?  
     &lt;a href=&quot;https://fr-spirits-concrete-iron.netlify.app/&quot;&gt;
-&lt;button&gt;I&#39;m finished&lt;/button&gt;&lt;/a&gt;
-    /* &lt;/div&gt; */
+&lt;button&gt;I&#39;m here&lt;/button&gt;&lt;/a&gt;
     &lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
         &lt;&lt;if $playToggle is false&gt;&gt;
@@ -1260,9 +1314,9 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   &lt;&lt;timed 30s&gt;&gt;
 &lt;&lt;replace &quot;#headerinstmount&quot;&gt;&gt;
-    &lt;p class=&quot;comment&quot;&gt; When you&#39;re finished listening, let me know 
+    &lt;p class=&quot;comment&quot;&gt; Are you outside the Liverpool Philharmonic?  
     &lt;a href=&quot;https://fr-spirits-concrete-iron.netlify.app/&quot;&gt;
-&lt;button&gt;I&#39;m finished&lt;/button&gt;&lt;/a&gt;
+&lt;button&gt;I&#39;m here&lt;/button&gt;&lt;/a&gt;
     &lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
 
@@ -1270,10 +1324,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
 &lt;/main&gt;
 
-&lt;&lt;include &quot;footerstorywalk&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;
-  &lt;&lt;set $addC to setup.addCaptions(&quot;streets&quot;)&gt;&gt;
-&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="streetstranscript" tags="" position="1100,350" size="100,100">&lt;h2&gt;Walk The Streets Part One&lt;/h2&gt;
+&lt;&lt;include &quot;footerstorywalk&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="streetstranscript" tags="" position="850,350" size="100,100">&lt;h2&gt;Walk The Streets Part One&lt;/h2&gt;
 
 NARRATOR:
 
@@ -1294,7 +1345,7 @@ There will be no classes today.
 Stay safe. Mind the sirens. Go down to the shelter. Pack a backpack. Bandages and iodine. Other medications you may need. A bottle of water. Biscuits. A flashlight. A needle with thread. Money. Documents. A power bank. A mobile phone.
 Write your name/surname on your hand. Your blood group. Relatives’ phone number. If the explosion is close, run to the bathroom.
 Keep in touch. Breathe deeply.
-This will go down in the history books.</tw-passagedata><tw-passagedata pid="30" name="end" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
+This will go down in the history books.</tw-passagedata><tw-passagedata pid="28" name="end" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;

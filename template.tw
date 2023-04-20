@@ -235,13 +235,13 @@ setup.backThirty = () => {
 :: StoryInit {"position":"100,100","size":"100,100"}
 <<cacheaudio "1" "./../assets/audio/1.mp3">>
 <<cacheaudio "2" "./../assets/audio/2.mp3">>
-<<cacheaudio "3" "./../assets/audio/3.mp3">>
+<<cacheaudio "3" "./../assets/audio/3V2.mp3">>
 <<cacheaudio "4" "./../assets/audio/4.mp3">>
 <<cacheaudio "5" "./../assets/audio/5.mp3">>
 <<cacheaudio "6" "./../assets/audio/6.mp3">>
 <<cacheaudio "7" "./../assets/audio/7.mp3">>
 <<cacheaudio "8" "./../assets/audio/8.mp3">>
-<<cacheaudio "9" "./../assets/audio/9.mp3">>
+<<cacheaudio "9" "./../assets/audio/9V2.mp3">>
 <<waitforaudio>>
 
 
@@ -250,7 +250,47 @@ setup.backThirty = () => {
 <div class="header-item"></div>
 <div class="header-item">
   <h1>$title</h1>
-  <h3 class="subtitle">With Fire & Rage</h3>
+  <h3 class="subtitle">$location</h3>
+
+<div class="multiple-icon-wrapper">
+<<if $bathroom is true>>
+ <div class="multiple-icon-item">
+      <img src="assets/img/bathroom.png" >
+
+    </div>
+    <</if>>
+    <<if $wifi is true>>
+      <div class="multiple-icon-item">
+      <img src="assets/img/wifi.png" >
+
+    </div>
+     <</if>>
+    <<if $food is true>>
+      <div class="multiple-icon-item">
+      <img src="assets/img/food.png" >
+
+    </div>
+     <</if>>
+    <<if $charge is true>>
+      <div class="multiple-icon-item">
+      <img src="assets/img/charge.png" >
+
+    </div>
+     <</if>>
+    <<if $stepfree is true>>
+      <div class="multiple-icon-item">
+      <img src="assets/img/stepfree.png" >
+
+    </div>
+     <</if>>
+    <<if $caution is true>>
+     
+      <div class="multiple-icon-item">
+      <img src="assets/img/caution.png" >
+
+    </div>
+     <</if>>
+</div>
 </div >
 </header>
 
@@ -283,16 +323,6 @@ setup.backThirty = () => {
   <</if>>
 
 <div id="headerinstmount"></div>
-/* <<if $showMap is true>>
-    <div class="nav-wrapper">
-      <div class="nav-item">
-    <<link [img[assets/img/map.png]]>>
-    <<toggleclass "#map" "hide">>
-
-    <</link>>
-    </div>
-  </div>
-  <</if>> */
 
 <<if $showForwards is true>>
   <<if $sendOn is true>>
@@ -417,6 +447,21 @@ setup.backThirty = () => {
         [img[Back|assets/img/back.png][$prevpass]]
     </div>
   </div>
+  <div class="nav-wrapper playpause-wrapper">
+  <div class="nav-item" id="playpause">
+      <<link [img[assets/img/playpause.png]]>>
+        <<if $playToggle is false>>
+      <<set $fn to setup.play()>>
+      <<set $playToggle to true>>
+      <<addclass "#playpause" "playhighlight">>
+      <<else>>
+       <<set $fn to setup.pause()>>
+        <<set $playToggle to false>>
+      <<removeclass "#playpause" "playhighlight">>
+      <</if>>
+      <</link>>
+  </div>
+</div>
    <div class="nav-wrapper">
   <div class="nav-item">
   <<link [img[assets/img/transcript.png]]>>
@@ -448,6 +493,7 @@ setup.backThirty = () => {
     </div>
   </div>
 </footer>
+<<done>><<addclass "#playpause" "playhighlight">><</done>>
 
 :: footerstory [nobr]
 
@@ -631,48 +677,6 @@ setup.backThirty = () => {
 
 
 
-:: credits [nobr]{"position":"450,50","size":"100,100"}
-<<set $passage to "credits">>
-<<set $showMap to false>>
-<<set $showAudio to false>>
-<<set $showReplay to false>>
-<header class="credits">
-<div class="header-item"></div>
-<div class="header-item">
-  <h1>With Fire & Rage</h1>
-</div >
-</header>
-<main class="credits">
-<p>Testimonies include: </p>
-<h3>OLYA MUKHINA</h3>
-<p>Executive Director of the Lesya Ukrainka Theater</p>
-<h3>STAS KONONOV</h3>
-<p>Musician and Guitarist</p>
-<h3>ALEVTINA SHVETSOVA</h3>
-<p>Arts Journalist and Artist</p>
-<h3>LUTFIE ZUDIEVA</h3>
-<p>Civic Journalist</p>
-<h3>OLEKSANDRA OSADCHA</h3>
-<p>Researcher and Curator at Kharkiv School Of Photography</p>
-<h3>SERHIY ZAKHAROV</h3>
-<p>Artist</p>
-<h3>VICTORIA AMELINA</h3>
-<p>Writer and Poet</p>
-<h3>ANNA SHARYHINA</h3>
-<p>Activist, Cultural Manager and Founder of Sphere</p>
-<h3>JULIA NIKOLAJEVSKA</h3>
-<p>Musician and Cultural Manager Kharkiv Music Fest</p>
-<h3>DMYTRO KOSTIUMINSKIJ</h3>
-<p>Artist, Theatre director and Filmmaker</p>
-<br/>
-<p>Poetry & Additional Texts include:</p>
-<p>Text Counter/retnuoC by Alexander Levitsky from Anthology24 Text by Nina Zakhozhenko from Anthology24</p>
-<p>Poem by Aliye Kenzhalieva</p>
-<p>Poem Ctrl+Z by Mykhailo Zharzhalio</p>
-<p>Poem Survivor's Syndrome by Andriy Bondarenko</p>
-<p>Poem by Ostap Slyvynsky</p>
-</main>
-<<include "footerback">>
 
 
 :: beginning [nobr]  {"position":"700,175","size":"100,100"}
@@ -708,13 +712,13 @@ setup.backThirty = () => {
 <<set $playToggle to false>>
 <<set $captionToggle to false>>
 <<set $showForwards to true>>
-<<set $showBackwards to false>>
-<<set $showCaptionsIcon to true>>
+<<set $showBackwards to true>>
+<<set $showCaptionsIcon to false>>
 <<set $showMap to false>>
 
 <main class="instructions" id="">
 <div id="mount"></div>
-<<timed 2s>><<replace "#mount">>
+<<timed 0.1s>><<replace "#mount">>
 <p>Welcome to With Fire and Rage</p>
 <</replace>><</timed>>
 
@@ -737,7 +741,7 @@ setup.backThirty = () => {
 <</append>><</timed>>
  
 </main>
-
+<<include "footer">>
 
 
 
@@ -749,9 +753,9 @@ setup.backThirty = () => {
 <<set $showAudio to false>>
 <<set $showReplay to false>>
 <<set $showForwards to true>>
-<<set $showBackwards to false>>
+<<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
-/* <<set $map = setup.generateDirectionsMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originPlaceId: "ChIJ2ccRtxghe0gR3Z7JzoorJ58"},"ChIJ2ccRtxghe0gR3Z7JzoorJ58")>> */
+
 
 <<set $map = setup.generateViewMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originName: "Liverpool Everyman Theatre"})>>
 
@@ -759,7 +763,7 @@ setup.backThirty = () => {
 <div id="audio"></div>
 /* <<include "header">> */
 <main class="instructions">
-<h2>Instructions</h2>
+<h2>Onboarding</h2>
 <div id="map" class="hide">$map</div>
 <div id="mount"></div>
 <<timed 0.5s>>
@@ -786,7 +790,7 @@ setup.backThirty = () => {
 <</timed>>
  <<timed 13s>>
   <<append "#mount">>
-<p>To read the audio transcript press[img[Forward|assets/img/transcript.png][$nextpass]]</p>
+<p>To read a transcript of the audio press[img[Forward|assets/img/transcript.png][$nextpass]]</p>
   <</append>>
 
 <</timed>>
@@ -797,7 +801,7 @@ setup.backThirty = () => {
   <</append>>
 <</timed>>
 </main>
-<<include "footerfor">>
+<<include "footer">>
 
 :: instructions2 [nobr]
 <<set $prevpass to "instructions">>
@@ -807,52 +811,59 @@ setup.backThirty = () => {
 <<set $showAudio to false>>
 <<set $showReplay to false>>
 <<set $showForwards to true>>
-<<set $showBackwards to false>>
+<<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
 
 <div id="audio"></div>
 /* <<include "header">> */
 <main class="instructions">
-<h2>Instructions</h2>
+<h2>Onboarding</h2>
 <div id="map" class="hide">$map</div>
 <div id="mount"></div>
-<<timed 0.5s>>
+<<timed 0.1s>>
   <<replace "#mount">>
-    <p>On today’s journey we will stop briefy in ten different locations</p>
+    <p>We will travel to ten different locations</p>
   <</replace>>
 
 <</timed>>
 <<timed 4s>>
    <<append "#mount">>
-<p>It’s up to you how fast or slow you travel, and how much you play in one go</p>
+<p>Walking for a little over one kilometre, in short stretches </p>
   <</append>>
 <</timed>>
 <<timed 6s>>
   <<append "#mount">>
-<p>Playing all the way through might take anywhere between 90 and 120 min.</p>
+<p>It’s up to you how fast or slow you go</p>
   <</append>>
     
 <</timed>>
 <<timed 8s>>
 <<append "#mount">>
-<p>Find a places to sit, to lean, to shelter, 
+<p>The full tour takes between 90 and 120 minutes 
 </p>
   <</append>>
 <</timed>>
 
  <<timed 10s>>
   <<append "#mount">>
-<p>If you want, take a break</p>
+<p>Listen to as much or as little as you like </p>
   <</append>>
 <</timed>>
 
- <<timed 15s>>
+<<timed 12s>>
+  <<append "#mount">>
+<p>You are always welcome to come back another day </p>
+  <</append>>
+<</timed>>
+
+
+ <<timed 14s>>
   <<append "#mount">>
 <<button "Next">><<goto $nextpass>><</button>>
   <</append>>
 <</timed>>
 </main>
-<<include "footerfor">>
+<<include "footer">>
 
 
 
@@ -864,62 +875,79 @@ setup.backThirty = () => {
 <<set $showAudio to false>>
 <<set $showReplay to false>>
 <<set $showForwards to true>>
-<<set $showBackwards to false>>
+<<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
 
 <div id="audio"></div>
 /* <<include "header">> */
 <main class="instructions">
-<h2>Instructions</h2>
+<h2>Onboarding</h2>
 <div id="map" class="hide">$map</div>
 <div id="mount"></div>
-<<timed 0.5s>>
-  <<replace "#mount">>
-    <p>These icons will show when facilities are available</p>
-  <</replace>>
+<<timed 0.1s>>
+  <<append "#mount">>
+    <p>At every location, I will suggest places to sit, to lean, to shelter</p>
+  <</append>>
 <</timed>>
-<<timed 3s>>
-   <<append "#mount">>
-<p>Bathroom [img[Bathroom|assets/img/bathroom.png][$passage]]</p>
+<<timed 2s>>
+  <<append "#mount">>
+    <p>Make yourself comfortable, if you want, take a break</p>
   <</append>>
 <</timed>>
 <<timed 4s>>
   <<append "#mount">>
-<p>Wifi [img[Wifi|assets/img/wifi.png][$passage]]</p>
+    <p>These icons show when facilities are available </p>
   <</append>>
 <</timed>>
-
 <<timed 5s>>
-  <<append "#mount">>
-<p>Food and Drink  [img[Food|assets/img/food.png][$passage]] </p>
-  <</append>>
-<</timed>>
-
-<<timed 6s>>
-  <<append "#mount">>
-<p>Step-free access [img[StepFree|assets/img/stepfree.png][$passage]]</p>
+   <<append "#mount">>
+  <div class="multiple-icon-wrapper">
+      <div class="multiple-icon-item">
+      <img src="assets/img/bathroom.png" >
+    <span>Bathroom </span>
+    </div>
+      <div class="multiple-icon-item">
+      <img src="assets/img/wifi.png" >
+    <span>Wifi </span>
+    </div>
+      <div class="multiple-icon-item">
+      <img src="assets/img/food.png" >
+    <span>Food & Drink </span>
+    </div>
+</div>
   <</append>>
 <</timed>>
 <<timed 7s>>
   <<append "#mount">>
-<p>Phone Charger [img[Charge|assets/img/charge.png][$passage]]</p>
+<p>As well as other important information like</p>
   <</append>>
 <</timed>>
-
 <<timed 8s>>
-  <<append "#mount">>
-<p>Caution [img[Caution|assets/img/charge.png][$passage]]</p>
+   <<append "#mount">>
+   <div class="multiple-icon-wrapper">
+      <div class="multiple-icon-item">
+      <img src="assets/img/stepfree.png" >
+    <span>Step-free access </span>
+    </div>
+      <div class="multiple-icon-item">
+      <img src="assets/img/wifi.png" >
+    <span>Phone Charger  </span>
+    </div>
+      <div class="multiple-icon-item">
+      <img src="assets/img/caution.png" >
+    <span>Caution! take care crossing roads</span>
+    </div>
+</div>
+
   <</append>>
 <</timed>>
-
-
  <<timed 10s>>
   <<append "#mount">>
 <<button "Next">><<goto $nextpass>><</button>>
   <</append>>
 <</timed>>
 </main>
-<<include "footerfor">>
+<<include "footer">>
 
 :: landing [nobr]
 <<set $title to "Our Biggest Premiere Yet">>
@@ -959,11 +987,28 @@ setup.backThirty = () => {
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
+<<set $location to " Liverpool Everyman">>
+<<set $bathroom to true>>
+<<set $wifi to true>>
+<<set $food to true>>
+<<set $charge to true>>
 <div id="audio"></div>
-/* <<include "header">> */
+<<if $openOrClosed is "open">>
+<<include "header">>
+<<else>>
+<header>
+<div class="header-item"></div>
+<div class="header-item">
+  <h1>$title</h1>
+  <h3 class="subtitle">$location</h3>
+  </div>
+
+  </header>
+<</if>>
 <main class="instructions">
 <div id="map" class="hide">$map</div>
   <<if $openOrClosed is "open">>
+  
     <<audio ":all" stop>><<audio "2" play>>
     <p>Go inside and take a seat in the downstairs bar </p>
   <p>There are comfortable sofas either end</p>
@@ -1016,7 +1061,7 @@ setup.backThirty = () => {
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
  </div>
   
-<div id="caption" class="hide"></div>
+
 <div id="transcript"></div>
 <div id="mount"></div>
 <<timed 0.1s>><<replace "#headerinstmount">><p class="comment"> To listen to <em>$title</em> press <div class="inline-btn-wrapper">
@@ -1043,9 +1088,7 @@ setup.backThirty = () => {
 </main>
 
 <<include "footerstory">>
-<<done>>
-  <<set $addC to setup.addCaptions("premiere")>>
-<</done>>
+
 
 
 
@@ -1118,7 +1161,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
 <<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
-<div id="audio"></div>
+
 
 <main class="instructions">
 <div id="map" class="hide">$map</div>
@@ -1154,9 +1197,12 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $ARtitle to "Title of Images TBC">>
-<<set $transcriptname to  "AR1transcript">>
+<<set $ARtitle to "Lesya Ukrainka Theatre">>
+<<set $transcriptname to  "ARtranscript">>
  <<audio ":all" stop>><<audio "5" play>>
+ <audio id="audio" >
+  <source src="">
+</audio>
 <<include "headerAR">>
 /* OPEN */
 <main class="ar">
@@ -1176,8 +1222,13 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<done>><<set $s to setup.startup()>><</done>>
 
 
-:: AR1transcript
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+:: ARtranscript
+As the full-scale invasion began, the team at the Lesya Ukrainka Theater in Lviv, transformed the venue in response. 
+
+They cleaned out the basement to become a bomb shelter, and adapted spaces for humanitarian aid. 
+
+They also created a plan to defend the theatre, with Molotov cocktails and barbed wire. 
+
 
 :: AR2 [nobr]{"position":"450,50","size":"100,100"}
 <<set $prevpass to "instnar3">>
@@ -1189,8 +1240,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $ARtitle to "Title of Images TBC">>
-<<set $transcriptname to  "AR2transcript">>
+<<set $ARtitle to "Lesya Ukrainka Theatre">>
+<<set $transcriptname to  "ARtranscript">>
+ <audio id="audio" >
+  <source src="">
+</audio>
  <<audio ":all" stop>><<audio "5" play>>
 /* CLOSED  */
 <<include "headerAR">>
@@ -1209,8 +1263,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <<include "footerAR">>
 <<done>><<set $s to setup.startup()>><</done>>
 
-:: AR2transcript
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+
 
 :: instnar5 [nobr]
 <<set $prevpass to "instnar3">>
@@ -1267,7 +1320,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 /* <div class="poster-wrapper hide" id="poster">
    <img class="poster" src="./../assets/img/obpy.jpeg"/>
  </div> */
-<div id="caption" class="hide" ></div>
+<div class="caution" ><img src="assets/img/caution.png"><p>Take care crossing roads </p></div>
 <div id="transcript"></div>
 <div id="mount"></div>
 
@@ -1284,10 +1337,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <p class="comment">As you begin to walk press  <div class="inline-btn-wrapper">
 <<link "play">>
       <<replace "#headerinstmount">>
-    <p class="comment"> When you're finished listening, let me know 
+    <p class="comment"> Are you outside the Liverpool Philharmonic?  
     <a href="https://fr-spirits-concrete-iron.netlify.app/">
-<button>I'm finished</button></a>
-    /* </div> */
+<button>I'm here</button></a>
     </p>
     <</replace>>
         <<if $playToggle is false>>
@@ -1302,9 +1354,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
   <<timed 30s>>
 <<replace "#headerinstmount">>
-    <p class="comment"> When you're finished listening, let me know 
+    <p class="comment"> Are you outside the Liverpool Philharmonic?  
     <a href="https://fr-spirits-concrete-iron.netlify.app/">
-<button>I'm finished</button></a>
+<button>I'm here</button></a>
     </p>
     <</replace>>
 
@@ -1313,9 +1365,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </main>
 
 <<include "footerstorywalk">>
-<<done>>
-  <<set $addC to setup.addCaptions("streets")>>
-<</done>>
+
 
 
 

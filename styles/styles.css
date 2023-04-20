@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Secular+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Spinnaker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap");
 /* CONSTANTS  */
 
 :root {
@@ -14,8 +13,8 @@
   --color-purple: #140246;
   --color-pink: #ff007c;
   --color-orange: #f75146;
-  --font-headings: "Shippori Antique B1", sans-serif;
-  --font-body: "Shippori Antique B1", sans-serif;
+  --font-headings: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
   --padding: 1.5rem;
 }
 
@@ -119,6 +118,7 @@ header {
   text-align: center;
   font-size: 1.5rem;
   font-family: var(--font-body);
+  margin-block-end: 2rem;
 }
 
 main {
@@ -332,6 +332,19 @@ main.story > #mount > p > .link-image > img {
   margin: 0 10px;
 }
 
+.multiple-icon-wrapper > .multiple-icon-item > img,
+.caution > img {
+  width: 30px;
+  margin: 0 10px;
+  margin-block-end: 0.5rem;
+}
+
+.caution > p {
+  font-size: 1.3rem;
+  display: inline;
+  font-style: italic;
+}
+
 main.instructions > #mount > p,
 main.instructions > p {
   background-color: var(--accent-color-secondary);
@@ -351,6 +364,26 @@ main.instructions > p.amenities {
   width: fit-content;
   text-align: right;
 }
+
+.multiple-icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block-end: 2rem;
+}
+
+.multiple-icon-wrapper > .multiple-icon-item {
+  display: flex;
+  max-width: 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.multiple-icon-wrapper > .multiple-icon-item > span {
+  text-align: center;
+}
+
 /* END  */
 
 main.end {
@@ -391,7 +424,7 @@ header.ar {
 header.ar > .nav-wrapper > .nav-item > h2 {
   font-size: 1.8rem;
   font-size: 2.2rem;
-  max-width: 80%;
+  max-width: 95%;
 }
 
 header.ar > .nav-wrapper > .nav-item > p.comment {
@@ -500,7 +533,7 @@ header.story {
 }
 
 header > #headerinstmount > p.comment {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   max-width: 80%;
   margin: auto;
 }
