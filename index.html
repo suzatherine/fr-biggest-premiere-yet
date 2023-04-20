@@ -1296,19 +1296,22 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
   &lt;&lt;replace &quot;#headerinstmount&quot;&gt;&gt;  
 &lt;p class=&quot;comment&quot;&gt;As you begin to walk press  &lt;div class=&quot;inline-btn-wrapper&quot;&gt;
 &lt;&lt;link &quot;play&quot;&gt;&gt;
+  &lt;&lt;timed 4s&gt;&gt;
       &lt;&lt;replace &quot;#headerinstmount&quot;&gt;&gt;
     &lt;p class=&quot;comment&quot;&gt; Are you outside the Liverpool Philharmonic?  
     &lt;a href=&quot;https://fr-spirits-concrete-iron.netlify.app/&quot;&gt;
 &lt;button&gt;I&#39;m here&lt;/button&gt;&lt;/a&gt;
     &lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
+   &lt;&lt;/timed&gt;&gt;
         &lt;&lt;if $playToggle is false&gt;&gt;
       &lt;&lt;set $fn to setup.play()&gt;&gt;
       &lt;&lt;set $playToggle to true&gt;&gt;
       &lt;&lt;addclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
       &lt;&lt;/if&gt;&gt;
-      &lt;&lt;/link&gt;&gt;&lt;/div&gt;&lt;/p&gt;
 
+      &lt;&lt;/link&gt;&gt;
+      &lt;/div&gt;&lt;/p&gt;
       &lt;&lt;/replace&gt;&gt;
  &lt;&lt;/timed&gt;&gt;
 
