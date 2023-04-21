@@ -1015,9 +1015,10 @@ setup.backThirty = () => {
 
   <<if $openOrClosed is "closed">>
   <<audio ":all" stop>><<audio "6" play>>
-  <p>Find a place to take shelter</p>
-  <p>Maybe by the big windows, under the theatre’s balcony</p>
-  <p>When you’re ready let me know</p>
+<p> Find a place to make yourself comfortable, facing Bluecoat</p>
+<p>Maybe lean against one of the large trees </p>
+<p>Or take a seat on one of the benches</p>
+
     <<button "I'm ready">><<goto $nextpass>><</button>>
 
    

@@ -318,6 +318,9 @@ header.credits > .header-item > h3 {
 
 /* INSTRUCTIONS  */
 
+header.standard {
+  justify-content: left;
+}
 header.standard > .header-item > h3.subtitle {
   text-align: left;
 }
