@@ -15,8 +15,8 @@ Our Biggest Premiere Yet
 :: Story Stylesheet [stylesheet]
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
-@import url("./styles/generics.css");
-@import url("./styles/styles.css");
+@import url("styles/generics.css");
+@import url("styles/styles.css");
 
 
 
@@ -216,15 +216,15 @@ setup.backThirty = () => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "1" "./../assets/audio/1.mp3">>
-<<cacheaudio "2" "./../assets/audio/2.mp3">>
-<<cacheaudio "3" "./../assets/audio/3V2.mp3">>
-<<cacheaudio "4" "./../assets/audio/4.mp3">>
-<<cacheaudio "5" "./../assets/audio/5.mp3">>
-<<cacheaudio "6" "./../assets/audio/6.mp3">>
-<<cacheaudio "7" "./../assets/audio/7.mp3">>
-<<cacheaudio "8" "./../assets/audio/8.mp3">>
-<<cacheaudio "9" "./../assets/audio/9V2.mp3">>
+<<cacheaudio "1" "assets/audio/1.mp3">>
+<<cacheaudio "2" "assets/audio/2.mp3">>
+<<cacheaudio "3" "assets/audio/3V2.mp3">>
+<<cacheaudio "4" "assets/audio/4.mp3">>
+<<cacheaudio "5" "assets/audio/5.mp3">>
+<<cacheaudio "6" "assets/audio/6.mp3">>
+<<cacheaudio "7" "assets/audio/7.mp3">>
+<<cacheaudio "8" "assets/audio/8.mp3">>
+<<cacheaudio "9" "assets/audio/9V2.mp3">>
 <<waitforaudio>>
 
 
@@ -678,7 +678,7 @@ setup.backThirty = () => {
 <main class="beginning" id="">
 
 <div class="poster-wrapper" id="poster">
-   <img class="poster" src="./../assets/img/main.jpeg"/>
+   <img class="poster" src="assets/img/main.jpeg"/>
  </div>
  <p class="comment center">Put your headphones in and turn up the volume</p>
  <div class="menu-wrapper">
@@ -1036,7 +1036,7 @@ setup.backThirty = () => {
   <track kind="captions" srclang="en" label="English captions" id="captrack" default>
 </audio>
 <div class="poster-wrapper" id="poster">
-   <img class="poster" src="./../assets/img/obpy.jpeg"/>
+   <img class="poster" src="assets/img/obpy.jpeg"/>
  </div>
   
 
@@ -1220,10 +1220,10 @@ For the last five years, we have been trying to work without a strict hierarchy.
 
   <div class="ar-imgs-container one" id="ARContainer">
     <div class="hidden-img-wrapper touch transparent" id="reveal" >
-        <img src="./assets/img/gifs/ar1open.gif" class="">
+        <img src="assets/img/gifs/ar1open.gif" class="">
       </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
-      <img src="./assets/img/everyman-inside.jpeg" class="">
+      <img src="assets/img/everyman-inside.jpeg" class="">
       </div>
   </div>
 
@@ -1266,10 +1266,10 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 
  <div class="ar-imgs-container one" id="ARContainer">
     <div class="hidden-img-wrapper touch transparent" id="reveal" >
-        <img src="./assets/img/gifs/ar2closed.gif" class="">
+        <img src="assets/img/gifs/ar2closed.gif" class="">
       </div>
     <div class="ar-img-wrapper touch bottom" id="initial" >
-      <img src="./assets/img/everyman-outside.jpeg" class="">
+      <img src="assets/img/everyman-outside.jpeg" class="">
       </div>
   </div>
 <div id="transcript"></div>
@@ -1334,7 +1334,7 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 
 <div id="map" class="">$map</div>
 /* <div class="poster-wrapper hide" id="poster">
-   <img class="poster" src="./../assets/img/obpy.jpeg"/>
+   <img class="poster" src="assets/img/obpy.jpeg"/>
  </div> */
 <div class="caution" ><img src="assets/img/caution.png"><p>Take care crossing roads </p></div>
 <div id="transcript"></div>
