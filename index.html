@@ -164,11 +164,18 @@ return iFrame
 
 // TOUCHEVENTS 
 // taken from https://developer.mozilla.org/en-US/docs/Web/API/Touch_events  
-setup.startup = () =>  {
+setup.startup = (playOnTouch) =>  {
   const ongoingTouches = [];
 
 const handleStart = (evt) =>{
   evt.preventDefault();
+  if (playOnTouch === true){
+const audio = document.getElementById("audio");
+const playpause = document.getElementById("playpause");
+ audio.play();
+ playpause.classList.add("playhighlight");
+
+}
  const initial = document.getElementById("initial");
 const reveal = document.getElementById("reveal");
      initial.classList.add("transparent");  
@@ -246,31 +253,7 @@ function log(msg) {
 
 // document.addEventListener("DOMContentLoaded", startup);
 
-// CAPTIONS
-setup.addCaptions = (cuekey) =>  {
-    const audio = document.getElementById("audio");
-     const track = audio.addTextTrack('subtitles', 'English', 'en');
-    track.mode = 'showing';
-    const cues = {
-      premiere: [[0.001,7.205,""],[7.23,10.02,"Welcome to the immersive body experience"],[10.045,13.71,"with fire and rage. I'm Veronica"],[13.71,16.32,"sclerotome, artist and producer from"],[16.32,19.02,"Kharkiv, Ukraine, and I will be your"],[19.02,23.01,"guide for today. Along the way, I"],[23.01,25.5,"encourage you to take a break. If you"],[25.5,28.17,"want to stop for a coffee, you will not"],[28.17,30.99,"spend long in each location but even so,"],[31.26,34.529,"find a place to sit to lean to shelter."],[35.04,37.65,"Make yourself comfortable. After all,"],[38.04,41.01,"Liverpool is your city, not mine. The"],[41.01,43.17,"places you will walk in, I've never"],[43.17,45.96,"been, but lets your imagination wander"],[45.96,49.17,"from your streets to ours. As I take you"],[49.17,51.6,"on a journey to the frontline in Ukraine"],[52.2,54.15,"to meet some of our country's most"],[54.15,57.36,"radical, brave and innovative artists"],[57.9,60.63,"from art museums, libraries, train"],[60.63,63.21,"stations and cafes in Liverpool to"],[63.21,65.16,"different histories in places across"],[65.16,68.31,"Ukraine. From where you are now at the"],[68.31,71.03999999999999,"Liverpool Everyman to the lesser Quinta"],[71.03999999999999,74.55,"Theatre in the beef. Here, you will need"],[74.58,77.34,"our first artist, Oliver Pooja kowski,"],[77.91,79.89,"who with tremendous courage and"],[79.89,82.5,"ingenuity, transformed her theatre to"],[82.5,87.27,"respond to a moment of crisis. So, I"],[87.27,89.91,"already let's begin."],[89.935,97.625,""],[97.65,103.53,"10 987 burning house in heaven, a"],[103.53,106.77000000000001,"cartridge is full of deceptions slyness,"],[107.00999999999999,110.19,"blackmail, no exceptions, read"],[110.4,113.64,"reflections, reviewing eternal centers"],[113.64,118.11,"of life, destroy, forget, deprive six"],[118.11,122.315,"five burn down. church choirs believe"],[122.34,125.79,"there is no where to flee for three to"],[125.79,128.58,"the abyss of suffering we have run to"],[128.58,128.94,"one."],[128.965,140.70499999999998,""],[140.73,144.57,"On the 24th of February 2020, till the"],[144.57,147.21,"day of the full scale invasion, we made"],[147.21,150.03,"a plan of how to defend the theater and"],[150.03,153.78,"how we could avoid being captured. It's"],[153.81,156.12,"the highest building in the district."],[156.48,158.52,"And right across the street, there is a"],[158.52,162.18,"big military base. So we put razor wire"],[162.21,164.4,"anywhere a person could climb onto the"],[164.4,167.28,"rooftop, and some of the staff began to"],[167.28,170.19,"make Molotov cocktails. This was the"],[170.19,174.72,"first day the war had already been going"],[174.72,177.78,"in the east for many years. So full"],[177.78,180.93,"scale invasion was not a surprise. But"],[180.93,184.59,"still, in the sharp moment of crisis. We"],[184.59,187.65,"were lost and we didn't know how to"],[187.71,190.92,"adapt our work. At first, it was very"],[190.92,194.88,"good. We had no sleep. Every day we had"],[194.88,198.24,"meetings with the whole theater team. We"],[198.24,200.91,"made a lot of mistakes, but we tried to"],[200.91,203.82,"find the best solutions. We started by"],[203.82,206.88,"setting up the spaces for refugees, and"],[206.88,209.37,"cleaning the basement that became a bomb"],[209.37,212.94,"shelter. We invited not only artists but"],[212.97,215.73,"anyone who had to flee and needed a"],[215.73,218.61,"space to stay. Many of our staff didn't"],[218.61,221.07,"feel safe in their apartments, so they"],[221.07,225.36,"also lived here. In our theater. We set"],[225.36,228.3,"up a shower and created a small kitchen."],[228.96,231.03,"The person who used to be in charge of"],[231.03,233.91,"laundry for costumes now washed clothes"],[233.94,237.09,"and bedding. Instead, the small stage"],[237.09,240,"became a space to store humanitarian aid"],[240.24,244.29,"actors distributed not only in Lviv but"],[244.29,247.11,"to other cities, often under shelling."],[247.71,250.35,"We organized buses for those who were"],[250.35,252.93,"displaced to go through the border to"],[252.93,255.72,"Poland. Because it was an awful"],[255.72,259.74,"situation. Those over 60 and mothers"],[259.74,262.65,"with a lot of small kids were stuck"],[262.65,266.43,"there for days. We prepared warm food"],[266.43,269.67,"and drinks and actors would give this"],[269.67,272.01,"out at the railway stations were"],[272.01,274.29,"internally displaced people were also"],[274.29,277.35,"waiting for days in winter, we equipped"],[277.35,279.87,"soldiers, including our colleagues and"],[279.87,282.45,"friends who went to defend the country."],[282.75,286.65,"Everything we had as theater was used in"],[286.68,289.65,"a new way. Set and probes became"],[289.65,293.07,"humanitarian aid and technical supplies"],[293.07,296.46,"things like walkie talkies were sent to"],[296.46,298.95,"the front line in the costume"],[298.95,302.04,"department. We sold parts of the uniform"],[302.07,305.19,"for soldiers. A very interesting fashion"],[305.19,308.04,"designer who lived in our shelter became"],[308.04,310.86,"the head of this production. For the"],[310.86,313.23,"last five years we have been trying to"],[313.23,316.86,"work without a strict hierarchy. And it"],[316.86,320.88,"is this horizontal structure that led to"],[320.88,323.7,"our biggest premiere yet, where the"],[323.7,327.24,"whole team united on the 24th of"],[327.24,330.18,"February to respond to the full scale"],[330.18,333.24,"invasion. And work is one strong"],[333.265,357.365,""]], 
-       streets: [[0.001,10.444,""],[10.469,13.229,"From the beginning, our citizens just"],[13.259,15.479,"changed and became full of strange and"],[15.479,19.859,"interesting artifacts. As you walk, look"],[19.859,25.169,"around Can you see underground bars to"],[25.169,30.089,"basements of buildings? In our cities,"],[30.329,31.919,"this were quickly adapted to become"],[31.919,35.279,"places to hide from rockets. posters"],[35.279,37.019,"from Music Nights are replaced with"],[37.019,40.469,"science for bumped shelters. As food and"],[40.469,42.779,"water restart for those taking refuge,"],[43.049,45.689,"sometimes for hours, weeks, or even"],[45.689,48.719,"months. On roads such as the one you're"],[48.719,51.089,"watching, people make outposts in"],[51.089,54.059,"preparation for invasion. And artists"],[54.149,56.189,"welded giant metal beams together"],[56.219,58.589,"creating hedge hooks to stop Russian"],[58.589,62.879,"tanks. Famous churches like the one"],[62.879,66.029,"behind and the one in front of you. Were"],[66.029,67.979,"boarded up to stop the stained glass"],[67.979,72.479,"from shattering explosions. Historic"],[72.479,74.57900000000001,"Buildings were protected in unique ways"],[74.729,76.559,"using metal sheets, plywood and"],[76.559,80.489,"scaffolding. Statues similar to the many"],[80.489,82.889,"will pass on your work today. You're"],[82.889,88.589,"covered in sandbags to protect them. The"],[88.589,90.749,"air raid alarm memory from high school"],[90.749,92.699,"drills appears as a present day"],[92.699,95.57900000000001,"nightmare. You're seeing the everyday"],[95.57900000000001,98.09899999999999,"sounds of the streets, it warrants the"],[98.09899999999999,100.34899999999999,"truck it's a camera and you have minutes"],[100.34899999999999,103.469,"to get on the ground. You catch eyes"],[103.469,105.65899999999999,"with strangers in anticipation of what's"],[105.65899999999999,111.364,"to come is an airborne or theory."],[111.38900000000001,113.369,"Millions of people flee the frontline"],[113.369,116.519,"cities. men of all ages are drafted in"],[116.519,119.699,"the military and teachers cancel lessons"],[119.699,120.239,"writing"],[120.264,127.415,""],[127.44,130.02,"there will be no classes today. Stay"],[130.02,133.59,"safe, minus sirens. Go down to the"],[133.59,138.06,"shelter, pack a backpack, bandages and"],[138.09,141.81,"ID in other medications you may need a"],[141.81,145.8,"bottle of water this gets a flashlight"],[146.31,150.75,"and needle with thread money documents a"],[150.75,154.95,"power bank mobile phone write your name"],[154.95,158.1,"surname on your hand. Your blood group,"],[158.55,161.7,"relatives phone number if the explosion"],[161.7,164.94,"is close, run to the bathroom. Keep in"],[164.94,169.8,"touch, breathe deeply. These are go down"],[169.82999999999998,171.21,"in the history books."],[171.235,192.46,""]]
-  }
-    for (let i=0; i<cues[cuekey].length; i++){
-    const cue = new VTTCue(cues[cuekey][i][0],cues[cuekey][i][1],cues[cuekey][i][2]);
-    track.addCue(cue); 
-}
-    track.addEventListener('cuechange', () => {
-    const activeCue = track.activeCues[0];
-    if (activeCue) {
-      document.getElementById('caption').textContent = activeCue.text;
-    }
-  });
-  console.log(audio.track)
 
-
-
- 
-}
 
 setup.play = () => {
  const audio = document.getElementById("audio")
@@ -737,7 +720,9 @@ setup.backThirty = () => {
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 &lt;&lt;set $showMap to false&gt;&gt;
-
+&lt;audio id=&quot;audio&quot; autoplay &gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/ONB/onboardingp1.mp3&quot;&gt;
+&lt;/audio&gt;
 &lt;main class=&quot;instructions&quot; id=&quot;&quot;&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -773,11 +758,11 @@ setup.backThirty = () => {
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 
-
 &lt;&lt;set $map = setup.generateViewMap({originLat: 53.402939134543324,originLong:-2.969497397902565, originName: &quot;Liverpool Everyman Theatre&quot;})&gt;&gt;
 
-
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
+&lt;audio id=&quot;audio&quot; autoplay &gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/ONB/onboardingp2.mp3&quot;&gt;
+&lt;/audio&gt;
 /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;h2&gt;Onboarding&lt;/h2&gt;
@@ -827,9 +812,9 @@ setup.backThirty = () => {
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
+&lt;audio id=&quot;audio&quot; autoplay &gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/ONB/onboardingp3.mp3&quot;&gt;
+&lt;/audio&gt;
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;h2&gt;Onboarding&lt;/h2&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
@@ -886,9 +871,9 @@ setup.backThirty = () => {
 &lt;&lt;set $showForwards to true&gt;&gt;
 &lt;&lt;set $showBackwards to true&gt;&gt;
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
-
-&lt;div id=&quot;audio&quot;&gt;&lt;/div&gt;
-/* &lt;&lt;include &quot;header&quot;&gt;&gt; */
+&lt;audio id=&quot;audio&quot; autoplay &gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/ONB/onboardingp4.mp3&quot;&gt;
+&lt;/audio&gt;
 &lt;main class=&quot;instructions&quot;&gt;
 &lt;h2&gt;Onboarding&lt;/h2&gt;
 &lt;div id=&quot;map&quot; class=&quot;hide&quot;&gt;$map&lt;/div&gt;
@@ -1042,7 +1027,7 @@ setup.backThirty = () => {
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;3&quot; play&gt;&gt;
 &lt;main class=&quot;story&quot; id=&quot;storyContainer&quot;&gt;
 &lt;audio id=&quot;audio&quot; &gt;
-  &lt;source src=&quot;https://www.dropbox.com/s/myez5ffs5k6zy26/01.%20Our%20Biggest%20Premiere%20Yet%20V1.mp3?raw=1&quot;&gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/PR/premiereV2.mp3&quot;&gt;
   &lt;track kind=&quot;captions&quot; srclang=&quot;en&quot; label=&quot;English captions&quot; id=&quot;captrack&quot; default&gt;
 &lt;/audio&gt;
 &lt;div class=&quot;poster-wrapper&quot; id=&quot;poster&quot;&gt;
@@ -1075,53 +1060,84 @@ setup.backThirty = () => {
 
 &lt;/main&gt;
 
-&lt;&lt;include &quot;footerstory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="premieretranscript" tags="" position="1225,225" size="100,100">&lt;h2&gt;$title&lt;/h2&gt;
+&lt;&lt;include &quot;footerstory&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="premieretranscript" tags="" position="1225,225" size="100,100">&lt;h2&gt;OUR BIGGEST PREMIERE YET&lt;/h2&gt;
 
-Welcome to the immersive audio experience With Fire and Rage...
-I’m Veronika Skliarova, artist and producer from Kharkiv, Ukraine. And I will be your guide for today.
-Along the way, I encourage you to take a break... If you want, stop for a coffee. We will not spend long in each location but even so, find a place to sit, to lean, to shelter. Make yourself comfortable, after all Liverpool is your city not mine.
-The places you will walk in, I have never been
-But let your imagination wander from your streets to ours. 
-As I take you on a journey to the frontline in Ukraine, to meet some of our country&#39;s most radical, brave and innovative artists.
+NARRATION BY VERONIKA SKLIAROVA:
+
+On today’s audio tour, I will take you on a journey to the frontline, to meet some of Ukraine’s most radical, brave and innovative artists.
+
+Listen directly to their words, poetry, and music. 
+
+Discover their artwork, embroidery and photography. 
+
+Experience how they’re creatively responding, with fire and rage, to invasion, occupation, censorship, and attempts to erase Ukrainian cultural identity.
+
+I invite you to let your imagination wander from your streets to mine. 
+
 From art museums, libraries, train stations, and cafes in Liverpool, to different histories and places across Ukraine.
-From where you are now, at the Liverpool Everyman, to the Lesya Ukrainka Theater in Lviv. Here you will meet our first artist Olha Puzhakovska, who with tremendous courage and ingenuity transformed her theatre to respond to a moment of crisis... 
-So, are you ready?
-Let’s begin
 
-ALEXANDER LEVITSKY:
+From where you are now, at the Liverpool Everyman, to the Lesya Ukrainka Theatre in Lviv. 
+
+Here you will meet our first artist Olha Puzhakovska, who with tremendous courage and ingenuity, transformed her theatre to respond to a moment of crisis… 
+
+So, are you ready?
+
+Then let’s begin
+
+
+POEM COUNTER/RETNUOC BY ALEXANDER LEVITSKY:
 
 Ten. Nine. Eight. Seven.
 Burning house in heaven.
+
 A cartridge is full of deceptions.
 Slyness. Blackmail. No exceptions.
-                    	     	Red reflections.
+                    	     	Red reflections. 
+
 Reviewing eternal senses of life.
 ‘Destroy,’ ‘Forget.’ ‘Deprive.’
                     	     	Six. Five.
+
 ‘Burn down’ church choirs plea.
 There is nowhere to flee.
                     	     	Four. Three.
+
 To the abyss of suffering, we have run.
 Two. One.
+
 The war has begun. 
 
-OLHA PUZHAKOVSKA:
 
-On the 24th of February 2022 (the day of the full-scale invasion), we made a plan of how to defend the theatre and how we could avoid it being captured. 
-It’s the highest building in the district and right across the street, there is a big military base. So we put razor wire anywhere a person could climb onto the rooftop, and some of the staff began to make Molotov cocktails. 
+TESTIMONY OF OLHA PUZHAKOVSKA:
+
+On the 24th of February 2022, the day of the full-scale invasion, we made a plan of how to defend the theatre and how we could avoid it being captured. 
+
+It’s the highest building in the district, and right across the street, there is a big military base. So we put razor wire anywhere a person could climb onto the rooftop, and some of the staff began to make Molotov cocktails. 
+
 This was the first day.
+
 The war had already being going in the east for many years, so the full-scale invasion was not a surprise. But still, in the sharp moment of crisis, we were lost and we didn&#39;t know how to adapt our work. 
+
 At first, it was very chaotic. We had no sleep. Every day we had meetings with the whole theatre team. We made a lot of mistakes, but we tried to find the best solutions.
+
 We started by setting up the spaces for refugees and cleaning the basement that became a bomb shelter.
+
 We invited not only artists but anyone who had to flee and needed a space to stay. 
+
 Many of our staff didn&#39;t feel safe in their apartments, so they also lived here in our theatre.
+
 We set up a shower and created a small kitchen. The person who used to be in charge of the laundry for costumes now washed clothes and bedding instead.
+
 The small stage became a space to store humanitarian aid. Actors distributed it not only in Lviv but to other cities, often under shelling.
+
 We organised buses for those who were displaced to go through the border to Poland. Because it was an awful situation, those over 60 and mothers with a lot of small kids were stuck there for days.
-We prepared warm food and drinks, and actors would give this out at the railway stations, where internally displaced people were also waiting for days in winter.
+
 We equipped soldiers, including our colleagues and friends, who went to go and defend the country. 
-Everything we had as a theatre was used in a new way. Set and costume became humanitarian aid, and technical supplies things like walkie-talkies were sent to the front line.
+
+Set and costume became humanitarian aid, and technical supplies things like walkie-talkies were sent to the front line.
+
 In the costume department, we sewed parts of the uniforms for soldiers. A very interesting fashion designer who lived in our shelter became the head of this production.
+
 For the last five years, we have been trying to work without a strict hierarchy. And it is this horizontal structure that led to our biggest premiere yet - where the whole team united on the 24th of February to respond to the full-scale invasion and work as one strong mechanism.</tw-passagedata><tw-passagedata pid="21" name="instnar3" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $prevpass to &quot;premiere&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;if $openOrClosed is &quot;open&quot;&gt;&gt;
@@ -1172,11 +1188,12 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;&lt;set $ARtitle to &quot;Lesya Ukrainka Theatre&quot;&gt;&gt;
 &lt;&lt;set $transcriptname to  &quot;ARtranscript&quot;&gt;&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;5&quot; play&gt;&gt;
- &lt;audio id=&quot;audio&quot; &gt;
-  &lt;source src=&quot;&quot;&gt;
+&lt;audio id=&quot;audio&quot; &gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/PR/PD1V1.mp3&quot;&gt;
 &lt;/audio&gt;
 &lt;&lt;include &quot;headerAR&quot;&gt;&gt;
 /* OPEN */
+
 &lt;main class=&quot;ar&quot;&gt;
 
   &lt;div class=&quot;ar-imgs-container one&quot; id=&quot;ARContainer&quot;&gt;
@@ -1191,7 +1208,9 @@ For the last five years, we have been trying to work without a strict hierarchy.
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="ARtranscript" tags="" position="350,350" size="100,100">As the full-scale invasion began, the team at the Lesya Ukrainka Theater in Lviv, transformed the venue in response. 
+&lt;&lt;done&gt;&gt;
+&lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+&lt;&lt;set $s to setup.startup(true)&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="ARtranscript" tags="" position="350,350" size="100,100">As the full-scale invasion began, the team at the Lesya Ukrainka Theater in Lviv, transformed the venue in response. 
 
 They cleaned out the basement to become a bomb shelter, and adapted spaces for humanitarian aid. 
 
@@ -1206,8 +1225,8 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 &lt;&lt;set $showCaptionsIcon to false&gt;&gt;
 &lt;&lt;set $ARtitle to &quot;Lesya Ukrainka Theatre&quot;&gt;&gt;
 &lt;&lt;set $transcriptname to  &quot;ARtranscript&quot;&gt;&gt;
- &lt;audio id=&quot;audio&quot; &gt;
-  &lt;source src=&quot;&quot;&gt;
+&lt;audio id=&quot;audio&quot; &gt;
+  &lt;source src=&quot;https://withfireandrageliverpool.com/audio/PR/PD1V1.mp3&quot;&gt;
 &lt;/audio&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;5&quot; play&gt;&gt;
 /* CLOSED  */
@@ -1225,7 +1244,9 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 &lt;div id=&quot;transcript&quot;&gt;&lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerAR&quot;&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;set $s to setup.startup()&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="instnar5" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
+&lt;&lt;done&gt;&gt;
+&lt;&lt;removeclass &quot;#playpause&quot; &quot;playhighlight&quot;&gt;&gt;
+&lt;&lt;set $s to setup.startup(true)&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="instnar5" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $prevpass to &quot;instnar3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;instnar5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $showMap to true&gt;&gt;
@@ -1320,27 +1341,43 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 
 &lt;/main&gt;
 
-&lt;&lt;include &quot;footerstorywalk&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="streetstranscript" tags="" position="850,350" size="100,100">&lt;h2&gt;Walk The Streets Part One&lt;/h2&gt;
+&lt;&lt;include &quot;footerstorywalk&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="streetstranscript" tags="" position="850,350" size="100,100">&lt;h2&gt;THE STREETS PART ONE&lt;/h2&gt;
 
-NARRATOR:
+NARRATION BY VERONIKA SKLIAROVA:
 
 From the beginning, our cities and streets changed and became full of strange and interesting artefacts.
-As you walk, look around.... Can you see underground bars or basements of buildings? 
-In our cities, these were quickly adapted to become places to hide from rockets. Posters for music nights were replaced with signs for bomb shelters. As food and water were stored for those taking refuge, sometimes for hours, weeks or even months.
-On roads such as the one you are walking, people made outposts in preparation for invasion. And artists welded giant metal beams together, creating “hedgehogs”, to stop Russian tanks.
-Famous churches like the one behind, and the one in front of you, were boarded up, to stop the stain glass from shattering in explosions. 
-Historic buildings were protected in unique ways, using metal sheets, plywood and scaffolding.
-And statues similar to the many you will pass on your walk today, were covered in sandbags to protect them. 
-The air raid alarm, a memory from high school drills, appeared as a present-day nightmare. 
-Piercing the everyday sounds of the streets, it warns that rockets are coming, and you have minutes to get underground. You catch eyes with strangers in anticipation of what’s to come. Is it an air bomb or artillery?
-Millions of people flee the frontline cities. Men of all ages are drafted into the military, and teachers cancel lessons writing...
 
-TEACHER: 
+As you walk, look around………… Can you see underground bars or basements of buildings? 
+
+In our cities, these were quickly adapted to become places to hide from rockets. 
+
+Posters for music nights were replaced with signs for bomb shelters. As food and water were stored for those taking refuge, sometimes for hours, weeks or even months.
+
+On roads such as the one you are walking, people made outposts in preparation for invasion. And artists welded giant metal beams together, creating “hedgehogs”, to stop Russian tanks.
+
+Famous churches like the one behind, and the one in front of you, were boarded up, to stop the stained glass from shattering in explosions. 
+
+Historic buildings were protected in unique ways, using metal sheets, plywood and scaffolding.
+
+And statues similar to the many you will pass on your walk today, were covered in sandbags to protect them. 
+
+The air raid alarm, a memory from high school drills, appeared as a present-day nightmare. 
+
+Piercing the everyday sounds of the streets, it warns that rockets are coming, and you have minutes to get underground. You catch eyes with strangers in anticipation of what’s to come. Is it an air bomb or artillery?
+
+Millions of people flee the frontline cities. Men of all ages are drafted into the military, and teachers cancel lessons writing…
+
+
+VOICE OF THE TEACHER: 
 
 There will be no classes today. 
+
 Stay safe. Mind the sirens. Go down to the shelter. Pack a backpack. Bandages and iodine. Other medications you may need. A bottle of water. Biscuits. A flashlight. A needle with thread. Money. Documents. A power bank. A mobile phone.
+
 Write your name/surname on your hand. Your blood group. Relatives’ phone number. If the explosion is close, run to the bathroom.
+
 Keep in touch. Breathe deeply.
+
 This will go down in the history books.</tw-passagedata><tw-passagedata pid="28" name="end" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $prevpass to &quot;streets&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;end&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;end&quot;&gt;&gt;
