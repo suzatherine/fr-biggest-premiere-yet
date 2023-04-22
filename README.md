@@ -1,6 +1,6 @@
 #Our Biggest Premiere Yet
 
-https://fr-biggest-premiere-yet.netlify.app/
+https://withfireandrageliverpool.com/premiere/
 
 add captions
 fix maps

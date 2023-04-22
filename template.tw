@@ -311,7 +311,7 @@ setup.backThirty = () => {
   <<if $sendOn is true>>
  <div class="nav-wrapper" id="forIcon">
     <div class="nav-item " >
-        <a href="https://fr-spirits-concrete-iron.netlify.app/">
+        <a href="https://withfireandrageliverpool.com/spirits/">
 <img src="assets/img/for.png"></a>
     </div>
   </div>
@@ -1328,8 +1328,8 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 <<include "headerstory">>
 <main class="story" id="storyContainer" >
 <audio id="audio" >
-  <source src="https://www.dropbox.com/s/y21jy250efbj22e/01.%20THE%20STREETS%20PART%20ONE%20V1.mp3?raw=1">
-  <track kind="captions" srclang="en" label="English captions" id="captrack" default>
+  <source src="https://withfireandrageliverpool.com/audio/streetsp1V1.mp3">
+
 </audio>
 
 <div id="map" class="">$map</div>
@@ -1355,7 +1355,7 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
   <<timed 4s>>
       <<replace "#headerinstmount">>
     <p class="comment"> Are you outside the Liverpool Philharmonic?  
-    <a href="https://fr-spirits-concrete-iron.netlify.app/">
+    <a href="https://withfireandrageliverpool.com/spirits/">
 <button>I'm here</button></a>
     </p>
     <</replace>>
@@ -1374,7 +1374,7 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
   <<timed 30s>>
 <<replace "#headerinstmount">>
     <p class="comment"> Are you outside the Liverpool Philharmonic?  
-    <a href="https://fr-spirits-concrete-iron.netlify.app/">
+    <a href="https://withfireandrageliverpool.com/spirits/">
 <button>I'm here</button></a>
     </p>
     <</replace>>
@@ -1432,36 +1432,6 @@ This will go down in the history books.
 
 
 
-
-:: end [nobr]
-<<set $prevpass to "streets">>
-<<set $passage to "end">>
-<<set $nextpass to "end">>
-<<set $showMap to false>>
-<<set $showAudio to false>>
-<<set $showReplay to true>>
-<<set $showBackwards to true>>
-<<set $showForwards to false>>
-<<set $showCaptionsIcon to false>>
-/* Church  */
-<<set $map =  setup.generateDirectionsMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"},"Royal Liverpool Philharmonic")>>
-<main class="end">
-<div id="audio"></div>
-<div id="map" class="hide">$map</div>
-<div id="mount"></div>
-<h2>Liverpool Philharmonic</h2>
-<p>Would you like to go on another journey?</p>
-<br/>
- <h3>Spirits from Concrete & Iron</h3>
- <br/>
-    <a href="https://fr-spirits-concrete-iron.netlify.app/">
-<button>Start</button></a>
-
-
-
-/* <p>Or back to the main <a href="https://liv-ukr-main.netlify.app/map">map</a></p> */
-</main>
-<<include "footer">>
 
 
 
