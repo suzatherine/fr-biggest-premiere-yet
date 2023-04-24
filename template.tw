@@ -759,18 +759,18 @@ setup.backThirty = () => {
 <</timed>>
 <<timed 2s>>
    <<append "#mount">>
-<p>This arrow takes you back[img[Back|assets/img/back.png][$prevpass]]</p>
+<p>To go back press this icon [img[Back|assets/img/back.png][$prevpass]]</p>
   <</append>>
 <</timed>>
 <<timed 4s>>
   <<append "#mount">>
-<p>This arrow skips you forward [img[Forward|assets/img/for.png][$nextpass]]</p>
+<p>To move forward press this icon [img[Forward|assets/img/for.png][$nextpass]]</p>
   <</append>>
     
 <</timed>>
 <<timed 6s>>
 <<append "#mount">>
-<p>You can replay with this icon   [img[Replay|assets/img/replay.png][$passage]]</p>
+<p>To replay press this icon   [img[Replay|assets/img/replay.png][$passage]]</p>
   <</append>>
 <</timed>>
  <<timed 8s>>
@@ -804,7 +804,7 @@ setup.backThirty = () => {
 <main class="instructions">
 <h2>Onboarding</h2>
 <div id="map" class="hide">$map</div>
-<div id="mount"></div>
+<div id="mount" class="onboarding"></div>
 <<timed 0.1s>>
   <<replace "#mount">>
     <p>We will travel to ten different locations</p>
@@ -862,13 +862,14 @@ setup.backThirty = () => {
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
+<<audio ":all" stop>>
 <audio id="audio" autoplay >
   <source src="https://withfireandrageliverpool.com/audio/ONB/onboardingp4.mp3">
 </audio>
 <main class="instructions">
 <h2>Onboarding</h2>
 <div id="map" class="hide">$map</div>
-<div id="mount"></div>
+<div id="mount" class="onboarding"></div>
 <<timed 0.1s>>
   <<append "#mount">>
     <p>At every location, I will suggest places to sit, to lean, to shelter</p>
@@ -907,12 +908,12 @@ setup.backThirty = () => {
     <span>Step-free access </span>
     </div>
       <div class="multiple-icon-item">
-      <img src="assets/img/wifi.png" >
+      <img src="assets/img/charge.png" >
     <span>Phone Charger  </span>
     </div>
       <div class="multiple-icon-item">
       <img src="assets/img/caution.png" >
-    <span>Caution! take care crossing roads</span>
+    <span>Caution!</span>
     </div>
 </div>
 
@@ -938,7 +939,7 @@ setup.backThirty = () => {
 <<set $showForwards to true>>
 <<set $showBackwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
+<<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre Liverpool"})>>
 <<audio ":all" stop>><<audio "1" play>>
 <div id="audio"></div>
 /* <<include "header">> */
@@ -973,7 +974,7 @@ setup.backThirty = () => {
 <<if $openOrClosed is "open">>
 <<include "header">>
 <<else>>
-<header>
+<header class="standard">
 <div class="header-item"></div>
 <div class="header-item">
   <h1>$title</h1>
@@ -1000,10 +1001,11 @@ setup.backThirty = () => {
 
   <<if $openOrClosed is "closed">>
   <<audio ":all" stop>><<audio "6" play>>
-<p> Find a place to make yourself comfortable, facing Bluecoat</p>
-<p>Maybe lean against one of the large trees </p>
-<p>Or take a seat on one of the benches</p>
+<p>Find a place to take shelter</p>
 
+<p>Maybe by the big windows, under the theatre’s balcony</p>
+
+<p>When you’re ready let me know</p>
     <<button "I'm ready">><<goto $nextpass>><</button>>
 
    
@@ -1170,7 +1172,7 @@ For the last five years, we have been trying to work without a strict hierarchy.
 <<set $showBackwards to true>>
 <<set $showForwards to true>>
 <<set $showCaptionsIcon to false>>
-<<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre"})>>
+<<set $map = setup.generateViewMap({originLat: 53.40300285309629,originLong: -2.9695139891945344, originName: "Everyman Theatre Liverpool"})>>
 
 
 <main class="instructions">
