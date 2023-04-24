@@ -722,7 +722,7 @@ setup.backThirty = () => {
 <</append>><</timed>>
 
 <<timed 8s>><<append "#mount">>
-<p>You can move forward via a button like<<button "This">><<goto $nextpass>><</button>></p> 
+<p>To move forward press<<button "This">><<goto $nextpass>><</button>></p> 
 <</append>><</timed>>
  
 </main>
