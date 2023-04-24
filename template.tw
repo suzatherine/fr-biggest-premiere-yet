@@ -722,7 +722,7 @@ setup.backThirty = () => {
 <</append>><</timed>>
 
 <<timed 8s>><<append "#mount">>
-<p>To move forward press<<button "This">><<goto $nextpass>><</button>></p> 
+<p>To move forward press a button like <<button "Next">><<goto $nextpass>><</button>></p> 
 <</append>><</timed>>
  
 </main>
@@ -759,18 +759,18 @@ setup.backThirty = () => {
 <</timed>>
 <<timed 2s>>
    <<append "#mount">>
-<p>To go back press this icon [img[Back|assets/img/back.png][$prevpass]]</p>
+<p>This arrow takes you back [img[Back|assets/img/back.png][$prevpass]]</p>
   <</append>>
 <</timed>>
 <<timed 4s>>
   <<append "#mount">>
-<p>To move forward press this icon [img[Forward|assets/img/for.png][$nextpass]]</p>
+<p>This arrow skips you forward [img[Forward|assets/img/for.png][$nextpass]]</p>
   <</append>>
     
 <</timed>>
 <<timed 6s>>
 <<append "#mount">>
-<p>To replay press this icon   [img[Replay|assets/img/replay.png][$passage]]</p>
+<p>You can replay with this icon [img[Replay|assets/img/replay.png][$passage]]</p>
   <</append>>
 <</timed>>
  <<timed 8s>>
@@ -1330,7 +1330,7 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
 <<include "headerstory">>
 <main class="story" id="storyContainer" >
 <audio id="audio" >
-  <source src="https://withfireandrageliverpool.com/audio/streetsp1V1.mp3">
+  <source src="https://withfireandrageliverpool.com/audio/PR/streetsp1V1.mp3">
 
 </audio>
 
