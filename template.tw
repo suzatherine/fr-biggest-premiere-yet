@@ -988,9 +988,12 @@ setup.backThirty = () => {
   <<if $openOrClosed is "open">>
   
     <<audio ":all" stop>><<audio "2" play>>
+      
     <p>Go inside and take a seat in the downstairs bar </p>
   <p>There are comfortable sofas either end</p>
   <p>When you’re ready let me know</p>
+       <div class="caution" ><img src="assets/img/charge.png"><p>Ask at box office</p></div>
+         <br>
   <<button "I'm ready">><<goto $nextpass>><</button>>
 
    /* <br/>
@@ -1354,7 +1357,7 @@ They also created a plan to defend the theatre, with Molotov cocktails and barbe
   <<replace "#headerinstmount">>  
 <p class="comment">As you begin to walk press  <div class="inline-btn-wrapper">
 <<link "play">>
-  <<timed 4s>>
+  <<timed 15s>>
       <<replace "#headerinstmount">>
     <p class="comment"> Are you outside the Liverpool Philharmonic?  
     <a href="https://withfireandrageliverpool.com/spirits/">
