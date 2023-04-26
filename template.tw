@@ -222,7 +222,7 @@ setup.backThirty = () => {
 <<cacheaudio "4" "assets/audio/4.mp3">>
 <<cacheaudio "5" "assets/audio/5.mp3">>
 <<cacheaudio "6" "assets/audio/6.mp3">>
-<<cacheaudio "7" "assets/audio/7.mp3">>
+<<cacheaudio "7" "assets/audio/7v2.mp3">>
 <<cacheaudio "8" "assets/audio/8.mp3">>
 <<cacheaudio "9" "assets/audio/9V2.mp3">>
 <<waitforaudio>>
@@ -1037,7 +1037,7 @@ setup.backThirty = () => {
  <<audio ":all" stop>><<audio "3" play>>
 <main class="story" id="storyContainer">
 <audio id="audio" >
-  <source src="https://withfireandrageliverpool.com/audio/PR/premiereV2.mp3">
+  <source src="https://withfireandrageliverpool.com/audio/PR/premiereV3.mp3">
   <track kind="captions" srclang="en" label="English captions" id="captrack" default>
 </audio>
 <div class="poster-wrapper" id="poster">
